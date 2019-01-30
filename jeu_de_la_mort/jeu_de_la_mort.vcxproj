@@ -172,6 +172,8 @@
   <ItemGroup>
     <ClCompile Include="Civil.cpp" />
     <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="Humanoid.cpp" />
     <ClCompile Include="jeu_de_la_mort.cpp" />

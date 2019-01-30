@@ -2,23 +2,12 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Humanoid">
     <Position X="5" Y="0.5" Width="1.75" />
-    <AssociationLine Name="m_ptr_cases" Type="Case" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.75" Y="1.375" />
-        <Point X="11.5" Y="1.375" />
-        <Point X="11.5" Y="2.5" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.076" Y="1.184" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAQAAgACEAAAAAAAAIgAAGAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAQAAgACEAAAAAAAAIgAACAAAAAAAAAA=</HashCode>
       <FileName>Humanoid.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_position_" />
-      <Field Name="m_ptr_cases" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Zombie">
@@ -29,7 +18,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ZombieRandomMove">
-    <Position X="2.75" Y="5" Width="1.75" />
+    <Position X="2.75" Y="5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAA=</HashCode>
       <FileName>ZombieRandomMove.h</FileName>
@@ -71,14 +60,22 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Map">
-    <Position X="14.5" Y="3" Width="1.5" />
+    <Position X="18.75" Y="2.25" Width="1.5" />
+    <AssociationLine Name="m_ptr_cases_" Type="MyNewList&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.456" Y="0.641" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Map.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_ptr_cases_" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Iterator&lt;T&gt;">
-    <Position X="18.75" Y="9" Width="1.5" />
+    <Position X="21.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAIAAAAAAQAEAAQAIBAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Iterator.h</FileName>
@@ -89,7 +86,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="MyNewList&lt;T&gt;">
-    <Position X="16.25" Y="7" Width="1.5" />
+    <Position X="18.75" Y="4.25" Width="1.5" />
     <AssociationLine Name="Header" Type="Node&lt;T&gt;">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.007" Y="1.631" />
@@ -97,9 +94,9 @@
     </AssociationLine>
     <AssociationLine Name="Queue" Type="Node&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="17.75" Y="7.979" />
-        <Point X="21.812" Y="7.979" />
-        <Point X="21.812" Y="9" />
+        <Point X="20.25" Y="5.229" />
+        <Point X="24.312" Y="5.229" />
+        <Point X="24.312" Y="6.25" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.179" Y="1.115" />
@@ -115,34 +112,39 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Node&lt;T&gt;">
-    <Position X="21.5" Y="9" Width="1.5" />
+    <Position X="24" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAgAAAAAAACAAAAAAACAAAAAAAAEAAAA=</HashCode>
       <FileName>Node.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Game">
-    <Position X="16.25" Y="5.25" Width="1.5" />
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <AssociationLine Name="m_ptr_map" Type="Map">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.425" Y="0.444" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="m_cases_" />
+      <Field Name="m_ptr_map" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GameManager">
-    <Position X="14.5" Y="4" Width="1.5" />
+    <Position X="15.75" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>GameManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Case">
-    <Position X="11.25" Y="2.5" Width="1.5" />
+    <Position X="11.25" Y="2" Width="1.5" />
     <AssociationLine Name="m_ptr_humanoid_" Type="Humanoid" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.375" Y="2.5" />
+        <Point X="11.375" Y="2" />
         <Point X="11.375" Y="1.766" />
         <Point X="6.75" Y="1.766" />
       </Path>

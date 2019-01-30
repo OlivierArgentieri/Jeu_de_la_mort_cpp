@@ -1,9 +1,16 @@
 #pragma once
-#include "MyNewList.h"
-#include "Case.h"
+#include "Map.h"
 
 class Game
 {
 private:
-	MyNewList<Case*> m_cases_;
+	Map * m_ptr_map;
+	MyNewList<Humanoid*> *m_humanoids_;
+
+
+public:
+	Game();
+
+	void AddHumanoid(Humanoid* _ptrHumanoid);
+
 };
