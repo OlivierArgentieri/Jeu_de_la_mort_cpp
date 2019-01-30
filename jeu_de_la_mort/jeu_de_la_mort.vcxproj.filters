@@ -60,6 +60,9 @@
     <ClInclude Include="Civil.h">
       <Filter>Header Files\Humanoid\Human</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="Civil.cpp">
       <Filter>Source Files\Humanoid\Human</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieRandomMove.cpp">
+      <Filter>Source Files\Humanoid\Zombie</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

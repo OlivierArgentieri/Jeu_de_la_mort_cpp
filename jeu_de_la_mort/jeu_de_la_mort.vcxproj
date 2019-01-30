@@ -155,6 +155,7 @@
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Military.h" />
     <ClInclude Include="Human.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="Humanoid.h" />
     <ClInclude Include="pch.h" />
@@ -175,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Zombie.cpp" />
+    <ClCompile Include="ZombieRandomMove.cpp" />
     <ClCompile Include="ZombieSpecificMove.cpp" />
   </ItemGroup>
   <ItemGroup>

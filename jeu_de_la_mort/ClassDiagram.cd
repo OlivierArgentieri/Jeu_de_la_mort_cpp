@@ -3,21 +3,24 @@
   <Class Name="Humanoid">
     <Position X="5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAABEAQAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAQAAAAAEAAAAAAAAIgAAAAAAABEAQAA=</HashCode>
       <FileName>Humanoid.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_position_" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Zombie">
     <Position X="1.5" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAA=</HashCode>
       <FileName>Zombie.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ZombieRandomMove">
     <Position X="2.75" Y="5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAA=</HashCode>
       <FileName>ZombieRandomMove.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,5 +59,12 @@
       <FileName>Civil.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Struct Name="Vector2">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vector2.h</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

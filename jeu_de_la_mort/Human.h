@@ -4,11 +4,10 @@
 class Human : public Humanoid
 {
 public:
-	virtual ~Human() = default;
-	bool CanTouch() override;
-	void Touch() override;
+	bool CanPlayTurn() override;
+	void PlayTurn() override;
 
-	void TryUseEffect();
+	void TriggerUseEffect();
 	virtual bool CanUseEffect() =0;
 	virtual void UseEffect() =0;
 

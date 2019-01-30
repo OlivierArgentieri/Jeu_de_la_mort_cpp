@@ -4,5 +4,7 @@
 class ZombieRandomMove : public Zombie
 {
 public:
+	ZombieRandomMove(Vector2 _v2Value); 
+
 	void Walk() override;
 };

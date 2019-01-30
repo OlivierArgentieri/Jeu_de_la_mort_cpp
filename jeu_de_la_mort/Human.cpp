@@ -1,16 +1,19 @@
 #include "pch.h"
 #include "Human.h"
 
-bool Human::CanTouch()
+bool Human::CanPlayTurn()
 {
+	// todo put tryUseEffectHEre() ? 
+	TriggerUseEffect();
 	return false;
 }
 
-void Human::Touch()
+void Human::PlayTurn()
 {
+	// todo reproduction
 }
 
-void Human::TryUseEffect()
+void Human::TriggerUseEffect()
 {
 	if(CanUseEffect())
 	{

@@ -4,7 +4,6 @@
 class Zombie : public Humanoid
 {
 public:
-	virtual ~Zombie() = default;
-	bool CanTouch() override;
-	void Touch() override;
+	bool CanPlayTurn() override;
+	void PlayTurn() override;
 };

@@ -3,13 +3,14 @@
 
 
 
-bool Zombie::CanTouch()
+bool Zombie::CanPlayTurn()
 {
 	// if human are present 
 	return false;
 }
 
-void Zombie::Touch()
+void Zombie::PlayTurn()
 {
-	// todo transform human to zombie
+	// todo transfrom human to zombie
+	// test Collision
 }
