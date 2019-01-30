@@ -9,3 +9,7 @@ bool Doctor::CanUseEffect()
 void Doctor::UseEffect()
 {
 }
+
+Doctor::Doctor(Vector2 _v2Position)
+{
+}

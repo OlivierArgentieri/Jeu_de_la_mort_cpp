@@ -6,5 +6,7 @@ class Case
 {
 private:
 	Vector2 m_position_;
-	Humanoid *m_ptr_humanoid_;
+
+public:
+	Humanoid *m_ptr_humanoid;
 };

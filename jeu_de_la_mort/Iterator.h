@@ -1,5 +1,6 @@
 #pragma once
 #include "Node.h"
+#include <stdexcept>
 
 template<typename T>
 class MyNewList;

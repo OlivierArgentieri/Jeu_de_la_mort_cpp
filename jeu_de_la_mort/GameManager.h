@@ -12,10 +12,10 @@ private:
 
 	GameManager();
 public:
-	GameManager* GetInstance()
+	static GameManager* GetInstance()
 	{
 		if (m_ptr_game_manager == nullptr)
-			GameManager::m_ptr_game_manager = new GameManager();
+			m_ptr_game_manager = new GameManager();
 
 		return  m_ptr_game_manager;
 	}
@@ -23,4 +23,5 @@ public:
 
 	void RegisterHumanoid(Humanoid* _ptrHumanoid);
 
+	
 };

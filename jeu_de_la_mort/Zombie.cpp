@@ -14,3 +14,8 @@ void Zombie::PlayTurn()
 	// todo transfrom human to zombie
 	// test Collision
 }
+
+std::string Zombie::GetTag()
+{
+	return "Zombie";
+}

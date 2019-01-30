@@ -20,3 +20,8 @@ void Human::TriggerUseEffect()
 		UseEffect();
 	}
 }
+
+std::string Human::GetTag()
+{
+	return "Human";
+}

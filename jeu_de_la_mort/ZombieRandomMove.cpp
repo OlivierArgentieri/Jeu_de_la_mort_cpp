@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "ZombieRandomMove.h"
+#include "GameManager.h"
 
-ZombieRandomMove::ZombieRandomMove(Vector2 _v2Value)
+ZombieRandomMove::ZombieRandomMove(Vector2 _v2Position)
 {
-	this->SetPosition(_v2Value);
+	GameManager::GetInstance()->RegisterHumanoid(this);
+	this->SetPosition(_v2Position);
 }
 
 void ZombieRandomMove::Walk()
 {
 }
-
