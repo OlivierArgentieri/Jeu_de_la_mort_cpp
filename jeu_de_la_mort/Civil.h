@@ -1,5 +1,6 @@
 #pragma once
 #include "Human.h"
+#include "GameManager.h"
 
 class Civil : public Human
 {

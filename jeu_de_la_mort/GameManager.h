@@ -1,13 +1,12 @@
 #pragma once
-#include "Humanoid.h"
 #include "Map.h"
 #include "Game.h"
+
 
 class GameManager
 {
 private:
 	static GameManager * m_ptr_game_manager;
-	Map* m_ptr_map_ = nullptr;
 	Game* m_ptr_game_ = nullptr;
 
 	GameManager();
@@ -20,8 +19,6 @@ public:
 		return  m_ptr_game_manager;
 	}
 
-
+	void RegisterGame(Game* _ptr_game);
 	void RegisterHumanoid(Humanoid* _ptrHumanoid);
-
-	
 };

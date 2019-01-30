@@ -8,6 +8,11 @@ GameManager::GameManager()
 {
 }
 
+void GameManager::RegisterGame(Game* _ptr_game)
+{
+	this->m_ptr_game_ = _ptr_game;
+}
+
 void GameManager::RegisterHumanoid(Humanoid* _ptrHumanoid)
 {
 	if (m_ptr_game_ != nullptr && _ptrHumanoid !=  nullptr)

@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "ZombieRandomMove.h"
-#include "GameManager.h"
 
 ZombieRandomMove::ZombieRandomMove(Vector2 _v2Position)
 {

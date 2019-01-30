@@ -1,7 +1,6 @@
 #pragma once
 #include "Vector2.h"
 #include <string>
-
 class Humanoid
 {
 public:

@@ -7,4 +7,5 @@ public:
 	bool CanUseEffect() override;
 	void UseEffect() override;
 	char GetSprite() override;
+	Military(Vector2 _v2Position);
 };

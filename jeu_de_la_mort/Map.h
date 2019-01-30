@@ -9,6 +9,8 @@ private:
 	Vector2 m_size_;
 
 	void SetSize(Vector2 _v2Size);
+
+	void InitCase();
 public:
 	Map(Vector2 _v2Size);
 	Case* GetCaseByPosition(Vector2 _v2Position);

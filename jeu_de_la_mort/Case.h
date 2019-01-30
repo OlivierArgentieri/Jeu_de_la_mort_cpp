@@ -5,11 +5,11 @@
 class Case
 {
 private:
-	Vector2 m_position_;
 	char m_char_;
-
+	void SetPosition(Vector2 _v2Position);
 public:
+	Vector2 m_position_;
 	Humanoid *m_ptr_humanoid;
-
-	char GetChar();
+	Case(Vector2 _v2Position);
+	char GetSprite();
 };
