@@ -1,6 +1,8 @@
 #pragma once
 #include "Vector2.h"
 
+class Case;
+
 class Humanoid
 {
 public:
@@ -16,5 +18,5 @@ public:
 
 private :
 	Vector2 m_position_;
-	
+	Case *m_ptr_cases;
 };
