@@ -153,8 +153,14 @@
   <ItemGroup>
     <ClInclude Include="Civil.h" />
     <ClInclude Include="Doctor.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Iterator.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Military.h" />
     <ClInclude Include="Human.h" />
+    <ClInclude Include="MyNewList.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="Humanoid.h" />

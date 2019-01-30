@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Humanoid\Human">
       <UniqueIdentifier>{d6a4b32b-1f64-4d55-9c7a-3346a311b7a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{d3bf45c9-d461-4d4a-9f87-f4633c3ce254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\List">
+      <UniqueIdentifier>{0751ebd3-42f1-4a95-915a-16319637850d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -62,6 +68,24 @@
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Humanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="MyNewList.h">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
