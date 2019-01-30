@@ -170,6 +170,7 @@
     <ClInclude Include="ZombieSpecificMove.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Case.cpp" />
     <ClCompile Include="Civil.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Game.cpp" />

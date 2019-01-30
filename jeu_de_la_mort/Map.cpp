@@ -1,9 +1,19 @@
 #include "pch.h"
 #include "Map.h"
 
-Map::Map()
+void Map::SetSize(Vector2 _v2Size)
+{
+	if (_v2Size.m_x < 0 || _v2Size.m_y < 0)
+		return;
+
+	this->m_size_ = _v2Size;
+}
+
+Map::Map(Vector2 _v2Size)
 {
 	this->m_ptr_cases_ = new MyNewList<Case*>();
+
+	this->SetSize(_v2Size);
 }
 
 Case* Map::GetCaseByPosition(Vector2 _v2Position)

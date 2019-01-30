@@ -8,4 +8,5 @@ public:
 	void UseEffect() override;
 
 	Doctor(Vector2 _v2Position);
+	char GetSprite() override;
 };

@@ -11,4 +11,5 @@ public:
 	virtual bool CanUseEffect() =0;
 	virtual void UseEffect() =0;
 
+	std::string GetTag() override;
 };

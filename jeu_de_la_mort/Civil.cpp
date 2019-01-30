@@ -16,3 +16,8 @@ Civil::Civil(Vector2 _v2Position)
 	GameManager::GetInstance()->RegisterHumanoid(this);
 	this->SetPosition(_v2Position);
 }
+
+char Civil::GetSprite()
+{
+	return 'C';
+}

@@ -7,4 +7,6 @@ public:
 	bool CanPlayTurn() override;
 	void PlayTurn() override;
 	std::string GetTag() override;
+	char GetSprite() override;
+
 };

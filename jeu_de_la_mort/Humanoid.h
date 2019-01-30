@@ -5,12 +5,14 @@
 class Humanoid
 {
 public:
+	virtual ~Humanoid() = default;
 	virtual void Walk();
 
 	void TriggerPlayTurn();
 	virtual bool CanPlayTurn() = 0;
 	virtual void PlayTurn() = 0;
 	virtual std::string GetTag() = 0;
+	virtual char GetSprite() = 0;
 
 	void SetPosition(Vector2 v2_value);
 	Vector2 GetPosition();

@@ -13,3 +13,8 @@ void Doctor::UseEffect()
 Doctor::Doctor(Vector2 _v2Position)
 {
 }
+
+char Doctor::GetSprite()
+{
+	return 'D';
+}

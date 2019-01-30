@@ -9,3 +9,8 @@ bool Military::CanUseEffect()
 void Military::UseEffect()
 {
 }
+
+char Military::GetSprite()
+{
+	return 'M';
+}
