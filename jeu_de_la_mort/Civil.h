@@ -7,6 +7,6 @@ class Civil : public Human
 public:
 	bool CanUseEffect() override;
 	void UseEffect() override;
-	Civil(Vector2 _v2Position);
+	Civil(Vector2 _Position);
 	char GetSprite() override;
 };

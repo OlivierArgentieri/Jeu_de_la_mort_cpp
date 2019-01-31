@@ -6,14 +6,14 @@ class Map
 {
 private:
 	MyNewList<Case*> *m_ptr_cases_;
-	Vector2 m_size_;
+	Vector2 *m_ptr_size_;
 
-	void SetSize(Vector2 _v2Size);
+	void SetSize(Vector2 *_ptrSize);
 
 	void InitCase();
 public:
-	Map(Vector2 _v2Size);
+	Map(Vector2 *_ptrSize);
 	Case* GetCaseByPosition(Vector2 _v2Position);
-
+	Vector2* FindExistingPosition(Vector2 _v2Position);
 	
 };

@@ -1,6 +1,12 @@
 #pragma once
-struct Vector2
+class Vector2
 {
+private:
 	int m_x;
 	int m_y;
+
+public:
+	Vector2(int _iX, int _iY);
+	int GetX();
+	int GetY();
 };

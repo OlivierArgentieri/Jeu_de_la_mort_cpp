@@ -5,11 +5,11 @@
 class Case
 {
 private:
-	char m_char_;
-	void SetPosition(Vector2 _v2Position);
+	void SetPosition(Vector2 *_ptrPosition);
+
 public:
-	Vector2 m_position_;
+	Vector2 *m_ptr_position_; // todo refactor
 	Humanoid *m_ptr_humanoid;
-	Case(Vector2 _v2Position);
+	Case(Vector2 *_ptrPosition);
 	char GetSprite();
 };

@@ -8,8 +8,8 @@ private:
 	MyNewList<Humanoid*> *m_humanoids_;
 
 public:
-	Game(Vector2 _v2SizeMap);
+	Game(Vector2 *_ptrSizeMap);
 
 	void AddHumanoid(Humanoid* _ptrHumanoid);
-
+	Map GetMap();
 };

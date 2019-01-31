@@ -3,6 +3,9 @@
 #include <string>
 class Humanoid
 {
+private :
+	Vector2 *m_ptr_position_;
+
 public:
 	virtual ~Humanoid() = default;
 	virtual void Walk();
@@ -13,9 +16,6 @@ public:
 	virtual std::string GetTag() = 0;
 	virtual char GetSprite() = 0;
 
-	void SetPosition(Vector2 v2_value);
+	void SetPosition(Vector2 *_ptrPosition);
 	Vector2 GetPosition();
-
-private :
-	Vector2 m_position_;
 };

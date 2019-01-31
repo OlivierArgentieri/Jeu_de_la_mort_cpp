@@ -6,4 +6,5 @@ class ZombieSpecificMove : public Zombie
 {
 public:
 	void Walk() override;
+
 };

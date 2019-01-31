@@ -12,9 +12,10 @@ void Doctor::UseEffect()
 
 Doctor::Doctor(Vector2 _v2Position)
 {
+	SetPosition(GameManager::GetInstance()->GetCurrentGame().GetMap().FindExistingPosition(_v2Position));
 	GameManager::GetInstance()->RegisterHumanoid(this);
-	SetPosition(_v2Position);
 }
+
 
 char Doctor::GetSprite()
 {

@@ -3,7 +3,6 @@
 #include "GameManager.h"
 
 GameManager *GameManager::m_ptr_game_manager = nullptr;
-
 GameManager::GameManager()
 {
 }
@@ -17,4 +16,14 @@ void GameManager::RegisterHumanoid(Humanoid* _ptrHumanoid)
 {
 	if (m_ptr_game_ != nullptr && _ptrHumanoid !=  nullptr)
 		m_ptr_game_->AddHumanoid(_ptrHumanoid);
+}
+
+Game GameManager::GetCurrentGame()
+{
+	return *this->m_ptr_game_;
+}
+
+Map GameManager::GetCurrentMap()
+{
+	return this->m_ptr_game_->GetMap();
 }

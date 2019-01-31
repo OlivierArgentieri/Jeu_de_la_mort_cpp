@@ -2,12 +2,12 @@
 #include "Game.h"
 #include "GameManager.h"
 
-Game::Game(Vector2 _v2SizeMap)
+
+Game::Game(Vector2* _ptrSizeMap)
 {
 	GameManager::GetInstance()->RegisterGame(this);
 	this->m_humanoids_ = new MyNewList<Humanoid*>();
-	this->m_ptr_map = new Map(_v2SizeMap);
-
+	this->m_ptr_map = new Map(_ptrSizeMap);
 }
 
 void Game::AddHumanoid(Humanoid* _ptrHumanoid)
@@ -19,4 +19,9 @@ void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 
 	if (temp != nullptr)
 		temp->m_ptr_humanoid = _ptrHumanoid;
+}
+
+Map Game::GetMap()
+{
+	return *this->m_ptr_map;
 }
