@@ -15,8 +15,17 @@ char Military::GetSprite()
 	return 'M';
 }
 
-Military::Military(Vector2 _v2Position)
+Military::Military(Vector2 _v2Position): Human()
 {
-	SetPosition(GameManager::GetInstance()->GetCurrentGame().GetMap().FindExistingPosition(_v2Position));
+	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
+}
+
+bool Military::CanPlayTurn(Vector2* _ptrNewPosition)
+{
+	return false;
+}
+
+void Military::PlayTurn(Vector2* _ptrNewPosition)
+{
 }

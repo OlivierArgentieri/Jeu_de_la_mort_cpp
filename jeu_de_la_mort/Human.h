@@ -4,12 +4,11 @@
 class Human : public Humanoid
 {
 public:
-	bool CanPlayTurn() override;
-	void PlayTurn() override;
-
 	void TriggerUseEffect();
-	virtual bool CanUseEffect() =0;
-	virtual void UseEffect() =0;
+	virtual bool CanUseEffect()=0;
+	virtual void UseEffect()=0;
 
 	std::string GetTag() override;
+	bool CanPlayTurn(Vector2* _ptrNewPosition) override =0;
+	void PlayTurn(Vector2* _ptrNewPosition) override = 0;
 };

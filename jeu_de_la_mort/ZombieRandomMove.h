@@ -7,7 +7,7 @@ class ZombieRandomMove : public Zombie
 {
 public:
 	ZombieRandomMove(Vector2 _v2Position);
-	bool CanPlayTurn() override;
-	void PlayTurn() override;
+	bool CanPlayTurn(Vector2* _ptrNewPosition) override;
+	void PlayTurn(Vector2* _ptrNewPosition) override;
 	//void Walk() override;
 };

@@ -21,6 +21,12 @@ int Vector2::GetY()
 	return m_y;
 }
 
+Vector2::Vector2()
+{
+	this->m_x = 0;
+	this->m_y = 0;
+}
+
 Vector2 Vector2::operator+(Vector2 _v2Vector)
 {
 	return Vector2(this->GetX() + _v2Vector.GetX(), this->GetY() + _v2Vector.GetY());

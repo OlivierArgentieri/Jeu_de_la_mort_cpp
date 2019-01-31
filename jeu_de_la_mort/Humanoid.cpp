@@ -2,6 +2,7 @@
 #include "Humanoid.h"
 #include "GameManager.h"
 
+
 Vector2 Humanoid::GetMovePattern()
 {
 	// random walking
@@ -30,9 +31,8 @@ Vector2 Humanoid::GetMovePattern()
 	return movePattern;
 }
 
-void Humanoid::Move(Vector2 *_PtrNewPosition)
+void Humanoid::Move(Vector2 _PtrNewPosition)
 {
-
 	// POSITION OK -> move
 	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
 	this->SetPosition(_PtrNewPosition);
@@ -46,10 +46,11 @@ Vector2* Humanoid::GetNewPosition(Vector2 _MovePattern)
 
 	// new position == nullptr si depassement ou impossible !!
 	if (this->m_ptr_map_ == nullptr)
-		return;
+		return nullptr;
 
-	auto newPosition = this->m_ptr_map_->FindExistingPosition(_MovePattern + this->GetPosition());
+	return this->m_ptr_map_->FindExistingPosition(_MovePattern + this->GetPosition());
 
+	/*
 	if (newPosition == nullptr)
 		return; // posotion invalide
 
@@ -62,24 +63,28 @@ Vector2* Humanoid::GetNewPosition(Vector2 _MovePattern)
 
 		return; // todo make collision
 	}
-
+	*/
 }
 
 void Humanoid::TriggerPlayTurn()
 {
-	// get next position to go
-	if (CanPlayTurn())
-		PlayTurn();
+	auto newPosition = this->GetNewPosition(GetMovePattern());
 
-	GetMovePattern();
+
+	// get next position to go
+	if (CanPlayTurn(newPosition))
+		PlayTurn(newPosition);
+
+	Move(*newPosition);
 }
 
-void Humanoid::SetPosition(Vector2 *_ptrPosition)
+
+void Humanoid::SetPosition(Vector2 _v2Position)
 {
-	if (_ptrPosition == nullptr || _ptrPosition->GetX() < 0 || _ptrPosition->GetY() < 0)
+	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0)
 		return;
 
-	this->m_ptr_position_ = _ptrPosition;
+	this->m_position_ = _v2Position;
 }
 
 void Humanoid::SetMap(Map* _ptrMap)
@@ -91,8 +96,5 @@ void Humanoid::SetMap(Map* _ptrMap)
 
 Vector2 Humanoid::GetPosition()
 {
-	if (this->m_ptr_position_ == nullptr)
-		return Vector2(-1, -1);
-
-	return *this->m_ptr_position_;
+	return this->m_position_;
 }

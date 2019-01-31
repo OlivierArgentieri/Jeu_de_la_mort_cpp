@@ -13,11 +13,20 @@ void Civil::UseEffect()
 
 Civil::Civil(Vector2 _v2Position)
 {
-	SetPosition(GameManager::GetInstance()->GetCurrentGame().GetMap().FindExistingPosition(_v2Position));
+	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
 char Civil::GetSprite()
 {
 	return 'C';
+}
+
+bool Civil::CanPlayTurn(Vector2* _ptrNewPosition)
+{
+	return false;
+}
+
+void Civil::PlayTurn(Vector2* _ptrNewPosition)
+{
 }

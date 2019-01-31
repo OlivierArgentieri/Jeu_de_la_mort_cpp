@@ -10,9 +10,9 @@ void Doctor::UseEffect()
 {
 }
 
-Doctor::Doctor(Vector2 _v2Position)
+Doctor::Doctor(Vector2 _v2Position): Human()
 {
-	SetPosition(GameManager::GetInstance()->GetCurrentGame().GetMap().FindExistingPosition(_v2Position));
+	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
@@ -20,4 +20,13 @@ Doctor::Doctor(Vector2 _v2Position)
 char Doctor::GetSprite()
 {
 	return 'D';
+}
+
+bool Doctor::CanPlayTurn(Vector2* _ptrNewPosition)
+{	
+	return false;
+}
+
+void Doctor::PlayTurn(Vector2* _ptrNewPosition)
+{
 }

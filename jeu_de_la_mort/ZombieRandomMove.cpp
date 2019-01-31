@@ -3,15 +3,15 @@
 
 ZombieRandomMove::ZombieRandomMove(Vector2 _v2Position)
 {
-	SetPosition(GameManager::GetInstance()->GetCurrentGame().GetMap().FindExistingPosition(_v2Position));
+	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-bool ZombieRandomMove::CanPlayTurn()
+bool ZombieRandomMove::CanPlayTurn(Vector2* _ptrNewPosition)
 {
 	return false;
 }
 
-void ZombieRandomMove::PlayTurn()
+void ZombieRandomMove::PlayTurn(Vector2* _ptrNewPosition)
 {
 }
