@@ -5,6 +5,7 @@
 
 bool Zombie::CanPlayTurn()
 {
+
 	// if human are present 
 	return false;
 }

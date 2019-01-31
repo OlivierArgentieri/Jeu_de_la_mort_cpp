@@ -17,7 +17,7 @@ Case::Case(Vector2* _ptrPosition)
 
 char Case::GetSprite()
 {
-	if (this->m_ptr_humanoid_ != nullptr)
+	if (this->IsOccuped())
 		return this->m_ptr_humanoid_->GetSprite();
 
 	return ' ';

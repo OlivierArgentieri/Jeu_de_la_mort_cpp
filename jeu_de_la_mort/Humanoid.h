@@ -8,14 +8,20 @@ class Map;
 class Humanoid
 {
 private :
-	Vector2 *m_ptr_position_;
+	Vector2 *m_position_;
 	Map *m_ptr_map_;
+
+	int m_range_;
 public:
-	virtual void Walk();
-	void Move(Vector2 _v2MovePattern);
+
+
+	virtual Vector2 GetMovePattern();
+
+	void Move(Vector2* _PtrNewPosition);
+	Vector2* GetNewPosition(Vector2 _MovePattern);
 	void TriggerPlayTurn();
-	virtual bool CanPlayTurn() = 0;
-	virtual void PlayTurn() = 0;
+	virtual bool CanPlayTurn(Vector2 *_ptrNewPosition) = 0; // todo 
+	virtual void PlayTurn(Vector2 *_ptrNewPosition) = 0; // todo
 	virtual std::string GetTag() = 0;
 	virtual char GetSprite() = 0;
 

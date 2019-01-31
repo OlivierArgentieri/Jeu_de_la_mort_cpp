@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "ZombieSpecificMove.h"
 
-void ZombieSpecificMove::Walk()
+Vector2 ZombieSpecificMove::GetMovePattern()
 {
+	return Vector2(0, 0);
+	// todo
 }

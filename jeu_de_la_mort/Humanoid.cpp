@@ -1,13 +1,10 @@
 #include "pch.h"
 #include "Humanoid.h"
-#include <ctime>
 #include "GameManager.h"
-#include <chrono>
 
-void Humanoid::Walk()
+Vector2 Humanoid::GetMovePattern()
 {
 	// random walking
-	srand(time(NULL)); // Seed the time
 	int random = rand() % (4 + 1) + 1;
 
 	Vector2 movePattern(0, 0);
@@ -30,10 +27,19 @@ void Humanoid::Walk()
 		break;
 	}
 
-	Move(movePattern);
+	return movePattern;
 }
 
-void Humanoid::Move(Vector2 _v2MovePattern)
+void Humanoid::Move(Vector2 *_PtrNewPosition)
+{
+
+	// POSITION OK -> move
+	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
+	this->SetPosition(_PtrNewPosition);
+	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Enter(this);
+}
+
+Vector2* Humanoid::GetNewPosition(Vector2 _MovePattern)
 {
 	// todo 
 	// move to new position
@@ -42,22 +48,30 @@ void Humanoid::Move(Vector2 _v2MovePattern)
 	if (this->m_ptr_map_ == nullptr)
 		return;
 
-	auto newPosition = this->m_ptr_map_->FindExistingPosition(_v2MovePattern + this->GetPosition());
-	// on retire le player de la case courrante
-	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
-	this->SetPosition(newPosition); // on lui donne sa nouvelle position.
-	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Enter(this); // liberate current case
-	// vector player + pattern 
-	// if depassement : osef 
+	auto newPosition = this->m_ptr_map_->FindExistingPosition(_MovePattern + this->GetPosition());
+
+	if (newPosition == nullptr)
+		return; // posotion invalide
+
+
+	if (this->m_ptr_map_->GetCaseByPosition(*newPosition)->IsOccuped())
+	{
+		this->PlayTurn();
+		// make test : if(tag == military) execute instant playTurn(); 
+		// test range in military :]
+
+		return; // todo make collision
+	}
 
 }
 
 void Humanoid::TriggerPlayTurn()
 {
+	// get next position to go
 	if (CanPlayTurn())
 		PlayTurn();
-	else
-		Walk();
+
+	GetMovePattern();
 }
 
 void Humanoid::SetPosition(Vector2 *_ptrPosition)
