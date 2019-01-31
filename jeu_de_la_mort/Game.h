@@ -17,4 +17,6 @@ public:
 	void GameLoop();
 	void TriggerAllPlayer();
 
+	// todo get huamn by position
+
 };

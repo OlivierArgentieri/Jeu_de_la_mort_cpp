@@ -47,3 +47,11 @@ void Case::Exit()
 {
 	this->m_ptr_humanoid_ = nullptr;
 }
+
+std::string Case::GetTagOccupant()
+{
+	if (this->m_ptr_humanoid_ == nullptr)
+		return "";
+
+	return this->m_ptr_humanoid_->GetTag();
+}

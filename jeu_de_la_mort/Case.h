@@ -18,4 +18,6 @@ public:
 	bool IsOccuped();
 	void Enter(Humanoid *_ptrHumanoid);
 	void Exit();
+
+	std::string GetTagOccupant();
 };
