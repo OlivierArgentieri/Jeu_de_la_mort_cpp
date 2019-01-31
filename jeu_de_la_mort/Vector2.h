@@ -9,4 +9,6 @@ public:
 	Vector2(int _iX, int _iY);
 	int GetX();
 	int GetY();
+
+	Vector2 operator+(Vector2 _v2Vector);
 };

@@ -4,12 +4,15 @@
 class Game
 {
 private:
-	Map * m_ptr_map;
-	MyNewList<Humanoid*> *m_humanoids_;
-
+	Map* m_ptr_map;
+	MyNewList<Humanoid*>* m_humanoids_;
+	bool m_game_over_;
 public:
-	Game(Vector2 *_ptrSizeMap);
+	Game(Vector2* _ptrSizeMap);
 
 	void AddHumanoid(Humanoid* _ptrHumanoid);
 	Map GetMap();
+
+	void DisplayMap();
+	void GameLoop();
 };
