@@ -8,15 +8,20 @@
 Game::Game(Vector2* _ptrSizeMap)
 {
 	GameManager::GetInstance()->RegisterGame(this);
-	this->m_humanoids_ = new MyNewList<Humanoid*>();
+	this->m_ptr_humanoids_ = new MyNewList<Humanoid*>();
 	this->m_ptr_map = new Map(_ptrSizeMap);
 	this->m_game_over_ = false;
 }
 
 void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 {
-	if (m_humanoids_ != nullptr)
-		m_humanoids_->PushBack(_ptrHumanoid);
+	if (_ptrHumanoid == nullptr)
+		return;
+
+	_ptrHumanoid->SetMap(this->m_ptr_map);
+
+	if (m_ptr_humanoids_ != nullptr)
+		m_ptr_humanoids_->PushBack(_ptrHumanoid);
 
 	Case* temp = m_ptr_map->GetCaseByPosition(_ptrHumanoid->GetPosition());
 
@@ -44,11 +49,20 @@ void Game::GameLoop()
 	while (!m_game_over_)
 	{
 		system("cls");
-
+		this->TriggerAllPlayer();
 
 
 
 
 		this->DisplayMap();
+	}
+}
+
+void Game::TriggerAllPlayer()
+{
+	for(int i =0; i< this->m_ptr_humanoids_->Size(); i++)
+	{
+		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
+		it.operator*()->TriggerPlayTurn();
 	}
 }

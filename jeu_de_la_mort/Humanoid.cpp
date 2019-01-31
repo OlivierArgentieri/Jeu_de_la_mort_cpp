@@ -37,16 +37,16 @@ void Humanoid::Move(Vector2 _v2MovePattern)
 {
 	// todo 
 	// move to new position
-	auto newPosition = GameManager::GetInstance()->GetCurrentMap().FindExistingPosition(_v2MovePattern + this->GetPosition());
 
 	// new position == nullptr si depassement ou impossible !!
-	if (this->_ptr_map_ == nullptr)
+	if (this->m_ptr_map_ == nullptr)
 		return;
 
+	auto newPosition = this->m_ptr_map_->FindExistingPosition(_v2MovePattern + this->GetPosition());
 	// on retire le player de la case courrante
-	_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
+	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
 	this->SetPosition(newPosition); // on lui donne sa nouvelle position.
-	_ptr_map_->GetCaseByPosition(this->GetPosition())->Enter(this); // liberate current case
+	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Enter(this); // liberate current case
 	// vector player + pattern 
 	// if depassement : osef 
 
@@ -72,7 +72,7 @@ void Humanoid::SetMap(Map* _ptrMap)
 {
 	if (_ptrMap == nullptr)
 		return;
-	_ptr_map_ = _ptrMap;
+	m_ptr_map_ = _ptrMap;
 }
 
 Vector2 Humanoid::GetPosition()

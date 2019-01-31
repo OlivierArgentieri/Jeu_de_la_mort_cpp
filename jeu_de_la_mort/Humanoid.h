@@ -9,7 +9,7 @@ class Humanoid
 {
 private :
 	Vector2 *m_ptr_position_;
-	Map *_ptr_map_;
+	Map *m_ptr_map_;
 public:
 	virtual void Walk();
 	void Move(Vector2 _v2MovePattern);

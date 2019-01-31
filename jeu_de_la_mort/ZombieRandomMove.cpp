@@ -7,7 +7,11 @@ ZombieRandomMove::ZombieRandomMove(Vector2 _v2Position)
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-void ZombieRandomMove::Walk()
+bool ZombieRandomMove::CanPlayTurn()
 {
-	// todo 
+	return false;
+}
+
+void ZombieRandomMove::PlayTurn()
+{
 }
