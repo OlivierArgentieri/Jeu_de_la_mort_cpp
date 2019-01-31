@@ -22,11 +22,11 @@ char Civil::GetSprite()
 	return 'C';
 }
 
-bool Civil::CanPlayTurn(Vector2* _ptrNewPosition)
+bool Civil::CanPlayTurn(Vector2 _v2NewPosition)
 {
 	return false;
 }
 
-void Civil::PlayTurn(Vector2* _ptrNewPosition)
+void Civil::PlayTurn(Vector2 _v2NewPosition)
 {
 }

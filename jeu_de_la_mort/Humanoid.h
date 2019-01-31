@@ -17,14 +17,15 @@ public:
 	virtual Vector2 GetMovePattern();
 
 	void Move(Vector2 _PtrNewPosition);
-	Vector2* GetNewPosition(Vector2 _MovePattern);
+	Vector2 GetNewPosition(Vector2 _MovePattern);
 	void TriggerPlayTurn();
-	virtual bool CanPlayTurn(Vector2 *_ptrNewPosition) =0;
-	virtual void PlayTurn(Vector2 *_ptrNewPosition) =0;
+	virtual bool CanPlayTurn(Vector2 _v2NewPosition) =0;
+	virtual void PlayTurn(Vector2 _v2NewPosition) =0;
 	virtual std::string GetTag()=0;
 	virtual char GetSprite()=0;
 
 	void SetPosition(Vector2 _v2Position);
 	void SetMap(Map *_ptrMap);
+	virtual Map GetMap();
 	Vector2 GetPosition();
 };

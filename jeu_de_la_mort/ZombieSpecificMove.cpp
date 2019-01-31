@@ -7,11 +7,11 @@ Vector2 ZombieSpecificMove::GetMovePattern()
 	// todo
 }
 
-bool ZombieSpecificMove::CanPlayTurn(Vector2* _ptrNewPosition)
+bool ZombieSpecificMove::CanPlayTurn(Vector2 _v2NewPosition)
 {
 	return false;
 }
 
-void ZombieSpecificMove::PlayTurn(Vector2* _ptrNewPosition)
+void ZombieSpecificMove::PlayTurn(Vector2 _v2NewPosition)
 {
 }

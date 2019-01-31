@@ -15,6 +15,14 @@ Case::Case(Vector2* _ptrPosition)
 	this->SetPosition(_ptrPosition);
 }
 
+Vector2 Case::GetPosition()
+{
+	if (this->m_ptr_position == nullptr)
+		return Vector2();
+
+	return *this->m_ptr_position;
+}
+
 char Case::GetSprite()
 {
 	if (this->IsOccuped())

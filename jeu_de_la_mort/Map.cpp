@@ -44,18 +44,18 @@ Case* Map::GetCaseByPosition(Vector2 _v2Position)
 	for (int i = 0; i < m_ptr_cases_->Size(); i++)
 	{
 		Iterator<Case*> it = m_ptr_cases_->Begin().operator++(i);
-		if (it.operator*()->m_ptr_position != nullptr && it.operator*()->m_ptr_position->GetX() == _v2Position.GetX() && it.operator*()->m_ptr_position->GetY() == _v2Position.GetY())
+		if (it.operator*()->GetPosition().GetX() == _v2Position.GetX() && it.operator*()->GetPosition().GetY() == _v2Position.GetY())
 			return it.operator*();
 	}
 	return nullptr;
 }
 
-Vector2* Map::FindExistingPosition(Vector2 _v2Position)
+Vector2 Map::FindExistingPosition(Vector2 _v2Position)
 {
 	auto p_case = GetCaseByPosition(_v2Position);
 
 	if (p_case != nullptr)
-		return p_case->m_ptr_position;
+		return p_case->GetPosition();
 
-	return nullptr;
+	return Vector2();
 }

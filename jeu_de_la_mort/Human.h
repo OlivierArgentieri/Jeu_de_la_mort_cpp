@@ -9,6 +9,6 @@ public:
 	virtual void UseEffect()=0;
 
 	std::string GetTag() override;
-	bool CanPlayTurn(Vector2* _ptrNewPosition) override =0;
-	void PlayTurn(Vector2* _ptrNewPosition) override = 0;
+	bool CanPlayTurn(Vector2 _v2NewPosition) override =0;
+	void PlayTurn(Vector2 _v2NewPosition) override = 0;
 };

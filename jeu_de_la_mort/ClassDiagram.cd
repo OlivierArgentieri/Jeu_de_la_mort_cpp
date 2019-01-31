@@ -28,7 +28,7 @@
   <Class Name="Humanoid">
     <Position X="5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAKAAEQAIgACAIAEAAAAAAgAACAAAACAAQAA=</HashCode>
+      <HashCode>IBAAAAAAAKAAEQAIgACAIAEAAAAAAgAACAAAACAAQAA=</HashCode>
       <FileName>Humanoid.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -49,28 +49,28 @@
   <Class Name="ZombieSpecificMove">
     <Position X="3" Y="8.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAACAAAACAAAAA=</HashCode>
       <FileName>ZombieSpecificMove.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Civil">
     <Position X="8.75" Y="8.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAAAAKAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAAACAAAAAAgAAAAAACAAKAAAAAAA=</HashCode>
       <FileName>Civil.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Doctor">
     <Position X="11.25" Y="8.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAAAKAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAAACAAAAAAAAAAAQACAAKAAAAAAA=</HashCode>
       <FileName>Doctor.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Military">
     <Position X="6" Y="8.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAKAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAAACAAQAAAAAAAAAACAAKAAAAAAA=</HashCode>
       <FileName>Military.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -152,7 +152,7 @@
   <Class Name="Case">
     <Position X="10" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAACAAAAgEAAAAAAAAAAAAAAEAgIAIAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAACAACAgEAAAAAAAAAAAAAAEAgIAIAAAAAAAAAA=</HashCode>
       <FileName>Case.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -162,12 +162,17 @@
   </Class>
   <Class Name="Game">
     <Position X="17.25" Y="4" Width="2" />
+    <AssociationLine Name="m_ptr_map_" Type="Map">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.255" Y="0.046" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAEAAgAAAAAwQAAAAQAAAgAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>ABAAAAAEAAgAAAAIwQAAAAAAAAgAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="m_ptr_map" />
+      <Field Name="m_ptr_map_" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GameManager">

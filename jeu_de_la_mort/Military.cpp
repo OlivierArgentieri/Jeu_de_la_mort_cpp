@@ -21,11 +21,11 @@ Military::Military(Vector2 _v2Position): Human()
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-bool Military::CanPlayTurn(Vector2* _ptrNewPosition)
+bool Military::CanPlayTurn(Vector2 _v2NewPosition)
 {
 	return false;
 }
 
-void Military::PlayTurn(Vector2* _ptrNewPosition)
+void Military::PlayTurn(Vector2 _v2NewPosition)
 {
 }
