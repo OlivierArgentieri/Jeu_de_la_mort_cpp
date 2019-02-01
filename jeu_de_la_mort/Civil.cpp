@@ -22,13 +22,7 @@ char Civil::GetSprite()
 	return 'C';
 }
 
-bool Civil::CanPlayTurn(Vector2 _v2NewPosition)
+void Civil::Reproduct(Vector2 _v2BabyPosition)
 {
-//	if(this->IAmInfected())
-	// todo increment lap infected
-	return false;
-}
-
-void Civil::PlayTurn(Vector2 _v2NewPosition)
-{
+	new Civil(_v2BabyPosition);
 }

@@ -12,9 +12,11 @@ public:
 	virtual void UseEffect()=0;
 
 	std::string GetTag() override;
-	bool CanPlayTurn(Vector2 _v2NewPosition) override =0;
-	void PlayTurn(Vector2 _v2NewPosition) override = 0;
+	void PlayTurn(Vector2 _v2NewPosition) override;
 
+	bool CanReproduct(Vector2 _v2SecondPosition);
+	virtual void Reproduct(Vector2 _v2BabyPosition) = 0;
 	void GetInfectedByZombie();
 	virtual bool IAmInfected();
+	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
 };

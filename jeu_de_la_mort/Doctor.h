@@ -9,6 +9,5 @@ public:
 	void UseEffect() override;
 	Doctor(Vector2 _v2Position);
 	char GetSprite() override;
-	bool CanPlayTurn(Vector2 _v2NewPosition) override;
-	void PlayTurn(Vector2 _v2NewPosition) override;
+	void Reproduct(Vector2 _v2BabyPosition) override;
 };

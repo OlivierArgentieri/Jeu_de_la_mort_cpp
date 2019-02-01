@@ -7,6 +7,5 @@ class ZombieSpecificMove : public Zombie
 public:
 	Vector2 GetMovePattern() override;
 
-	bool CanPlayTurn(Vector2 _v2NewPosition) override;
 	void PlayTurn(Vector2 _v2NewPosition) override;
 };

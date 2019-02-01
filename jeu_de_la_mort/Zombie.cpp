@@ -14,9 +14,9 @@ char Zombie::GetSprite()
 	return 'Z';
 }
 
-bool Zombie::CanPlayTurn(Vector2 _v2NewPosition)
+bool Zombie::CanEatHuman(Vector2 _v2NewPosition)
 {
-	Case *h = GetMap().GetCaseByPosition(_v2NewPosition);
+	Case* h = GetMap().GetCaseByPosition(_v2NewPosition);
 	if (h != nullptr && h->GetTagOccupant() == "Human")
 		return true;
 	return false;
@@ -24,11 +24,11 @@ bool Zombie::CanPlayTurn(Vector2 _v2NewPosition)
 
 void Zombie::PlayTurn(Vector2 _v2NewPosition)
 {
-	Human *h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant();
-	h->GetInfectedByZombie();
-	//manger l'humain
-
+	if (this->CanEatHuman(_v2NewPosition))
+	{
+		Human* h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant();
+		h->GetInfectedByZombie();
+	}
 	// todo viré le cast
-	//GameManager::GetInstance()->GetCurrentGame().
-	
+
 }

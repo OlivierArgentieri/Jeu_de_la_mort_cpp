@@ -76,7 +76,7 @@ void Humanoid::TriggerPlayTurn()
 
 
 	// get next position to go
-	if (CanPlayTurn(newPosition))
+	//if (CanPlayTurn(newPosition))
 		PlayTurn(newPosition);
 
 	if (newPosition != -1 && !GetMap().GetCaseByPosition(newPosition)->IsOccuped())
@@ -110,4 +110,9 @@ Map Humanoid::GetMap()
 Vector2 Humanoid::GetPosition()
 {
 	return this->m_position_;
+}
+
+int Humanoid::GetRange()
+{
+	return this->m_range_;
 }

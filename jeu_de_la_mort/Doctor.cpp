@@ -17,16 +17,13 @@ Doctor::Doctor(Vector2 _v2Position)
 }
 
 
+
 char Doctor::GetSprite()
 {
 	return 'D';
 }
 
-bool Doctor::CanPlayTurn(Vector2 _v2NewPosition)
-{	
-	return false;
-}
-
-void Doctor::PlayTurn(Vector2 _v2NewPosition)
+void Doctor::Reproduct(Vector2 _v2BabyPosition)
 {
+	new Doctor(_v2BabyPosition);
 }
