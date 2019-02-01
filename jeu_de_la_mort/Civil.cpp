@@ -24,6 +24,8 @@ char Civil::GetSprite()
 
 bool Civil::CanPlayTurn(Vector2 _v2NewPosition)
 {
+//	if(this->IAmInfected())
+	// todo increment lap infected
 	return false;
 }
 

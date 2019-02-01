@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2.h"
 #include "Humanoid.h"
+#include "Human.h"
 
 class Case
 {
@@ -20,4 +21,5 @@ public:
 	void Exit();
 
 	std::string GetTagOccupant();
+	Human* GetHumanOccupant();
 };

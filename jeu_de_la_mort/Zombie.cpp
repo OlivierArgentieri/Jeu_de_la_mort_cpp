@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Zombie.h"
 #include "GameManager.h"
+#include "Human.h"
 
 
 std::string Zombie::GetTag()
@@ -20,6 +21,7 @@ bool Zombie::CanPlayTurn(Vector2 _v2NewPosition)
 
 void Zombie::PlayTurn(Vector2 _v2NewPosition)
 {
+	GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant()->GetInfectedByZombie();
 	//manger l'humain
 
 	// todo viré le cast
