@@ -16,7 +16,7 @@ private :
 public:
 	virtual Vector2 GetMovePattern();
 
-	void Move(Vector2 _PtrNewPosition);
+	void Move(Vector2 _v2NewPosition);
 	Vector2 GetNewPosition(Vector2 _MovePattern);
 	void TriggerPlayTurn();
 	virtual bool CanPlayTurn(Vector2 _v2NewPosition) =0;

@@ -31,11 +31,15 @@ Vector2 Humanoid::GetMovePattern()
 	return movePattern;
 }
 
-void Humanoid::Move(Vector2 _PtrNewPosition)
+void Humanoid::Move(Vector2 _v2NewPosition)
 {
+
+	if (_v2NewPosition.GetX() < 0 || _v2NewPosition.GetY() < 0 || _v2NewPosition.GetX() >= this->GetMap().GetSize().GetX() || _v2NewPosition.GetY() >= this->GetMap().GetSize().GetY())
+		return;
+
 	// POSITION OK -> move
 	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Exit(); // liberate current case
-	this->SetPosition(_PtrNewPosition);
+	this->SetPosition(_v2NewPosition);
 	m_ptr_map_->GetCaseByPosition(this->GetPosition())->Enter(this);
 }
 
@@ -75,14 +79,15 @@ void Humanoid::TriggerPlayTurn()
 	if (CanPlayTurn(newPosition))
 		PlayTurn(newPosition);
 
-	if (!GetMap().GetCaseByPosition(newPosition)->IsOccuped())
+	if (newPosition != -1 && !GetMap().GetCaseByPosition(newPosition)->IsOccuped())
 		Move(newPosition);
+
 }
 
 
 void Humanoid::SetPosition(Vector2 _v2Position)
 {
-	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0)
+	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0 )
 		return;
 
 	this->m_position_ = _v2Position;

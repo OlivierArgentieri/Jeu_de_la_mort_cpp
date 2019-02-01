@@ -3,7 +3,7 @@
 
 void Map::SetSize(Vector2* _ptrSize)
 {
-	if (_ptrSize->GetX() < 1 || _ptrSize->GetY() < 1)
+	if (_ptrSize != nullptr && _ptrSize->GetX() < 1 || _ptrSize->GetY() < 1)
 		return;
 
 	this->m_ptr_size_ = _ptrSize;
@@ -11,6 +11,8 @@ void Map::SetSize(Vector2* _ptrSize)
 
 void Map::InitCase()
 {
+	if (this->m_ptr_size_ == nullptr)
+		return;
 	for (int i = 0; i < this->m_ptr_size_->GetX(); i++)
 	{
 		for (int j=0; j< this->m_ptr_size_->GetY(); j++)
