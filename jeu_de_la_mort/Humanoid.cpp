@@ -75,7 +75,7 @@ void Humanoid::TriggerPlayTurn()
 	if (CanPlayTurn(newPosition))
 		PlayTurn(newPosition);
 
-
+	if (!GetMap().GetCaseByPosition(newPosition)->IsOccuped())
 		Move(newPosition);
 }
 

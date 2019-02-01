@@ -23,6 +23,6 @@ void Zombie::PlayTurn(Vector2 _v2NewPosition)
 	//manger l'humain
 
 	// todo viré le cast
-	GetMap().
+	//GameManager::GetInstance()->GetCurrentGame().
 	
 }
