@@ -2,7 +2,6 @@
 #include "Human.h"
 #include "Case.h"
 #include "Map.h"
-#include "Doctor.h"
 
 
 std::string Human::GetTag()
@@ -12,6 +11,7 @@ std::string Human::GetTag()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
+	//if(this->AmIinfected() && this->)
 	if (CanUseEffect(_v2NewPosition))
 	{
 
@@ -25,17 +25,12 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 		return;
 	}
-	// todo make effect 
-
-
-
-
 }
 
 bool Human::CanReproduct(Vector2 _v2SecondPosition)
 {
 	Case *h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() != "Human")
+	if (h != nullptr && h->GetTagOccupant() != "Human") // todo non contaminé
 		return false;
 
 	return true;
