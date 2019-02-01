@@ -6,9 +6,9 @@ class Human : public Humanoid
 private:
 	bool m_is_infected_;
 	int m_number_lap_infected_;
+	int m_cpt_lap_infected_;
 public:
-	void TriggerUseEffect();
-	virtual bool CanUseEffect()=0;
+	virtual bool CanUseEffect(Vector2 _v2NewPosition)=0;
 	virtual void UseEffect()=0;
 
 	std::string GetTag() override;
@@ -17,6 +17,7 @@ public:
 	bool CanReproduct(Vector2 _v2SecondPosition);
 	virtual void Reproduct(Vector2 _v2BabyPosition) = 0;
 	void GetInfectedByZombie();
-	virtual bool IAmInfected();
+	virtual bool AmIinfected();
+	void HealMe();
 	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
 };

@@ -55,6 +55,8 @@ void Game::GameLoop()
 
 
 		this->DisplayMap();
+
+		CheckGameOver();
 	}
 }
 
@@ -65,4 +67,9 @@ void Game::TriggerAllPlayer()
 		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
 		it.operator*()->TriggerPlayTurn();
 	}
+}
+
+void Game::CheckGameOver()
+{
+	this->m_game_over_ = this->m_ptr_humanoids_->Size() == this->m_ptr_map->GetSize().GetX() * this->m_ptr_map->GetSize().GetY();
 }

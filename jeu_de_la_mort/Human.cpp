@@ -5,14 +5,6 @@
 #include "Doctor.h"
 
 
-void Human::TriggerUseEffect()
-{
-	if(CanUseEffect())
-	{
-		UseEffect();
-	}
-}
-
 std::string Human::GetTag()
 {
 	return "Human";
@@ -20,6 +12,11 @@ std::string Human::GetTag()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
+	if (CanUseEffect(_v2NewPosition))
+	{
+
+		return;
+	}
 	if (CanReproduct(_v2NewPosition))
 	{
 		Vector2 temp = GetNearestEmptyPosition(_v2NewPosition);
@@ -28,21 +25,15 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 		return;
 	}
-		// todo make effect 
+	// todo make effect 
 
-	if(CanUseEffect())
-	{
-		return;
-	}
+
 
 
 }
 
 bool Human::CanReproduct(Vector2 _v2SecondPosition)
 {
-	if (this->GetTag() != "Human")
-		return false;
-
 	Case *h = GetMap().GetCaseByPosition(_v2SecondPosition);
 	if (h != nullptr && h->GetTagOccupant() != "Human")
 		return false;
@@ -56,9 +47,15 @@ void Human::GetInfectedByZombie()
 	this->m_is_infected_ = true;
 }
 
-bool Human::IAmInfected()
+bool Human::AmIinfected()
 {
 	return this->m_is_infected_;
+}
+
+void Human::HealMe()
+{
+	this->m_cpt_lap_infected_ = 0;
+	this->m_is_infected_ = false;
 }
 
 Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
@@ -67,7 +64,7 @@ Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 	Case *ptrCaseTemp = nullptr;
 
 
-	for (int i =1; i>=this->GetRange(); i++)
+	for (int i = 1; i <= this->GetRange(); i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);

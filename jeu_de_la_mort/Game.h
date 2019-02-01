@@ -16,6 +16,7 @@ public:
 	void DisplayMap();
 	void GameLoop();
 	void TriggerAllPlayer();
+	void CheckGameOver();
 
 	// todo get huamn by position
 

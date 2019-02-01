@@ -5,9 +5,9 @@
 class Civil : public Human
 {
 public:
-	bool CanUseEffect() override;
+	bool CanUseEffect(Vector2 _v2NewPosition) override;
 	void UseEffect() override;
-	explicit Civil(Vector2 _v2Position);
+	Civil(Vector2 _v2Position);
 	char GetSprite() override;
 
 

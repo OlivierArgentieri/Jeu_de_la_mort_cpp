@@ -11,7 +11,7 @@ private :
 	Vector2 m_position_;
 	Map *m_ptr_map_;
 
-	int m_range_;
+	int m_range_ = 1; // todo construct by object
 
 public:
 	virtual Vector2 GetMovePattern();

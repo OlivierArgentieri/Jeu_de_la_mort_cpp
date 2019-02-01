@@ -2,17 +2,19 @@
 #include "Civil.h"
 #include "GameManager.h"
 
-bool Civil::CanUseEffect()
+bool Civil::CanUseEffect(Vector2 _v2NewPosition)
 {
 	return false;
 }
 
 void Civil::UseEffect()
 {
+	
 }
 
 Civil::Civil(Vector2 _v2Position)
 {
+	
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }

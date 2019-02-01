@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Military.h"
 #include "GameManager.h"
-bool Military::CanUseEffect()
+bool Military::CanUseEffect(Vector2 _v2NewPosition)
 {
 	return false;
 }

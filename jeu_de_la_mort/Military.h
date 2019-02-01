@@ -4,7 +4,7 @@
 class Military : public Human
 {
 public:
-	bool CanUseEffect() override;
+	bool CanUseEffect(Vector2 _v2NewPosition) override;
 	void UseEffect() override;
 	char GetSprite() override;
 	Military(Vector2 _v2Position);
