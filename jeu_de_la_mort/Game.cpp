@@ -3,6 +3,7 @@
 #include "GameManager.h"
 #include <chrono>
 #include <iostream>
+#include "Util.h"
 
 
 Game::Game(Vector2* _ptrSizeMap)
@@ -60,8 +61,9 @@ void Game::DisplayMap()
 	for (int y = 0; y < this->GetMap().GetSize().GetY(); y++)
 	{
 		for (int x = 0; x < this->GetMap().GetSize().GetX(); x++)
-			printf("|%c", this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
-		std::cout << std::endl;
+			Util::SetCursorConsolePosition(Vector2(x, y), this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
+			//printf("|%c", this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
+		//std::cout << std::endl;
 	}
 }
 
@@ -69,7 +71,7 @@ void Game::GameLoop()
 {
 	while (!m_game_over_)
 	{
-		system("cls");
+		//system("cls");
 		this->TriggerAllPlayer();
 
 
@@ -77,7 +79,7 @@ void Game::GameLoop()
 
 		this->DisplayMap();
 
-		CheckGameOver();
+		//CheckGameOver();
 	}
 }
 

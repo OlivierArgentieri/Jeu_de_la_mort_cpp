@@ -6,7 +6,7 @@ bool Military::CanUseEffect(Vector2 _v2NewPosition)
 	return false;
 }
 
-void Military::UseEffect()
+void Military::UseEffect(Vector2 _v2NewPosition)
 {
 }
 

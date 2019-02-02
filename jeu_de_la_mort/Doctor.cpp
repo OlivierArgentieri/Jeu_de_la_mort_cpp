@@ -10,7 +10,7 @@ bool Doctor::CanUseEffect(Vector2 _v2NewPosition)
 	return false;
 }
 
-void Doctor::UseEffect()
+void Doctor::UseEffect(Vector2 _v2NewPosition)
 {
 
 }
