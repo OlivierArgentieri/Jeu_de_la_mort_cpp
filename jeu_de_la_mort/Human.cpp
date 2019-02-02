@@ -13,8 +13,9 @@ std::string Human::GetTag()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-	if(this->m_cpt_lap_infected_ > 3)// todo make const
+	if(this->m_cpt_lap_infected_ > 1)// todo make const
 	{
+		/**/
 		Vector2 temp(this->GetPosition());
 		delete(this);
 		new ZombieRandomMove(temp);
