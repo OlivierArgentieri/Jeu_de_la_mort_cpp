@@ -21,6 +21,7 @@ public:
 
 	void RegisterGame(Game* _ptr_game);
 	void RegisterHumanoid(Humanoid* _ptrHumanoid);
+	void RemoveHumanoid(Humanoid* _ptrHumanoid);
 	Game GetCurrentGame();
 	Map GetCurrentMap();
 };

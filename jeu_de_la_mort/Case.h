@@ -8,8 +8,7 @@ class Case
 private:
 	void SetPosition(Vector2 *_ptrPosition);
 	Humanoid *m_ptr_humanoid_;
-
-	Vector2 *m_ptr_position; // todo refactor
+	Vector2 *m_ptr_position_; // todo refactor
 public:
 	
 	Case(Vector2 *_ptrPosition);

@@ -2,6 +2,8 @@
 #include "Human.h"
 #include "Case.h"
 #include "Map.h"
+#include "Zombie.h"
+#include "ZombieRandomMove.h"
 
 
 std::string Human::GetTag()
@@ -11,7 +13,12 @@ std::string Human::GetTag()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-	//if(this->AmIinfected() && this->)
+	if(this->m_cpt_lap_infected_ > 3)// todo make const
+	{
+		new ZombieRandomMove(this->GetPosition());
+		delete(this);
+		return;
+	}
 	if (CanUseEffect(_v2NewPosition))
 	{
 
@@ -25,15 +32,21 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 		return;
 	}
+
+	if (this->AmIinfected())
+		this->m_cpt_lap_infected_++;
+
+	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
+		Move(_v2NewPosition);
 }
 
 bool Human::CanReproduct(Vector2 _v2SecondPosition)
 {
 	Case *h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() != "Human") // todo non contaminé
-		return false;
+	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected()) // si humain et pas infecté + collision -> reproduction
+		return true;
 
-	return true;
+	return false;
 }
 
 

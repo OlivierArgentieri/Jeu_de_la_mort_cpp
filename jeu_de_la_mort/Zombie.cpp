@@ -29,4 +29,7 @@ void Zombie::PlayTurn(Vector2 _v2NewPosition)
 		Human* h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant(); // todo viré le cast
 		h->GetInfectedByZombie();
 	}
+
+	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
+		Move(_v2NewPosition);
 }

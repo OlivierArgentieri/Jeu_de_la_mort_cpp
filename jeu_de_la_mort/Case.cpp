@@ -8,7 +8,7 @@ void Case::SetPosition(Vector2 * _ptrPosition)
 	if (_ptrPosition == nullptr || _ptrPosition->GetX() < 0 || _ptrPosition->GetY()< 0)
 		return;
 
-	this->m_ptr_position = _ptrPosition;
+	this->m_ptr_position_ = _ptrPosition;
 }
 
 Case::Case(Vector2* _ptrPosition)
@@ -18,10 +18,10 @@ Case::Case(Vector2* _ptrPosition)
 
 Vector2 Case::GetPosition()
 {
-	if (this->m_ptr_position == nullptr)
+	if (this->m_ptr_position_ == nullptr)
 		return Vector2();
 
-	return *this->m_ptr_position;
+	return *this->m_ptr_position_;
 }
 
 char Case::GetSprite()

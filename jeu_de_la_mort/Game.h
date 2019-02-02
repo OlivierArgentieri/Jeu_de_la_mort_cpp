@@ -11,6 +11,8 @@ public:
 	Game(Vector2* _ptrSizeMap);
 
 	void AddHumanoid(Humanoid* _ptrHumanoid);
+	void DeleteHumanoid(Humanoid* _ptrHumanoid);
+	void RemoveHumanoidFromList(Humanoid* _ptrHumanoid);
 	Map GetMap();
 
 	void DisplayMap();

@@ -28,6 +28,26 @@ void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 	if (temp != nullptr)
 		temp->Enter(_ptrHumanoid);
 }
+void Game::DeleteHumanoid(Humanoid* _ptrHumanoid)
+{
+	// remove from list
+	RemoveHumanoidFromList(_ptrHumanoid);
+
+	// set nullptr in map
+	Case* temp = m_ptr_map->GetCaseByPosition(_ptrHumanoid->GetPosition());
+	if (temp != nullptr)
+		temp->Exit();
+}
+
+void Game::RemoveHumanoidFromList(Humanoid *_ptrHumanoid)
+{
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
+	{
+		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
+		//if (it.operator*() == _ptrHumanoid)
+		//	this->m_ptr_humanoids_->EraseAt(it);
+	}
+}
 
 Map Game::GetMap()
 {

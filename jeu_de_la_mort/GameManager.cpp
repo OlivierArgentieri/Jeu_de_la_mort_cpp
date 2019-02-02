@@ -22,6 +22,14 @@ void GameManager::RegisterHumanoid(Humanoid* _ptrHumanoid)
 	}
 }
 
+void GameManager::RemoveHumanoid(Humanoid* _ptrHumanoid)
+{
+	if (m_ptr_game_ != nullptr && _ptrHumanoid != nullptr)
+	{
+		m_ptr_game_->DeleteHumanoid(_ptrHumanoid);;
+	}
+}
+
 Game GameManager::GetCurrentGame()
 {
 	return *this->m_ptr_game_;

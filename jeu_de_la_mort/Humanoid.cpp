@@ -77,17 +77,16 @@ void Humanoid::TriggerPlayTurn()
 
 	// get next position to go
 	//if (CanPlayTurn(newPosition))
-		PlayTurn(newPosition);
+	PlayTurn(newPosition);
 
-	if (newPosition != -1 && !GetMap().GetCaseByPosition(newPosition)->IsOccuped())
-		Move(newPosition);
+
 
 }
 
 
 void Humanoid::SetPosition(Vector2 _v2Position)
 {
-	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0 )
+	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0)
 		return;
 
 	this->m_position_ = _v2Position;
@@ -115,4 +114,9 @@ Vector2 Humanoid::GetPosition()
 int Humanoid::GetRange()
 {
 	return this->m_range_;
+}
+
+Humanoid::~Humanoid()
+{
+	GameManager::GetInstance()->RemoveHumanoid(this);
 }

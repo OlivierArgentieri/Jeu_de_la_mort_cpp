@@ -29,4 +29,6 @@ public:
 	virtual Map GetMap();
 	Vector2 GetPosition();
 	virtual int GetRange();
+	
+	~Humanoid();
 };
