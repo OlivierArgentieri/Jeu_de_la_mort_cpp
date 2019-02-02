@@ -46,6 +46,8 @@ void Game::RemoveHumanoidFromList(Humanoid *_ptrHumanoid)
 		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
 		//if (it.operator*() == _ptrHumanoid)
 		//	this->m_ptr_humanoids_->EraseAt(it);
+		// todo test 
+
 	}
 }
 
