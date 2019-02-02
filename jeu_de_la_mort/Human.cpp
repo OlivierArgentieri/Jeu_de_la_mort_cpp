@@ -15,8 +15,9 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 {
 	if(this->m_cpt_lap_infected_ > 3)// todo make const
 	{
-		new ZombieRandomMove(this->GetPosition());
+		Vector2 temp(this->GetPosition());
 		delete(this);
+		new ZombieRandomMove(temp);
 		return;
 	}
 	if (CanUseEffect(_v2NewPosition))

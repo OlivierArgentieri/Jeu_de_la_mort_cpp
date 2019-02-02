@@ -18,14 +18,14 @@ void Map::InitCase()
 		for (int j=0; j< this->m_ptr_size_->GetY(); j++)
 		{
 			Vector2 *p_v2 = new Vector2(i, j);
-			this->m_ptr_cases_->PushBack(new Case(p_v2));
+			this->m_ptr_cases_->push_back(new Case(p_v2));
 		}
 	}
 }
 
 Map::Map(Vector2* _ptrSize)
 {
-	this->m_ptr_cases_ = new MyNewList<Case*>();
+	this->m_ptr_cases_ = new MyList<Case*>();
 	this->SetSize(_ptrSize);
 	this->InitCase();
 }
@@ -43,11 +43,11 @@ Case* Map::GetCaseByPosition(Vector2 _v2Position)
 	if (_v2Position.GetX() < 0 || _v2Position.GetX() >= this->GetSize().GetX() || _v2Position.GetY() < 0 || _v2Position.GetY() >= this->GetSize().GetY())
 		return nullptr;
 
-	for (int i = 0; i < m_ptr_cases_->Size(); i++)
+	for (int i = 0; i < m_ptr_cases_->get_size(); i++)
 	{
-		Iterator<Case*> it = m_ptr_cases_->Begin().operator++(i);
-		if (it.operator*()->GetPosition().GetX() == _v2Position.GetX() && it.operator*()->GetPosition().GetY() == _v2Position.GetY())
-			return it.operator*();
+		Case *case_ = m_ptr_cases_->element_at(i);
+		if (case_ != nullptr && case_->GetPosition().GetX() == _v2Position.GetX() && case_->GetPosition().GetY() == _v2Position.GetY())
+			return case_;
 	}
 	return nullptr;
 }

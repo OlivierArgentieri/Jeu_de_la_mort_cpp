@@ -8,7 +8,7 @@
 Game::Game(Vector2* _ptrSizeMap)
 {
 	GameManager::GetInstance()->RegisterGame(this);
-	this->m_ptr_humanoids_ = new MyNewList<Humanoid*>();
+	this->m_ptr_humanoids_ = new MyList<Humanoid*>();
 	this->m_ptr_map = new Map(_ptrSizeMap);
 	this->m_game_over_ = false;
 }
@@ -21,7 +21,7 @@ void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 	_ptrHumanoid->SetMap(this->m_ptr_map);
 
 	if (m_ptr_humanoids_ != nullptr)
-		m_ptr_humanoids_->PushBack(_ptrHumanoid);
+		m_ptr_humanoids_->push_back(_ptrHumanoid);
 
 	Case* temp = m_ptr_map->GetCaseByPosition(_ptrHumanoid->GetPosition());
 
@@ -41,12 +41,11 @@ void Game::DeleteHumanoid(Humanoid* _ptrHumanoid)
 
 void Game::RemoveHumanoidFromList(Humanoid *_ptrHumanoid)
 {
-	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
+	for (int i = 0; i < this->m_ptr_humanoids_->get_size(); i++)
 	{
-		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
-		//if (it.operator*() == _ptrHumanoid)
-		//	this->m_ptr_humanoids_->EraseAt(it);
-		// todo test 
+		Humanoid *ptr  = this->m_ptr_humanoids_->element_at(i);
+		if (ptr == _ptrHumanoid)
+			this->m_ptr_humanoids_->erase(this->m_ptr_humanoids_->begin().element_at(i));
 
 	}
 }
@@ -84,14 +83,14 @@ void Game::GameLoop()
 
 void Game::TriggerAllPlayer()
 {
-	for(int i =0; i< this->m_ptr_humanoids_->Size(); i++)
+	for(int i =0; i< this->m_ptr_humanoids_->get_size(); i++)
 	{
-		Iterator<Humanoid*> it = this->m_ptr_humanoids_->Begin().operator++(i);
-		it.operator*()->TriggerPlayTurn();
+		Humanoid *ptr = this->m_ptr_humanoids_->element_at(i);
+		ptr->TriggerPlayTurn();
 	}
 }
 
 void Game::CheckGameOver()
 {
-	this->m_game_over_ = this->m_ptr_humanoids_->Size() == this->m_ptr_map->GetSize().GetX() * this->m_ptr_map->GetSize().GetY();
+	this->m_game_over_ = this->m_ptr_humanoids_->get_size() == this->m_ptr_map->GetSize().GetX() * this->m_ptr_map->GetSize().GetY();
 }

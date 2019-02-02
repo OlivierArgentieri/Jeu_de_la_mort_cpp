@@ -78,6 +78,15 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
     <ClInclude Include="Iterator.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
@@ -87,14 +96,14 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyIterator.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyList.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="Case.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyNode.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

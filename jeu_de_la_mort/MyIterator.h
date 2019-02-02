@@ -45,8 +45,7 @@ MyIterator<T>& MyIterator<T>::operator--()
 		this->m_ptr_my_node_ = this->m_ptr_my_node_->m_previous_ptr_;
 		return *this;
 	}
-	this->m_ptr_my_node_ = nullptr;
-	return MyIterator<T>(nullptr);
+	throw new std::out_of_range("index out of range");
 }
 
 template <typename T>
