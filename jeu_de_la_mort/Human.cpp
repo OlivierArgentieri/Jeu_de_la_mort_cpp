@@ -2,7 +2,6 @@
 #include "Human.h"
 #include "Case.h"
 #include "Map.h"
-#include "Zombie.h"
 #include "ZombieRandomMove.h"
 
 

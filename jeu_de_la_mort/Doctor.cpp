@@ -3,7 +3,6 @@
 
 bool Doctor::CanUseEffect(Vector2 _v2NewPosition)
 {
-
 	Case* h = GetMap().GetCaseByPosition(_v2NewPosition);
 	if (h != nullptr && h->GetTagOccupant() == "Human" && h->GetHumanOccupant()->AmIinfected())
 		return true;
@@ -23,7 +22,6 @@ Doctor::Doctor(Vector2 _v2Position)
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
-
 
 char Doctor::GetSprite()
 {
