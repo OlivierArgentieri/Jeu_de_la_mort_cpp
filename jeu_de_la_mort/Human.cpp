@@ -23,7 +23,7 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 	}
 	if (CanUseEffect(_v2NewPosition))
 	{
-
+		this->UseEffect(_v2NewPosition);
 		return;
 	}
 	if (CanReproduct(_v2NewPosition))

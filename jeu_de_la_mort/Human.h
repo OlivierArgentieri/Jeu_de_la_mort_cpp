@@ -9,7 +9,7 @@ private:
 	int m_cpt_lap_infected_;
 public:
 	virtual bool CanUseEffect(Vector2 _v2NewPosition)=0;
-	virtual void UseEffect()=0;
+	virtual void UseEffect(Vector2 _v2NewPosition)=0;
 
 	std::string GetTag() override;
 	void PlayTurn(Vector2 _v2NewPosition) override;

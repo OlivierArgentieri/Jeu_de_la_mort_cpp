@@ -12,7 +12,10 @@ bool Doctor::CanUseEffect(Vector2 _v2NewPosition)
 
 void Doctor::UseEffect(Vector2 _v2NewPosition)
 {
+	Human *h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant();
 
+	if (h != nullptr)
+		h->HealMe();
 }
 
 Doctor::Doctor(Vector2 _v2Position)
@@ -20,7 +23,6 @@ Doctor::Doctor(Vector2 _v2Position)
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
-
 
 
 char Doctor::GetSprite()
