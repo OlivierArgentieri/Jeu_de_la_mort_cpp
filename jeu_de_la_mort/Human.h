@@ -20,4 +20,6 @@ public:
 	virtual bool AmIinfected();
 	void HealMe();
 	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
+	void TransformToZombie();
+	bool CanTransformToZombie();
 };

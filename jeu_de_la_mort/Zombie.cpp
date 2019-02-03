@@ -33,3 +33,8 @@ void Zombie::PlayTurn(Vector2 _v2NewPosition)
 	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
 		Move(_v2NewPosition);
 }
+
+void Zombie::KillMe()
+{
+	
+}

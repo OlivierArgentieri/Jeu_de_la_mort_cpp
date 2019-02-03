@@ -13,12 +13,9 @@ std::string Human::GetTag()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-	if(this->m_cpt_lap_infected_ > 1)// todo make const
+	if (CanTransformToZombie())// todo make const
 	{
-		/**/
-		Vector2 temp(this->GetPosition());
-		delete(this);
-		new ZombieRandomMove(temp);
+		TransformToZombie();
 		return;
 	}
 	if (CanUseEffect(_v2NewPosition))
@@ -31,11 +28,10 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 		Vector2 temp = GetNearestEmptyPosition(_v2NewPosition);
 		if (temp != -1)
 			Reproduct(temp);
-
 		return;
 	}
 
-	if (this->AmIinfected())
+	if (AmIinfected())
 		this->m_cpt_lap_infected_++;
 
 	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
@@ -100,4 +96,16 @@ Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 	}
 
 	return Vector2();
+}
+
+void Human::TransformToZombie()
+{
+	Vector2 temp(this->GetPosition());
+	delete(this);
+	new ZombieRandomMove(temp);
+}
+
+bool Human::CanTransformToZombie()
+{
+	return this->m_cpt_lap_infected_ > 1; // todo make const
 }
