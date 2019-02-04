@@ -9,7 +9,6 @@ bool Civil::CanUseEffect(Vector2 _v2NewPosition)
 
 void Civil::UseEffect(Vector2 _v2NewPosition)
 {
-	
 }
 
 Civil::Civil(Vector2 _v2Position)
