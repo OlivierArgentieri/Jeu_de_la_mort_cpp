@@ -26,4 +26,5 @@ public:
 	void TransformToZombie();
 	bool CanTransformToZombie();
 	bool CanMove(Vector2 _v2NewPosition);
+	void ProgressiceContamination();
 };

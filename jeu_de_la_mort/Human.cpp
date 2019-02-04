@@ -45,7 +45,7 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 	}
 
 	if (AmIinfected())
-		this->m_cpt_lap_infected_++;
+		ProgressiceContamination();
 	
 	if (CanMove(_v2NewPosition))
 		Move(_v2NewPosition);
@@ -130,4 +130,9 @@ bool Human::CanTransformToZombie()
 bool Human::CanMove(Vector2 _v2NewPosition)
 {
 	return _v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped();
+}
+
+void Human::ProgressiceContamination()
+{
+	this->m_cpt_lap_infected_++;
 }
