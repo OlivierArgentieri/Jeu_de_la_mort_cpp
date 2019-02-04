@@ -1,17 +1,16 @@
 #include "pch.h"
 #include "Doctor.h"
 
-bool Doctor::CanUseEffect(Vector2 _v2NewPosition)
-{
-	
-}
-
-void Doctor::UseEffect(Vector2 _v2NewPosition)
+bool Doctor::UseEffect(Vector2 _v2NewPosition)
 {
 	Case* c = GetMap().GetCaseByPosition(_v2NewPosition);
 	if (c != nullptr && c->GetTagOccupant() == "Human" && c->GetHumanOccupant()->AmIinfected())
+	{
 		c->GetHumanOccupant()->HealMe();
+		return true;
+	}
 
+	return false;
 }
 
 Doctor::Doctor(Vector2 _v2Position)

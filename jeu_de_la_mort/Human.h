@@ -9,8 +9,7 @@ private:
 	int m_cpt_lap_infected_;
 	int m_cpt_lap_reproduct_ =0; // todo 
 public:
-	virtual bool CanUseEffect(Vector2 _v2NewPosition)=0;
-	virtual bool UseEffect(Vector2 _v2NewPosition)=0;
+	virtual bool UseEffect(Vector2 _v2NewPosition) =0;
 
 	std::string GetTag() override;
 	void IncrementLapReproduct();
@@ -26,4 +25,5 @@ public:
 	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
 	void TransformToZombie();
 	bool CanTransformToZombie();
+	bool CanMove(Vector2 _v2NewPosition);
 };

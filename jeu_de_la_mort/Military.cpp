@@ -2,18 +2,16 @@
 #include "Military.h"
 #include "GameManager.h"
 
-bool Military::CanUseEffect(Vector2 _v2NewPosition)
-{
-	return true;
-}
 
-void Military::UseEffect(Vector2 _v2NewPosition)
+bool Military::UseEffect(Vector2 _v2NewPosition)
 {
 	auto t = this->GetOneZombieInMyRange();
 	if (t == nullptr)
-		return;
+		return false;
 	
 	t->KillMe();
+
+	return true;
 }
 
 char Military::GetSprite()

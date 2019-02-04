@@ -2,11 +2,6 @@
 #include "Civil.h"
 #include "GameManager.h"
 
-bool Civil::CanUseEffect(Vector2 _v2NewPosition)
-{
-	return false;
-}
-
 bool Civil::UseEffect(Vector2 _v2NewPosition)
 {
 	return false; // no action for civil

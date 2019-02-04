@@ -11,4 +11,5 @@ public:
 
 	void KillMe();
 	void EatHuman(Vector2 _v2NewPosition);
+	bool CanMove(Vector2 _v2NewPosition);
 };

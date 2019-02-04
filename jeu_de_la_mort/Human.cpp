@@ -129,5 +129,5 @@ bool Human::CanTransformToZombie()
 
 bool Human::CanMove(Vector2 _v2NewPosition)
 {
-	_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped()
+	return _v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped();
 }
