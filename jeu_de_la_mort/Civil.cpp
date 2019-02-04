@@ -7,9 +7,9 @@ bool Civil::CanUseEffect(Vector2 _v2NewPosition)
 	return false;
 }
 
-void Civil::UseEffect(Vector2 _v2NewPosition)
+bool Civil::UseEffect(Vector2 _v2NewPosition)
 {
-	
+	return false; // no action for civil
 }
 
 Civil::Civil(Vector2 _v2Position)

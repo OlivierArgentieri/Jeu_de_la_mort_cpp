@@ -3,18 +3,15 @@
 
 bool Doctor::CanUseEffect(Vector2 _v2NewPosition)
 {
-	Case* h = GetMap().GetCaseByPosition(_v2NewPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && h->GetHumanOccupant()->AmIinfected())
-		return true;
-	return false;
+	
 }
 
 void Doctor::UseEffect(Vector2 _v2NewPosition)
 {
-	Human *h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant();
+	Case* c = GetMap().GetCaseByPosition(_v2NewPosition);
+	if (c != nullptr && c->GetTagOccupant() == "Human" && c->GetHumanOccupant()->AmIinfected())
+		c->GetHumanOccupant()->HealMe();
 
-	if (h != nullptr)
-		h->HealMe();
 }
 
 Doctor::Doctor(Vector2 _v2Position)
