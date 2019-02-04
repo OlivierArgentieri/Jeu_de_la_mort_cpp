@@ -63,7 +63,7 @@ Human* Case::GetHumanOccupant()
 	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human")
 		return nullptr;
 
-	return  dynamic_cast<Human*>(this->m_ptr_humanoid_);
+	return  static_cast<Human*>(this->m_ptr_humanoid_);
 }
 
 

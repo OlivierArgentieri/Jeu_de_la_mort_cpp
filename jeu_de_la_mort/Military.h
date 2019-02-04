@@ -11,6 +11,6 @@ public:
 	char GetSprite() override;
 	Military(Vector2 _v2Position);
 	void Reproduct(Vector2 _v2BabyPosition) override;
-	Zombie* GetOneZombiePositionInMyRange();
+	Zombie* GetOneZombieInMyRange();
 	MyNewList<Zombie*> GetZombiesInMyRange();
 };

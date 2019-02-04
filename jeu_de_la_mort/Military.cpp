@@ -4,21 +4,16 @@
 
 bool Military::CanUseEffect(Vector2 _v2NewPosition)
 {
-	auto temp = GetZombiesInMyRange();
-	if (temp.Size() > 0)
-	{
-		return true;
-	}
-	return false;
+	return true;
 }
 
 void Military::UseEffect(Vector2 _v2NewPosition)
 {
-	Zombie *temp = GetOneZombiePositionInMyRange();
-	if (temp == nullptr)
+	auto t = this->GetOneZombieInMyRange();
+	if (t == nullptr)
 		return;
-
-	temp->KillMe();
+	
+	t->KillMe();
 }
 
 char Military::GetSprite()
@@ -39,16 +34,15 @@ void Military::Reproduct(Vector2 _v2BabyPosition)
 	new Military(_v2BabyPosition);
 }
 
-Zombie* Military::GetOneZombiePositionInMyRange()
+Zombie* Military::GetOneZombieInMyRange()
 {
 	MyNewList<Zombie*> temp = GetZombiesInMyRange();
 	int listSize = temp.Size();
 
-	if(listSize>0)
+	if (listSize > 0)
 	{
 		int randNum = rand() % (listSize);
-		return  temp.At(randNum).operator*();;
-
+		return temp.At(randNum).operator*();;
 	}
 	return nullptr;
 }
@@ -57,11 +51,11 @@ Zombie* Military::GetOneZombiePositionInMyRange()
 MyNewList<Zombie*> Military::GetZombiesInMyRange()
 {
 	Vector2 v2Temp;
-	Case *ptrCaseTemp = nullptr;
+	Case* ptrCaseTemp = nullptr;
 	MyNewList<Zombie*> returnList = MyNewList<Zombie*>();
 
 
-	for (int i = 0; i < this->GetRange() && returnList.Size()<1; i++)
+	for (int i = 0; i < this->GetRange() && returnList.Size() < 1; i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
@@ -87,6 +81,6 @@ MyNewList<Zombie*> Military::GetZombiesInMyRange()
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
 			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
 	}
-	
+
 	return returnList;
 }
