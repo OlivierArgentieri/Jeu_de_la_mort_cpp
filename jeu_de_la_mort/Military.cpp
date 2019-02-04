@@ -4,19 +4,22 @@
 
 bool Military::CanUseEffect(Vector2 _v2NewPosition)
 {
+	/**/
 	auto temp = GetZombiesInMyRange();
-	if (temp != nullptr && temp->get_size() > 0)
-		return true;
+	//if (temp != nullptr && temp->get_size() > 0)
+	//	return true;
+
 	return false;
 }
 
 void Military::UseEffect(Vector2 _v2NewPosition)
 {
+	/*
 	Zombie *temp = GetOneZombiePositionInMyRange();
 	if (temp == nullptr)
 		return;
 
-	temp->KillMe();
+	temp->KillMe();*/
 }
 
 char Military::GetSprite()
@@ -26,7 +29,7 @@ char Military::GetSprite()
 
 Military::Military(Vector2 _v2Position)
 {
-	this->SetRange(4);
+	this->SetRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
@@ -51,6 +54,7 @@ Zombie* Military::GetOneZombiePositionInMyRange()
 		int randNum = rand() % (listSize);
 		return temp->element_at(randNum);
 	}
+	delete(temp);
 	return nullptr;
 }
 

@@ -75,8 +75,6 @@ void Game::GameLoop()
 		this->TriggerAllPlayer();
 
 
-
-
 		this->DisplayMap();
 
 		//CheckGameOver();

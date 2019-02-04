@@ -112,7 +112,6 @@ Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 		if (ptrCaseTemp != nullptr && !ptrCaseTemp->IsOccuped())
 			return v2Temp;
-
 	}
 
 	return Vector2();
