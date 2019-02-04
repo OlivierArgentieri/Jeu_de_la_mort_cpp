@@ -45,42 +45,17 @@ void Humanoid::Move(Vector2 _v2NewPosition)
 
 Vector2 Humanoid::GetNewPosition(Vector2 _MovePattern)
 {
-	// todo 
-	// move to new position
-
 	// new position == nullptr si depassement ou impossible !!
 	if (this->m_ptr_map_ == nullptr)
 		return Vector2();
 
 	return this->m_ptr_map_->FindExistingPosition(_MovePattern + this->GetPosition());
-
-	/*
-	if (newPosition == nullptr)
-		return; // posotion invalide
-
-
-	if (this->m_ptr_map_->GetCaseByPosition(*newPosition)->IsOccuped())
-	{
-		this->PlayTurn();
-		// make test : if(tag == military) execute instant playTurn();
-		// test range in military :]
-
-		return; // todo make collision
-	}
-	*/
 }
 
 void Humanoid::TriggerPlayTurn()
 {
 	auto newPosition = this->GetNewPosition(GetMovePattern());
-
-
-	// get next position to go
-	//if (CanPlayTurn(newPosition))
 	PlayTurn(newPosition);
-
-
-
 }
 
 
@@ -114,6 +89,14 @@ Vector2 Humanoid::GetPosition()
 int Humanoid::GetRange()
 {
 	return this->m_range_;
+}
+
+void Humanoid::SetRange(int _iNewRange)
+{
+	if (_iNewRange <= 0)
+		return;
+
+	this->m_range_ = _iNewRange;
 }
 
 Humanoid::~Humanoid()

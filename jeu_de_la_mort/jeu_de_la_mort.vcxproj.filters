@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{d10a0e00-85ce-4600-871f-d6e931980e28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{89386832-d31c-49e9-b269-ad661bfb428f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{2defae64-9f60-4e6c-8351-07a029a46a33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -78,6 +84,15 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
     <ClInclude Include="Iterator.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
@@ -87,14 +102,17 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyIterator.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyList.h">
+      <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="Case.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="MyNode.h">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Header Files\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

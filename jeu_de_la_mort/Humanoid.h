@@ -19,7 +19,6 @@ public:
 	void Move(Vector2 _v2NewPosition);
 	Vector2 GetNewPosition(Vector2 _MovePattern);
 	void TriggerPlayTurn();
-	//virtual bool CanPlayTurn(Vector2 _v2NewPosition) =0;
 	virtual void PlayTurn(Vector2 _v2NewPosition) =0;
 	virtual std::string GetTag()=0;
 	virtual char GetSprite()=0;
@@ -29,6 +28,7 @@ public:
 	virtual Map GetMap();
 	Vector2 GetPosition();
 	virtual int GetRange();
+	virtual void SetRange(int _iNewRange);
 	
 	~Humanoid();
 };

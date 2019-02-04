@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Case.h"
 #include "Human.h"
+#include "Zombie.h"
 
 
 void Case::SetPosition(Vector2 * _ptrPosition)
@@ -63,4 +64,13 @@ Human* Case::GetHumanOccupant()
 		return nullptr;
 
 	return  dynamic_cast<Human*>(this->m_ptr_humanoid_);
+}
+
+
+Zombie* Case::GetZombieOccupant()
+{
+	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Zombie")
+		return nullptr;
+
+	return  dynamic_cast<Zombie*>(this->m_ptr_humanoid_);
 }

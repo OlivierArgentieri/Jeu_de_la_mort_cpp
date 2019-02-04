@@ -2,6 +2,7 @@
 #include "Vector2.h"
 #include "Humanoid.h"
 #include "Human.h"
+#include "Zombie.h"
 
 class Case
 {
@@ -21,4 +22,5 @@ public:
 
 	std::string GetTagOccupant();
 	Human* GetHumanOccupant();
+	Zombie* GetZombieOccupant();
 };

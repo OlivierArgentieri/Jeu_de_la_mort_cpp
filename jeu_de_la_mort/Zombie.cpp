@@ -24,7 +24,7 @@ bool Zombie::CanEatHuman(Vector2 _v2NewPosition)
 
 void Zombie::PlayTurn(Vector2 _v2NewPosition)
 {
-	if (this->CanEatHuman(_v2NewPosition))
+	if (CanEatHuman(_v2NewPosition))
 	{
 		Human* h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant(); // todo viré le cast
 		h->GetInfectedByZombie();
@@ -32,4 +32,9 @@ void Zombie::PlayTurn(Vector2 _v2NewPosition)
 
 	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
 		Move(_v2NewPosition);
+}
+
+void Zombie::KillMe()
+{
+	delete(this);
 }
