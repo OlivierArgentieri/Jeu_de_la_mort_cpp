@@ -12,5 +12,5 @@ public:
 	Military(Vector2 _v2Position);
 	void Reproduct(Vector2 _v2BabyPosition) override;
 	Zombie* GetOneZombiePositionInMyRange();
-	MyNewList<Zombie*>* GetZombiesInMyRange();
+	MyNewList<Zombie*> GetZombiesInMyRange();
 };
