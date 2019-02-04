@@ -4,8 +4,10 @@
 
 bool Military::CanUseEffect(Vector2 _v2NewPosition)
 {
-	// todo
-
+	auto temp = GetZombiesInMyRange();
+	if (temp != nullptr && temp->get_size() > 0)
+		return true;
+	return false;
 }
 
 void Military::UseEffect(Vector2 _v2NewPosition)
@@ -22,14 +24,16 @@ char Military::GetSprite()
 	return 'M';
 }
 
-Military::Military(Vector2 _v2Position) : Human()
+Military::Military(Vector2 _v2Position)
 {
+	this->SetRange(4);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
 void Military::Reproduct(Vector2 _v2BabyPosition)
 {
+	Human::Reproduct(_v2BabyPosition);
 	new Military(_v2BabyPosition);
 }
 
@@ -87,5 +91,3 @@ MyList<Zombie*>* Military::GetZombiesInMyRange()
 	}
 	return returnList;
 }
-
-

@@ -36,5 +36,5 @@ void Zombie::PlayTurn(Vector2 _v2NewPosition)
 
 void Zombie::KillMe()
 {
-	
+	delete(this);
 }

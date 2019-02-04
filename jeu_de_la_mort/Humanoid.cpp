@@ -55,14 +55,7 @@ Vector2 Humanoid::GetNewPosition(Vector2 _MovePattern)
 void Humanoid::TriggerPlayTurn()
 {
 	auto newPosition = this->GetNewPosition(GetMovePattern());
-
-
-	// get next position to go
-	//if (CanPlayTurn(newPosition))
 	PlayTurn(newPosition);
-
-
-
 }
 
 
@@ -96,6 +89,14 @@ Vector2 Humanoid::GetPosition()
 int Humanoid::GetRange()
 {
 	return this->m_range_;
+}
+
+void Humanoid::SetRange(int _iNewRange)
+{
+	if (_iNewRange <= 0)
+		return;
+
+	this->m_range_ = _iNewRange;
 }
 
 Humanoid::~Humanoid()

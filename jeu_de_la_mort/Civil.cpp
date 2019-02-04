@@ -26,5 +26,6 @@ char Civil::GetSprite()
 
 void Civil::Reproduct(Vector2 _v2BabyPosition)
 {
+	Human::Reproduct(_v2BabyPosition);
 	new Civil(_v2BabyPosition);
 }
