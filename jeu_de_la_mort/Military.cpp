@@ -14,7 +14,6 @@ bool Military::CanUseEffect(Vector2 _v2NewPosition)
 
 void Military::UseEffect(Vector2 _v2NewPosition)
 {
-	/**/
 	Zombie *temp = GetOneZombiePositionInMyRange();
 	if (temp == nullptr)
 		return;
