@@ -1,15 +1,14 @@
 #pragma once
 #include "Case.h"
-#include "MyList.h"
+#include "MyNewList.h"
 
 class Map
 {
 private:
-	MyList<Case*> *m_ptr_cases_;
+	MyNewList<Case*> *m_ptr_cases_;
 	Vector2 *m_ptr_size_;
 
 	void SetSize(Vector2 *_ptrSize);
-
 	void InitCase();
 public:
 	Map(Vector2 *_ptrSize);

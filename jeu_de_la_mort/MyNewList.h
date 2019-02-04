@@ -158,15 +158,15 @@ public:
 		return size;
 	}
 
-	Iterator<T> *At(int i)//Search a node at a position i
+	Iterator<T> At(int i)//Search a node at a position i
 	{
 		int j = 0;
-		Iterator<T> *it = new Iterator<T>(Header, this);;
+		Iterator<T> it = Iterator<T>(Header, this);;
 		while (j != i)
 		{
-			if (it->element != nullptr)
+			if (it.element != nullptr)
 			{
-				it->operator++();
+				it.operator++();
 				j++;
 			}
 			else

@@ -5,7 +5,7 @@ class Game
 {
 private:
 	Map* m_ptr_map;
-	MyList<Humanoid*> *m_ptr_humanoids_;
+	MyNewList<Humanoid*> *m_ptr_humanoids_;
 	bool m_game_over_;
 public:
 	Game(Vector2* _ptrSizeMap);

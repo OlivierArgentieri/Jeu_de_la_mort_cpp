@@ -102,15 +102,6 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
-    <ClInclude Include="MyIterator.h">
-      <Filter>Header Files\List</Filter>
-    </ClInclude>
-    <ClInclude Include="MyList.h">
-      <Filter>Header Files\List</Filter>
-    </ClInclude>
-    <ClInclude Include="MyNode.h">
-      <Filter>Header Files\List</Filter>
-    </ClInclude>
     <ClInclude Include="Util.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
