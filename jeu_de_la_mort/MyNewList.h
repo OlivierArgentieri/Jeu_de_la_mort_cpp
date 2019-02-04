@@ -77,22 +77,20 @@ public:
 					Queue = Queue->Previous;
 					Queue->Next = nullptr;
 					ToReturn = End();
-					delete(Position.element);
 				}
 				else if (Position.element->Previous == nullptr)
 				{
 					Header = Header->Next;
 					Header->Previous = nullptr;
 					ToReturn = Begin();
-					delete(Position.element);
 				}
 				else
 				{
 					Position.element->Next->Previous = Position.element->Previous;
 					Position.element->Previous->Next = Position.element->Next;
-					ToReturn = Position.operator++();
-					delete(Position.element);
+					ToReturn = Position;
 				}
+				delete(Position.element);
 			}
 			else
 			{
