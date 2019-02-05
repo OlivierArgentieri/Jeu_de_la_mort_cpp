@@ -72,12 +72,12 @@ void Game::GameLoop()
 	while (!m_game_over_)
 	{
 		//system("cls");
-		this->TriggerAllPlayer();
+		TriggerAllPlayer();
 
 
-		this->DisplayMap();
+		DisplayMap();
 
-		//CheckGameOver();
+		CheckGameOver();
 	}
 }
 
@@ -92,5 +92,18 @@ void Game::TriggerAllPlayer()
 
 void Game::CheckGameOver()
 {
-	this->m_game_over_ = this->m_ptr_humanoids_->Size() == this->m_ptr_map->GetSize().GetX() * this->m_ptr_map->GetSize().GetY();
+	if (GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
+		this->m_game_over_ = true;
+}
+
+int Game::GetNumberOfHumanoidsByTag(std::string _sTag)
+{
+	int toReturn = 0;
+	for (int i =0; i<this->m_ptr_humanoids_->Size(); i++)
+	{
+		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == _sTag)
+			toReturn++;
+	}
+
+	return toReturn;
 }

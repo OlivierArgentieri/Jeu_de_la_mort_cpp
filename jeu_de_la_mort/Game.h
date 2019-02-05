@@ -19,6 +19,7 @@ public:
 	void GameLoop();
 	void TriggerAllPlayer();
 	void CheckGameOver();
+	int GetNumberOfHumanoidsByTag(std::string _sTag);
 
 	// todo get huamn by position
 
