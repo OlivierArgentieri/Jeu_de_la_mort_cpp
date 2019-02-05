@@ -8,7 +8,9 @@ private:
 	bool m_is_infected_;
 	int m_number_lap_infected_;
 	int m_cpt_lap_infected_;
-	int m_cpt_lap_reproduct_ =0; // todo 
+	int m_cpt_lap_reproduct_ =2; 
+
+	const int m_lap_before_transform_ = 1;
 public:
 	virtual bool UseEffect(Vector2 _v2NewPosition) =0;
 
@@ -23,10 +25,9 @@ public:
 	void GetInfectedByZombie();
 	virtual bool AmIinfected();
 	void HealMe();
-	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
+	Vector2 GetNearestEmptyPosition();
 	void TransformToZombie();
 	void InstanteRandomZombieType(Vector2 _v2Position);
-	void GetRandomlyZombieTypeObject();
 	bool CanTransformToZombie();
 	bool CanMove(Vector2 _v2NewPosition);
 	void ProgressiceContamination();

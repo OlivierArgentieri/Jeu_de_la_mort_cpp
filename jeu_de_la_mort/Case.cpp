@@ -72,5 +72,5 @@ Zombie* Case::GetZombieOccupant()
 	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Zombie")
 		return nullptr;
 
-	return  dynamic_cast<Zombie*>(this->m_ptr_humanoid_);
+	return static_cast<Zombie*>(this->m_ptr_humanoid_);
 }

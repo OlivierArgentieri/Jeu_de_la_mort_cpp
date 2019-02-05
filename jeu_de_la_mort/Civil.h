@@ -8,6 +8,5 @@ public:
 	bool UseEffect(Vector2 _v2NewPosition) override;
 	Civil(Vector2 _v2Position);
 	char GetSprite() override;
-
 	void Reproduct(Vector2 _v2BabyPosition) override;
 };

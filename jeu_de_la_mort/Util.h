@@ -6,6 +6,6 @@
 class Util
 {
 public:
-	static void SetCursorConsolePosition(Vector2 _v2Position, char _cContent);
+	static void SetCursorConsolePosition(Vector2 _v2Position);
 };
 

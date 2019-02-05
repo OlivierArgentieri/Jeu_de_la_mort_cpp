@@ -13,8 +13,6 @@ private:
 public:
 	Map(Vector2 *_ptrSize);
 	Vector2 GetSize();
-	Case* GetCaseByPosition(Vector2 _v2Position); // todo
+	Case* GetCaseByPosition(Vector2 _v2Position);
 	Vector2 FindExistingPosition(Vector2 _v2Position);
-
-
 };

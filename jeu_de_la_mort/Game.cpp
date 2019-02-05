@@ -10,7 +10,7 @@ Game::Game(Vector2* _ptrSizeMap)
 {
 	GameManager::GetInstance()->RegisterGame(this);
 	this->m_ptr_humanoids_ = new MyNewList<Humanoid*>();
-	this->m_ptr_map = new Map(_ptrSizeMap);
+	this->m_ptr_map_ = new Map(_ptrSizeMap);
 	this->m_game_over_ = false;
 }
 
@@ -19,12 +19,12 @@ void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 	if (_ptrHumanoid == nullptr)
 		return;
 
-	_ptrHumanoid->SetMap(this->m_ptr_map);
+	_ptrHumanoid->SetMap(this->m_ptr_map_);
 
 	if (m_ptr_humanoids_ != nullptr)
 		m_ptr_humanoids_->PushBack(_ptrHumanoid);
 
-	Case* temp = m_ptr_map->GetCaseByPosition(_ptrHumanoid->GetPosition());
+	Case* temp = m_ptr_map_->GetCaseByPosition(_ptrHumanoid->GetPosition());
 
 	if (temp != nullptr)
 		temp->Enter(_ptrHumanoid);
@@ -36,7 +36,7 @@ void Game::DeleteHumanoid(Humanoid* _ptrHumanoid)
 	RemoveHumanoidFromList(_ptrHumanoid);
 
 	// set nullptr in map
-	Case* temp = m_ptr_map->GetCaseByPosition(_ptrHumanoid->GetPosition());
+	Case* temp = m_ptr_map_->GetCaseByPosition(_ptrHumanoid->GetPosition());
 	if (temp != nullptr)
 		temp->Exit();
 }
@@ -53,7 +53,7 @@ void Game::RemoveHumanoidFromList(Humanoid* _ptrHumanoid)
 
 Map Game::GetMap()
 {
-	return *this->m_ptr_map;
+	return *this->m_ptr_map_;
 }
 
 void Game::DisplayMap()
@@ -61,9 +61,10 @@ void Game::DisplayMap()
 	for (int y = 0; y < this->GetMap().GetSize().GetY(); y++)
 	{
 		for (int x = 0; x < this->GetMap().GetSize().GetX(); x++)
-			Util::SetCursorConsolePosition(Vector2(x, y), this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
-		//printf("|%c", this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
-		//std::cout << std::endl;
+		{
+			Util::SetCursorConsolePosition(Vector2(x, y));
+			std::cout << this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite();
+		}
 	}
 }
 
@@ -98,7 +99,7 @@ void Game::TriggerAllPlayer()
 
 void Game::CheckGameOver()
 {
-	if (GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
+	if (GetNumberOfInfectedHuman()==0 &&  GetNumberOfHumanoidsByTag("Zombie") == 0)
 		this->m_game_over_ = true;
 }
 
@@ -111,5 +112,16 @@ int Game::GetNumberOfHumanoidsByTag(std::string _sTag)
 			toReturn++;
 	}
 
+	return toReturn;
+}
+
+int Game::GetNumberOfInfectedHuman()
+{
+	int toReturn = 0;
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
+	{
+		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human" && static_cast<Human*>(this->m_ptr_humanoids_->At(i).operator*())->AmIinfected())
+			toReturn++;
+	}
 	return toReturn;
 }
