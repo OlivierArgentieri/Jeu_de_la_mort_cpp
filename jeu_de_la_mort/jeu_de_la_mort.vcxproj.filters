@@ -105,6 +105,9 @@
     <ClInclude Include="Util.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
+    <ClInclude Include="ZombieExplode.h">
+      <Filter>Header Files\Humanoid\Zombie</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -154,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="Util.cpp">
       <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieExplode.cpp">
+      <Filter>Source Files\Humanoid\Zombie</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

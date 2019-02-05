@@ -3,6 +3,7 @@
 #include "Case.h"
 #include "Map.h"
 #include "ZombieRandomMove.h"
+#include "ZombieExplode.h"
 
 
 std::string Human::GetTag()
@@ -27,28 +28,27 @@ void Human::ResetLapReproduct()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-	if (CanTransformToZombie())// todo make const
+	if (CanTransformToZombie())
 	{
 		TransformToZombie();
 		return;
 	}
-	if (CanUseEffect(_v2NewPosition))
-	{
-		this->UseEffect(_v2NewPosition);
-		return;
-	}
+	if (UseEffect(_v2NewPosition))
+		return; // to allow one action per lap
+
+
 	if (CanReproduct(_v2NewPosition))
 	{
-		Vector2 temp = GetNearestEmptyPosition(_v2NewPosition);
+		Vector2 temp = GetNearestEmptyPosition();
 		if (temp != -1)
 			Reproduct(temp);
 		return;
 	}
 
 	if (AmIinfected())
-		this->m_cpt_lap_infected_++;
-	
-	if (_v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped())
+		ProgressiceContamination();
+
+	if (CanMove(_v2NewPosition))
 		Move(_v2NewPosition);
 
 	IncrementLapReproduct();
@@ -56,8 +56,11 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 bool Human::CanReproduct(Vector2 _v2SecondPosition)
 {
-	Case *h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h->GetHumanOccupant()->GetLapReproduct() > 5) // si humain et pas infecté + collision -> reproduction
+	Case* h = GetMap().GetCaseByPosition(_v2SecondPosition);
+	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h
+		->GetHumanOccupant()
+		->GetLapReproduct() >
+		5) // si humain + pas infecté + collision -> reproduction
 		return true;
 
 	return false;
@@ -84,11 +87,10 @@ void Human::HealMe()
 	this->m_is_infected_ = false;
 }
 
-Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
+Vector2 Human::GetNearestEmptyPosition()
 {
 	Vector2 v2Temp;
-	Case *ptrCaseTemp = nullptr;
-
+	Case* ptrCaseTemp = nullptr;
 
 	for (int i = 1; i <= this->GetRange(); i++)
 	{
@@ -119,12 +121,33 @@ Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 
 void Human::TransformToZombie()
 {
+	// rand sur type de zombie
 	Vector2 temp(this->GetPosition());
 	delete(this);
-	new ZombieRandomMove(temp);
+	InstanteRandomZombieType(temp);
+}
+
+void Human::InstanteRandomZombieType(Vector2 _v2Position)
+{
+
+	int r = rand() % (2);
+	if (r == 0)
+		new ZombieRandomMove(_v2Position);
+	else
+		new ZombieExplode(_v2Position);
 }
 
 bool Human::CanTransformToZombie()
 {
-	return this->m_cpt_lap_infected_ > 1; // todo make const
+	return this->m_cpt_lap_infected_ > m_lap_before_transform_;
+}
+
+bool Human::CanMove(Vector2 _v2NewPosition)
+{
+	return _v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped();
+}
+
+void Human::ProgressiceContamination()
+{
+	this->m_cpt_lap_infected_++;
 }

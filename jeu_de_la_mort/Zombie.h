@@ -9,5 +9,7 @@ public:
 	bool CanEatHuman(Vector2 _v2NewPosition);
 	void PlayTurn(Vector2 _v2NewPosition) override;
 
-	void KillMe();
+	virtual void KillMe();
+	void EatHuman(Vector2 _v2NewPosition);
+	bool CanMove(Vector2 _v2NewPosition);
 };

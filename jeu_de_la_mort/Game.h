@@ -4,7 +4,7 @@
 class Game
 {
 private:
-	Map* m_ptr_map;
+	Map* m_ptr_map_;
 	MyNewList<Humanoid*> *m_ptr_humanoids_;
 	bool m_game_over_;
 public:
@@ -16,10 +16,10 @@ public:
 	Map GetMap();
 
 	void DisplayMap();
+	void DisplayATH();
 	void GameLoop();
 	void TriggerAllPlayer();
 	void CheckGameOver();
-
-	// todo get huamn by position
-
+	int GetNumberOfHumanoidsByTag(std::string _sTag);
+	int GetNumberOfInfectedHuman();
 };
