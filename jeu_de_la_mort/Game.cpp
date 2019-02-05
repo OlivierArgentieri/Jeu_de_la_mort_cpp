@@ -71,8 +71,8 @@ void Game::DisplayMap()
 void Game::DisplayATH()
 {
 	Util::SetCursorConsolePosition(GetMap().GetSize());
-	std::cout << std::endl << "\t \t \t ";
-	std::cout << std::endl << "\t \t \t ";
+	std::cout << std::endl << "                     ";
+	std::cout << std::endl << "                     ";
 
 	Util::SetCursorConsolePosition(GetMap().GetSize());
 	std::cout <<std::endl<< "Nb of human : " << GetNumberOfHumanoidsByTag("Human");
