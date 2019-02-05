@@ -9,6 +9,7 @@ private:
 
 
 public:
+	ZombieExplode(Vector2 _v2Position, int _iRange);
 	~ZombieExplode();
 	void Explode();
 	MyNewList<Human*> GetHumanInMyRange();
