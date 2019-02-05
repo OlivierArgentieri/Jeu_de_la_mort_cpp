@@ -3,6 +3,7 @@
 #include "Case.h"
 #include "Map.h"
 #include "ZombieRandomMove.h"
+#include "ZombieExplode.h"
 
 
 std::string Human::GetTag()
@@ -27,7 +28,7 @@ void Human::ResetLapReproduct()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-	if (CanTransformToZombie())// todo make const
+	if (CanTransformToZombie()) // todo make const
 	{
 		TransformToZombie();
 		return;
@@ -46,7 +47,7 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 	if (AmIinfected())
 		ProgressiceContamination();
-	
+
 	if (CanMove(_v2NewPosition))
 		Move(_v2NewPosition);
 
@@ -55,8 +56,11 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 bool Human::CanReproduct(Vector2 _v2SecondPosition)
 {
-	Case *h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h->GetHumanOccupant()->GetLapReproduct() > 5) // si humain et pas infecté + collision -> reproduction
+	Case* h = GetMap().GetCaseByPosition(_v2SecondPosition);
+	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h
+	                                                                                               ->GetHumanOccupant()
+	                                                                                               ->GetLapReproduct() >
+		5) // si humain et pas infecté + collision -> reproduction
 		return true;
 
 	return false;
@@ -86,7 +90,7 @@ void Human::HealMe()
 Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 {
 	Vector2 v2Temp;
-	Case *ptrCaseTemp = nullptr;
+	Case* ptrCaseTemp = nullptr;
 
 	for (int i = 1; i <= this->GetRange(); i++)
 	{
@@ -117,9 +121,20 @@ Vector2 Human::GetNearestEmptyPosition(Vector2 _v2CurrentPosition)
 
 void Human::TransformToZombie()
 {
+	// rand sur type de zombie
 	Vector2 temp(this->GetPosition());
 	delete(this);
-	new ZombieRandomMove(temp);
+	InstanteRandomZombieType(temp);
+}
+
+void Human::InstanteRandomZombieType(Vector2 _v2Position)
+{
+
+	int r = rand() % (2);
+	if (r == 0)
+		new ZombieRandomMove(_v2Position);
+	else
+		new ZombieExplode(_v2Position);
 }
 
 bool Human::CanTransformToZombie()

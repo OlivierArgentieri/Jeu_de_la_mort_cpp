@@ -16,6 +16,7 @@ public:
 	Map GetMap();
 
 	void DisplayMap();
+	void DisplayATH();
 	void GameLoop();
 	void TriggerAllPlayer();
 	void CheckGameOver();

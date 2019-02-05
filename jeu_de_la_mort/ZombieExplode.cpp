@@ -3,9 +3,9 @@
 #include "ZombieExplode.h"
 #include "GameManager.h"
 
-ZombieExplode::ZombieExplode(Vector2 _v2Position, int _iRange)
+ZombieExplode::ZombieExplode(Vector2 _v2Position)
 {
-	SetRange(_iRange);
+	SetRange(3);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }

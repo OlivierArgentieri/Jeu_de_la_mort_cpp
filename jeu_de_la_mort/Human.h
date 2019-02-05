@@ -1,5 +1,6 @@
 #pragma once
 #include "Humanoid.h"
+#include "Zombie.h"
 
 class Human : public Humanoid
 {
@@ -24,6 +25,8 @@ public:
 	void HealMe();
 	Vector2 GetNearestEmptyPosition(Vector2 _v2CurrentPosition);
 	void TransformToZombie();
+	void InstanteRandomZombieType(Vector2 _v2Position);
+	void GetRandomlyZombieTypeObject();
 	bool CanTransformToZombie();
 	bool CanMove(Vector2 _v2NewPosition);
 	void ProgressiceContamination();

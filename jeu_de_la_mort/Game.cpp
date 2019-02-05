@@ -29,6 +29,7 @@ void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 	if (temp != nullptr)
 		temp->Enter(_ptrHumanoid);
 }
+
 void Game::DeleteHumanoid(Humanoid* _ptrHumanoid)
 {
 	// remove from list
@@ -40,14 +41,13 @@ void Game::DeleteHumanoid(Humanoid* _ptrHumanoid)
 		temp->Exit();
 }
 
-void Game::RemoveHumanoidFromList(Humanoid *_ptrHumanoid)
+void Game::RemoveHumanoidFromList(Humanoid* _ptrHumanoid)
 {
 	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
-		Humanoid *ptr  = this->m_ptr_humanoids_->At(i).operator*();
+		Humanoid* ptr = this->m_ptr_humanoids_->At(i).operator*();
 		if (ptr == _ptrHumanoid)
 			this->m_ptr_humanoids_->EraseAt(this->m_ptr_humanoids_->At(i));
-
 	}
 }
 
@@ -62,30 +62,36 @@ void Game::DisplayMap()
 	{
 		for (int x = 0; x < this->GetMap().GetSize().GetX(); x++)
 			Util::SetCursorConsolePosition(Vector2(x, y), this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
-			//printf("|%c", this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
+		//printf("|%c", this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite());
 		//std::cout << std::endl;
 	}
+}
+
+void Game::DisplayATH()
+{
+	
+
 }
 
 void Game::GameLoop()
 {
 	while (!m_game_over_)
 	{
-		//system("cls");
 		TriggerAllPlayer();
-
 
 		DisplayMap();
 
+
+		DisplayATH();
 		CheckGameOver();
 	}
 }
 
 void Game::TriggerAllPlayer()
 {
-	for(int i =0; i< this->m_ptr_humanoids_->Size(); i++)
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
-		Humanoid *ptr = this->m_ptr_humanoids_->At(i).operator*();
+		Humanoid* ptr = this->m_ptr_humanoids_->At(i).operator*();
 		ptr->TriggerPlayTurn();
 	}
 }
@@ -99,7 +105,7 @@ void Game::CheckGameOver()
 int Game::GetNumberOfHumanoidsByTag(std::string _sTag)
 {
 	int toReturn = 0;
-	for (int i =0; i<this->m_ptr_humanoids_->Size(); i++)
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
 		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == _sTag)
 			toReturn++;
