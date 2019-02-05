@@ -78,7 +78,32 @@ MyNewList<Zombie*> Military::GetZombiesInMyRange()
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
 			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
-	}
 
+		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + -i);
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+
+		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
+			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
+
+
+		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + -i);
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+
+		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
+			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
+
+		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + +i);
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+
+		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
+			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
+
+
+		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + +i);
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+
+		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
+			returnList.PushBack(ptrCaseTemp->GetZombieOccupant());
+	}
 	return returnList;
 }
