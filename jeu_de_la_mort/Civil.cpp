@@ -9,15 +9,11 @@ bool Civil::UseEffect(Vector2 _v2NewPosition)
 
 Civil::Civil(Vector2 _v2Position)
 {
-	
+	SetSprite(new Sprite('C', WHITE));
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-char Civil::GetSprite()
-{
-	return 'C';
-}
 
 void Civil::Reproduct(Vector2 _v2BabyPosition)
 {

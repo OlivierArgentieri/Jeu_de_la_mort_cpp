@@ -1,6 +1,5 @@
 #pragma once
 #include "Zombie.h"
-#include "GameManager.h"
 
 
 class ZombieRandomMove : public Zombie

@@ -73,6 +73,7 @@ void Human::Reproduct(Vector2 _v2BabyPosition)
 
 void Human::GetInfectedByZombie()
 {
+	ChangeColorSprite(RED);
 	this->m_is_infected_ = true;
 }
 
@@ -83,8 +84,10 @@ bool Human::AmIinfected()
 
 void Human::HealMe()
 {
+	ChangeColorSprite(WHITE);
 	this->m_cpt_lap_infected_ = 0;
 	this->m_is_infected_ = false;
+	
 }
 
 Vector2 Human::GetNearestEmptyPosition()

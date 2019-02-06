@@ -15,14 +15,12 @@ bool Doctor::UseEffect(Vector2 _v2NewPosition)
 
 Doctor::Doctor(Vector2 _v2Position)
 {
+
+	SetSprite(new Sprite('D', WHITE));
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-char Doctor::GetSprite()
-{
-	return 'D';
-}
 
 void Doctor::Reproduct(Vector2 _v2BabyPosition)
 {

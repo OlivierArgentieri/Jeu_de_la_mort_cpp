@@ -8,8 +8,9 @@ private:
 	char m_char_;
 
 public:
+	Sprite(char _cChar = ' ', color _cColor = RESET);
 	void SetColor(color _cColor);
 
 	void Display();
-
+	
 };

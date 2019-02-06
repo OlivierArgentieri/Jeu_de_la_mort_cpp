@@ -14,14 +14,10 @@ bool Military::UseEffect(Vector2 _v2NewPosition)
 	return true;
 }
 
-char Military::GetSprite()
-{
-	return 'M';
-}
-
 Military::Military(Vector2 _v2Position)
 {
-	this->SetRange(2);
+	SetSprite(new Sprite('D', WHITE));
+	SetRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
