@@ -105,7 +105,7 @@ void Game::TriggerAllPlayer()
 
 void Game::CheckGameOver()
 {
-	if (GetNumberOfInfectedHuman()==0 &&  GetNumberOfHumanoidsByTag("Zombie") == 0)
+	if (GetNumberOfInfectedHuman()==0 &&  GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
 		this->m_game_over_ = true;
 }
 

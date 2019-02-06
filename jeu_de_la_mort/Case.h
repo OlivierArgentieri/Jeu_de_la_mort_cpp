@@ -23,4 +23,5 @@ public:
 	std::string GetTagOccupant();
 	Human* GetHumanOccupant();
 	Zombie* GetZombieOccupant();
+
 };

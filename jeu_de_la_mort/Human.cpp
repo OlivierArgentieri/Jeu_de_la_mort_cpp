@@ -5,6 +5,7 @@
 #include "ZombieRandomMove.h"
 #include "ZombieExplode.h"
 #include "GameManager.h"
+#include "Factory.h"
 
 
 std::string Human::GetTag()
@@ -69,7 +70,7 @@ bool Human::CanReproduct(Vector2 _v2SecondPosition)
 
 void Human::Reproduct(Vector2 _v2BabyPosition)
 {
-	GameManager::GetInstance()->InstantiateRandomHuman(_v2BabyPosition);
+	Factory::InitiateRandomHuman(_v2BabyPosition);
 	this->ResetLapReproduct();
 }
 
@@ -129,7 +130,7 @@ void Human::TransformToZombie()
 	// rand sur type de zombie
 	Vector2 temp(this->GetPosition());
 	delete(this);
-	GameManager::GetInstance()-> InstantiateRandomZombieType(temp);
+	Factory::InitiateRandomZombie(temp);
 }
 
 

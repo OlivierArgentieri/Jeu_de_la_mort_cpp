@@ -16,7 +16,6 @@ public:
 	}
 	~MyNewList()
 	{
-
 	}
 	void PushFront(T NewElement)//Add new element at front of the list
 	{

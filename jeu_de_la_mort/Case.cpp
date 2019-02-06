@@ -47,6 +47,8 @@ void Case::Enter(Humanoid* _ptrHumanoid)
 
 void Case::Exit()
 {
+	if (this == nullptr)
+		return;
 	this->m_ptr_humanoid_ = nullptr;
 }
 

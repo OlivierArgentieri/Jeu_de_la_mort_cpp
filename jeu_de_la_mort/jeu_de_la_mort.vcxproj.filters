@@ -55,6 +55,9 @@
     <Filter Include="Source Files\Humanoid\Sprite">
       <UniqueIdentifier>{2e7f8baa-a6f0-475e-913b-085a13d547d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{082e17ac-9033-4111-8694-8fb75c6c1aa9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -87,16 +90,10 @@
     <ClInclude Include="Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Case.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Iterator.h">
@@ -119,6 +116,21 @@
     </ClInclude>
     <ClInclude Include="Color.h">
       <Filter>Header Files\Humanoid\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumHuman.h">
+      <Filter>Header Files\Humanoid\Human</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieEnum.h">
+      <Filter>Header Files\Humanoid\Zombie</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +170,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Case.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -175,6 +184,12 @@
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Humanoid\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Case.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
