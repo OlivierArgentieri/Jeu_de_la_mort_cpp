@@ -171,6 +171,7 @@
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="Humanoid.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ZombieEnum.h" />
     <ClInclude Include="ZombieExplode.h" />
     <ClInclude Include="ZombieRandomMove.h" />
     <ClInclude Include="ZombieSpecificMove.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Civil.cpp" />
     <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Human.cpp" />

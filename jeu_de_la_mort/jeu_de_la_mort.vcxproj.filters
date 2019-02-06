@@ -129,6 +129,9 @@
     <ClInclude Include="Case.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
+    <ClInclude Include="ZombieEnum.h">
+      <Filter>Header Files\Humanoid\Zombie</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -184,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="Case.cpp">
       <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
