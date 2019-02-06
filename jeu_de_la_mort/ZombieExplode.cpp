@@ -11,6 +11,7 @@ ZombieExplode::ZombieExplode(Vector2 _v2Position)
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
+
 ZombieExplode::~ZombieExplode()
 {
 	this->Explode();

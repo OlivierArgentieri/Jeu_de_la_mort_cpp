@@ -14,8 +14,21 @@ public:
 		Queue = nullptr;
 		size = 0;
 	}
+	MyNewList(MyNewList *_ptrNewList)
+	{
+		if(_ptrNewList == nullptr)
+		{
+			MyNewList();
+			return;
+		}
+		for(int i =0; i< _ptrNewList->size; i++)
+		{
+			this->PushBack(_ptrNewList->At(i).operator*());
+		}
+	}
 	~MyNewList()
 	{
+		Clear();
 	}
 	void PushFront(T NewElement)//Add new element at front of the list
 	{
@@ -112,7 +125,7 @@ public:
 		Header = nullptr;
 		Queue = nullptr;
 	}
-	void Remove(T i)//Remove an element i of the list
+	void Remove(T i)//Remove an element i of the liste
 	{
 		int j = 0;
 		Iterator<T> it = Begin();

@@ -59,7 +59,7 @@ void Game::RemoveHumanoidFromList(Humanoid* _ptrHumanoid)
 
 Map Game::GetMap()
 {
-	return *this->m_ptr_map_;
+	return Map(this->m_ptr_map_);
 }
 
 void Game::DisplayMap()
@@ -113,6 +113,16 @@ void Game::CheckGameOver()
 {
 	if (GetNumberOfInfectedHuman()==0 &&  GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
 		this->m_game_over_ = true;
+}
+
+Humanoid* Game::GetHumanoidByPosition(Vector2 _v2Position)
+{
+	for (int i = 0; i < m_ptr_humanoids_->Size(); i++)
+	{
+		if (m_ptr_humanoids_->At(i).operator*()->GetPosition() == _v2Position)
+			return m_ptr_humanoids_->At(i).operator*();
+	}
+	return nullptr;
 }
 
 int Game::GetNumberOfHumanoidsByTag(std::string _sTag)

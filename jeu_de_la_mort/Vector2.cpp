@@ -7,6 +7,18 @@ Vector2::Vector2(int _iX, int _iY)
 	this->m_y = _iY;
 }
 
+Vector2::Vector2(Vector2* _ptrVector)
+{
+	if (_ptrVector == nullptr)
+	{
+		Vector2();
+		return;
+	}
+
+	this->m_x = _ptrVector->GetX();
+	this->m_y = _ptrVector->GetY();
+}
+
 int Vector2::GetX()
 {
 	if (this == nullptr)
@@ -34,7 +46,12 @@ Vector2 Vector2::operator+(Vector2 _v2Vector)
 
 bool Vector2::operator==(int _iValue)
 {
-	return this->m_x == _iValue && this->m_y == m_y;
+	return this->m_x == _iValue && this->m_y == _iValue;
+}
+
+bool Vector2::operator==(Vector2 _v2Vector)
+{
+	return this->m_x == GetX() && this->m_y == GetY();
 }
 
 bool Vector2::operator!=(int _iValue)
