@@ -46,7 +46,7 @@ Case* Map::GetCaseByPosition(Vector2 _v2Position)
 	for (int i = 0; i < m_ptr_cases_->Size(); i++)
 	{
 		Case *case_ = m_ptr_cases_->At(i).operator*();
-		if (case_ != nullptr && case_->GetPosition() == _v2Position)
+		if (case_ != nullptr && case_->GetPosition().GetX() == _v2Position.GetX() && case_->GetPosition().GetY() == _v2Position.GetY())
 			return case_;
 	}
 	return nullptr;

@@ -89,8 +89,8 @@ void Game::GameLoop()
 		DisplayMap();
 
 
-//		DisplayATH();
-//		CheckGameOver();
+		DisplayATH();
+		CheckGameOver();
 	}
 }
 

@@ -34,12 +34,9 @@ Vector2 Vector2::operator+(Vector2 _v2Vector)
 
 bool Vector2::operator==(int _iValue)
 {
-	return this->m_x == _iValue && this->m_y == _iValue;
+	return this->m_x == _iValue && this->m_y == m_y;
 }
-bool Vector2::operator==(Vector2 _v2Value)
-{
-	return this->m_x == _v2Value.GetX() && this->m_y == _v2Value.GetY();
-}	
+
 bool Vector2::operator!=(int _iValue)
 {
 	return !(this->operator==(_iValue));

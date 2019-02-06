@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Game.h"
 
+
 class GameManager
 {
 private:
@@ -23,4 +24,6 @@ public:
 	void RemoveHumanoid(Humanoid* _ptrHumanoid);
 	Game GetCurrentGame();
 	Map GetCurrentMap();
+	void InstantiateRandomHuman(Vector2 _v2Position);
+	void InstantiateRandomZombieType(Vector2 _v2Position);
 };
