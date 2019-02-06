@@ -42,12 +42,13 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IBAAAAAAAKABEQAIgAAEIAEgAAAAAoAACAgAACAAQAA=</HashCode>
+      <HashCode>IBAAAAEAAKABEQAIgAAEIAEAAAAACoAACAgAACAAQAA=</HashCode>
       <FileName>Humanoid.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_position_" />
       <Field Name="m_ptr_map_" />
+      <Field Name="m_ptr_sprite_" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ZombieSpecificMove">
@@ -60,7 +61,7 @@
   <Class Name="Civil">
     <Position X="12" Y="12.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Civil.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -113,7 +114,7 @@
         <Point X="37.625" Y="6.612" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="2.672" Y="1.225" />
+        <Position X="2.148" Y="1.56" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Queue" Type="Node&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
@@ -123,7 +124,7 @@
         <Point X="36.562" Y="6.612" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="1.604" Y="0.739" />
+        <Position X="1.143" Y="1.074" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -218,12 +219,12 @@
   <Class Name="Zombie">
     <Position X="3.5" Y="5.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>IAAAAKAAAAAAEAAQAQAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAKAAAAAAAAAQAQAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Zombie.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Util">
-    <Position X="22.75" Y="10.25" Width="2.5" />
+    <Position X="16.75" Y="9" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Util.h</FileName>
@@ -232,14 +233,14 @@
   <Class Name="ZombieExplode">
     <Position X="3" Y="9" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAEAAAAECAAEAAAAAoAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAEAAAAACAAEAAAAAoAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ZombieExplode.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sprite">
-    <Position X="4.25" Y="0.75" Width="1.5" />
+    <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAABAgAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAQBAgAAEAAAAA=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -247,7 +248,7 @@
     </ShowAsAssociation>
   </Class>
   <Enum Name="color">
-    <Position X="1.5" Y="0.75" Width="1.5" />
+    <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAQIAAAAAAAAAAQkAAEAAAEAAAAAAAAAA=</HashCode>
       <FileName>Color.h</FileName>

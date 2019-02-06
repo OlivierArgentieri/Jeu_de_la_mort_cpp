@@ -8,7 +8,6 @@ class Military : public Human
 public:
 	bool UseEffect(Vector2 _v2NewPosition) override;
 	Military(Vector2 _v2Position);
-	void Reproduct(Vector2 _v2BabyPosition) override;
 	Zombie* GetOneZombieInMyRange();
 	MyNewList<Zombie*> GetZombiesInMyRange();
 };
