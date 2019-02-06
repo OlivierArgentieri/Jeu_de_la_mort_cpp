@@ -27,8 +27,7 @@ public:
 	void HealMe();
 	Vector2 GetNearestEmptyPosition();
 	void TransformToZombie();
-	void InstanteRandomZombieType(Vector2 _v2Position);
 	bool CanTransformToZombie();
 	bool CanMove(Vector2 _v2NewPosition);
-	void ProgressiceContamination();
+	void ProgressiveContamination();
 };

@@ -7,5 +7,4 @@ class Doctor : public Human
 public:
 	bool UseEffect(Vector2 _v2NewPosition) override;
 	Doctor(Vector2 _v2Position);
-	void Reproduct(Vector2 _v2BabyPosition) override;
 };

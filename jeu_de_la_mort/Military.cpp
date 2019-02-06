@@ -16,17 +16,12 @@ bool Military::UseEffect(Vector2 _v2NewPosition)
 
 Military::Military(Vector2 _v2Position)
 {
-	SetSprite(new Sprite('D', WHITE));
+	SetSprite(new Sprite('M', WHITE));
 	SetRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
 
-void Military::Reproduct(Vector2 _v2BabyPosition)
-{
-	Human::Reproduct(_v2BabyPosition);
-	new Military(_v2BabyPosition);
-}
 
 Zombie* Military::GetOneZombieInMyRange()
 {
@@ -49,7 +44,7 @@ MyNewList<Zombie*> Military::GetZombiesInMyRange()
 	MyNewList<Zombie*> returnList = MyNewList<Zombie*>();
 
 
-	for (int i = 0; i < this->GetRange() && returnList.Size() < 1; i++)
+	for (int i = 1; i < this->GetRange() && returnList.Size() < 1; i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);

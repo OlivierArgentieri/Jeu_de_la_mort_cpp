@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "ZombieRandomMove.h"
 #include "ZombieExplode.h"
+#include "GameManager.h"
 
 
 std::string Human::GetTag()
@@ -46,7 +47,7 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 	}
 
 	if (AmIinfected())
-		ProgressiceContamination();
+		ProgressiveContamination();
 
 	if (CanMove(_v2NewPosition))
 		Move(_v2NewPosition);
@@ -68,6 +69,7 @@ bool Human::CanReproduct(Vector2 _v2SecondPosition)
 
 void Human::Reproduct(Vector2 _v2BabyPosition)
 {
+	GameManager::GetInstance()->InstantiateRandomHuman(_v2BabyPosition);
 	this->ResetLapReproduct();
 }
 
@@ -127,18 +129,10 @@ void Human::TransformToZombie()
 	// rand sur type de zombie
 	Vector2 temp(this->GetPosition());
 	delete(this);
-	InstanteRandomZombieType(temp);
+	GameManager::GetInstance()-> InstantiateRandomZombieType(temp);
 }
 
-void Human::InstanteRandomZombieType(Vector2 _v2Position)
-{
 
-	int r = rand() % (2);
-	if (r == 0)
-		new ZombieRandomMove(_v2Position);
-	else
-		new ZombieExplode(_v2Position);
-}
 
 bool Human::CanTransformToZombie()
 {
@@ -150,7 +144,7 @@ bool Human::CanMove(Vector2 _v2NewPosition)
 	return _v2NewPosition != -1 && !GetMap().GetCaseByPosition(_v2NewPosition)->IsOccuped();
 }
 
-void Human::ProgressiceContamination()
+void Human::ProgressiveContamination()
 {
 	this->m_cpt_lap_infected_++;
 }

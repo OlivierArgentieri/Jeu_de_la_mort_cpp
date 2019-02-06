@@ -25,7 +25,7 @@ public:
 	virtual std::string GetTag()=0;
 	virtual Sprite GetSprite();
 	virtual void ChangeColorSprite(color _cColor);
-	virtual void SetSprite(Sprite* _ptrSprite);
+	void SetSprite(Sprite* _ptrSprite);
 	void SetPosition(Vector2 _v2Position);
 	void SetMap(Map *_ptrMap);
 	virtual Map GetMap();
