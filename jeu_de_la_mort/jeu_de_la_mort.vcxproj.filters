@@ -120,6 +120,12 @@
     <ClInclude Include="Color.h">
       <Filter>Header Files\Humanoid\Sprite</Filter>
     </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumHuman.h">
+      <Filter>Header Files\Humanoid\Human</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
