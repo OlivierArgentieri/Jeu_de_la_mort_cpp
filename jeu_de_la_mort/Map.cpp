@@ -30,6 +30,13 @@ Map::Map(Vector2* _ptrSize)
 	this->InitCase();
 }
 
+Map::~Map()
+{
+	// todo : patch memory issue
+	//delete(m_ptr_cases_);
+	//delete(m_ptr_size_);
+}
+
 Vector2 Map::GetSize()
 {
 	return *this->m_ptr_size_;

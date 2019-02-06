@@ -14,6 +14,12 @@ Game::Game(Vector2* _ptrSizeMap)
 	this->m_game_over_ = false;
 }
 
+Game::~Game()
+{
+	delete(m_ptr_humanoids_);
+	delete(m_ptr_map_);
+}
+
 void Game::AddHumanoid(Humanoid* _ptrHumanoid)
 {
 	if (_ptrHumanoid == nullptr)

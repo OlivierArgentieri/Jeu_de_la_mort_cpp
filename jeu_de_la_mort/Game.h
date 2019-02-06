@@ -9,7 +9,7 @@ private:
 	bool m_game_over_;
 public:
 	Game(Vector2* _ptrSizeMap);
-
+	~Game();
 	void AddHumanoid(Humanoid* _ptrHumanoid);
 	void DeleteHumanoid(Humanoid* _ptrHumanoid);
 	void RemoveHumanoidFromList(Humanoid* _ptrHumanoid);

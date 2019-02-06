@@ -12,6 +12,7 @@ private:
 	void InitCase();
 public:
 	Map(Vector2 *_ptrSize);
+	~Map();
 	Vector2 GetSize();
 	Case* GetCaseByPosition(Vector2 _v2Position);
 	Vector2 FindExistingPosition(Vector2 _v2Position);
