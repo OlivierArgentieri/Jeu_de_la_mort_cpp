@@ -25,12 +25,12 @@ Vector2 Case::GetPosition()
 	return *this->m_ptr_position_;
 }
 
-char Case::GetSprite()
+Sprite Case::GetSprite()
 {
 	if (this->IsOccuped())
 		return this->m_ptr_humanoid_->GetSprite();
 
-	return ' ';
+	return Sprite();
 }
 
 bool Case::IsOccuped()

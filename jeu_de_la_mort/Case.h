@@ -15,7 +15,7 @@ public:
 	Case(Vector2 *_ptrPosition);
 	Vector2 GetPosition();
 
-	char GetSprite();
+	Sprite GetSprite();
 	bool IsOccuped();
 	void Enter(Humanoid *_ptrHumanoid);
 	void Exit();

@@ -5,6 +5,7 @@
 
 ZombieExplode::ZombieExplode(Vector2 _v2Position)
 {
+	SetSprite(new Sprite('E', YELLOW));
 	SetRange(3);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
@@ -94,9 +95,4 @@ void ZombieExplode::KillMe()
 {
 	Explode();
 	delete(this);
-}
-
-char ZombieExplode::GetSprite()
-{
-	return 'E';
 }

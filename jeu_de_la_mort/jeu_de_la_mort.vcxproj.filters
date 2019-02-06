@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Util">
       <UniqueIdentifier>{2defae64-9f60-4e6c-8351-07a029a46a33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Humanoid\Sprite">
+      <UniqueIdentifier>{87f7200e-4431-43ab-9e33-3f78125e6e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Humanoid\Sprite">
+      <UniqueIdentifier>{2e7f8baa-a6f0-475e-913b-085a13d547d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -108,6 +114,12 @@
     <ClInclude Include="ZombieExplode.h">
       <Filter>Header Files\Humanoid\Zombie</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Humanoid\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files\Humanoid\Sprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -160,6 +172,9 @@
     </ClCompile>
     <ClCompile Include="ZombieExplode.cpp">
       <Filter>Source Files\Humanoid\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Humanoid\Sprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -59,6 +59,25 @@ void Humanoid::TriggerPlayTurn()
 }
 
 
+Sprite Humanoid::GetSprite()
+{
+	if (m_ptr_sprite_ == nullptr)
+		return Sprite();
+
+	return *m_ptr_sprite_;
+}
+
+void Humanoid::ChangeColorSprite(color _cColor)
+{
+	m_ptr_sprite_->SetColor(_cColor);
+}
+
+void Humanoid::SetSprite(Sprite* _ptrSprite)
+{
+	if (_ptrSprite != nullptr)
+		m_ptr_sprite_ = _ptrSprite;
+}
+
 void Humanoid::SetPosition(Vector2 _v2Position)
 {
 	if (_v2Position.GetX() < 0 || _v2Position.GetY() < 0)
@@ -102,4 +121,5 @@ void Humanoid::SetRange(int _iNewRange)
 Humanoid::~Humanoid()
 {
 	GameManager::GetInstance()->RemoveHumanoid(this);
+	delete(m_ptr_sprite_);
 }

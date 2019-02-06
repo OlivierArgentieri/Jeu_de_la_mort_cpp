@@ -63,7 +63,7 @@ void Game::DisplayMap()
 		for (int x = 0; x < this->GetMap().GetSize().GetX(); x++)
 		{
 			Util::SetCursorConsolePosition(Vector2(x, y));
-			std::cout << this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite();
+			this->GetMap().GetCaseByPosition(Vector2(x, y))->GetSprite().Display();
 		}
 	}
 }

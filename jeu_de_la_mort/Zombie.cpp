@@ -9,10 +9,6 @@ std::string Zombie::GetTag()
 	return "Zombie";
 }
 
-char Zombie::GetSprite()
-{
-	return 'Z';
-}
 
 bool Zombie::CanEatHuman(Vector2 _v2NewPosition)
 {

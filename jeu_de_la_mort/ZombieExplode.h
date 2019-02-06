@@ -15,6 +15,4 @@ public:
 	MyNewList<Human*> GetHumanInMyRange();
 	void InfectHuman(MyNewList<Human*> _lHumans);
 	void KillMe() override;
-
-	char GetSprite() override;
 };
