@@ -1,8 +1,8 @@
 #pragma once
+#include "EnumHuman.h"
+
 class Factory
 {
 public:
-	static GetRandomHumanEnum();
-
-
+	static humans GetRandomHumanEnum();
 };

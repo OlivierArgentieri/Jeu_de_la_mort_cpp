@@ -1,6 +1,6 @@
 #pragma once
 
-enum humans
+enum human
 {
 	MILITARY,
 	DOCTOR,
