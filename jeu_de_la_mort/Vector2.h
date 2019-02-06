@@ -6,7 +6,7 @@ private:
 	int m_y;
 
 public:
-	Vector2(int _iX, int _iY);
+	Vector2(int _iX, int _iY);// todo 
 	int GetX();
 	int GetY();
 	Vector2();
