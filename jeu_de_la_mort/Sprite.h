@@ -9,8 +9,7 @@ private:
 
 public:
 	Sprite(char _cChar = ' ', color _cColor = RESET);
+	Sprite(const Sprite &_refSprite);
 	void SetColor(color _cColor);
-
 	void Display();
-	
 };

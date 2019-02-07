@@ -13,7 +13,6 @@ private:
 	const int m_lap_before_transform_ = 1;
 public:
 	virtual bool UseEffect(Vector2 _v2NewPosition) =0;
-
 	std::string GetTag() override;
 	void IncrementLapReproduct();
 	int GetLapReproduct();

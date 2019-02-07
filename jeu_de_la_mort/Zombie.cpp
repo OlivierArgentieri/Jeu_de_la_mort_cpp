@@ -20,9 +20,10 @@ bool Zombie::CanEatHuman(Vector2 _v2NewPosition)
 
 void Zombie::PlayTurn(Vector2 _v2NewPosition)
 {
+	
 	if (CanEatHuman(_v2NewPosition))
 	{
-		EatHuman(_v2NewPosition);
+		//EatHuman(_v2NewPosition);
 		// return ?
 	}
 

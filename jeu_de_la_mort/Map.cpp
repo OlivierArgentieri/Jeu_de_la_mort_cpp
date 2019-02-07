@@ -15,9 +15,9 @@ void Map::InitCase()
 		return;
 	for (int i = 0; i < this->m_ptr_size_->GetX(); i++)
 	{
-		for (int j=0; j< this->m_ptr_size_->GetY(); j++)
+		for (int j = 0; j < this->m_ptr_size_->GetY(); j++)
 		{
-			Vector2 *p_v2 = new Vector2(i, j);
+			Vector2* p_v2 = new Vector2(i, j);
 			this->m_ptr_cases_->PushBack(new Case(p_v2));
 		}
 	}
@@ -30,11 +30,17 @@ Map::Map(Vector2* _ptrSize)
 	this->InitCase();
 }
 
+Map::Map(const Map& _refMap)
+{
+	this->m_ptr_size_ = new Vector2(*_refMap.m_ptr_size_);
+	this->m_ptr_cases_= new MyNewList<Case*>(*_refMap.m_ptr_cases_);
+}
+
 Map::~Map()
 {
 	// todo : patch memory issue
-	//delete(m_ptr_cases_);
-	//delete(m_ptr_size_);
+	delete(m_ptr_cases_);
+	delete(m_ptr_size_);
 }
 
 Vector2 Map::GetSize()
@@ -47,13 +53,15 @@ Case* Map::GetCaseByPosition(Vector2 _v2Position)
 	if (this->m_ptr_cases_ == nullptr)
 		return nullptr;
 
-	if (_v2Position.GetX() < 0 || _v2Position.GetX() >= this->GetSize().GetX() || _v2Position.GetY() < 0 || _v2Position.GetY() >= this->GetSize().GetY())
+	if (_v2Position.GetX() < 0 || _v2Position.GetX() >= this->GetSize().GetX() || _v2Position.GetY() < 0 || _v2Position.
+		GetY() >= this->GetSize().GetY())
 		return nullptr;
 
 	for (int i = 0; i < m_ptr_cases_->Size(); i++)
 	{
-		Case *case_ = m_ptr_cases_->At(i).operator*();
-		if (case_ != nullptr && case_->GetPosition().GetX() == _v2Position.GetX() && case_->GetPosition().GetY() == _v2Position.GetY())
+		Case* case_ = m_ptr_cases_->At(i).operator*();
+		if (case_ != nullptr && case_->GetPosition().GetX() == _v2Position.GetX() && case_->GetPosition().GetY() ==
+			_v2Position.GetY())
 			return case_;
 	}
 	return nullptr;

@@ -30,6 +30,7 @@ void Human::ResetLapReproduct()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
+	
 	if (CanTransformToZombie())
 	{
 		TransformToZombie();
@@ -90,7 +91,6 @@ void Human::HealMe()
 	ChangeColorSprite(WHITE);
 	this->m_cpt_lap_infected_ = 0;
 	this->m_is_infected_ = false;
-	
 }
 
 Vector2 Human::GetNearestEmptyPosition()

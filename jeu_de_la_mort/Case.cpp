@@ -17,6 +17,11 @@ Case::Case(Vector2* _ptrPosition)
 	this->SetPosition(_ptrPosition);
 }
 
+Case::~Case()
+{
+	delete(m_ptr_position_);
+}
+
 Vector2 Case::GetPosition()
 {
 	if (this->m_ptr_position_ == nullptr)

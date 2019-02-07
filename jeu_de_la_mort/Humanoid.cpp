@@ -64,7 +64,7 @@ Sprite Humanoid::GetSprite()
 	if (m_ptr_sprite_ == nullptr)
 		return Sprite();
 
-	return *m_ptr_sprite_;
+	return *m_ptr_sprite_; // todo
 }
 
 void Humanoid::ChangeColorSprite(color _cColor)
@@ -95,9 +95,10 @@ void Humanoid::SetMap(Map* _ptrMap)
 
 Map Humanoid::GetMap()
 {
+	/*
 	if (this->m_ptr_map_ == nullptr)
-		return Map(nullptr);
-	return *this->m_ptr_map_;
+		return Map();*/
+	return *this->m_ptr_map_; //todo
 }
 
 Vector2 Humanoid::GetPosition()

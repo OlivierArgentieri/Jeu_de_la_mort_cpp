@@ -22,10 +22,8 @@ public:
 		element = position;
 		m_list = list;
 	}
-
 	~Iterator()
 	{
-
 	}
 
 	Iterator<T>& operator++(int i)

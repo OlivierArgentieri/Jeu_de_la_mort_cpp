@@ -10,7 +10,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAEAABABAACAAAAIAAAUAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAABABAACAAAAIAAAUAAAAAAAAEAAIAAAAAAA=</HashCode>
       <FileName>Map.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -163,7 +163,7 @@
   <Class Name="Case">
     <Position X="11.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAACAACAgEIAAAAAAAAEAAAAEAgIAIAAIAAAAAAA=</HashCode>
+      <HashCode>AACAAACAACAgEIAAAAAAAAEAAAAEAgIAIAIIAAAAAAA=</HashCode>
       <FileName>Case.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -179,18 +179,19 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAEAAgAAEAIwQAAAEAAACgAAACAAAAAACAACAA=</HashCode>
+      <HashCode>ABAEAAAEAAgAAEAIwQAAAEAAACiAAACAAAAAACAACAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_ptr_map_" />
+      <Field Name="m_ptr_humanoids_" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GameManager">
-    <Position X="17.25" Y="5.5" Width="2.5" />
+    <Position X="16.5" Y="5.5" Width="3" />
     <AssociationLine Name="m_ptr_game_manager" Type="GameManager">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.511" Y="0.312" />
+        <Position X="-0.226" Y="0.312" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="m_ptr_game_" Type="Game">
@@ -199,7 +200,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAQAAAABAAACAAAAAQAGEBCCAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAAAQAAAABAAACAAAAAQAGEBCCAA=</HashCode>
       <FileName>GameManager.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -238,7 +239,7 @@
   <Class Name="ZombieExplode">
     <Position X="3" Y="9.25" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAEAAAAACAAEAAAAAoAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAgACAAEAAAAAoAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ZombieExplode.h</FileName>
     </TypeIdentifier>
   </Class>

@@ -14,8 +14,17 @@ public:
 		Queue = nullptr;
 		size = 0;
 	}
+	MyNewList(const MyNewList &_refNewList)
+	{
+		size = 0;
+		for(Node<T> *ptr_node = _refNewList.Header; ptr_node != nullptr ; ptr_node = ptr_node->Next)
+		{
+			PushBack(ptr_node->value);
+		}
+	}
 	~MyNewList()
 	{
+		Clear();
 	}
 	void PushFront(T NewElement)//Add new element at front of the list
 	{
@@ -112,7 +121,7 @@ public:
 		Header = nullptr;
 		Queue = nullptr;
 	}
-	void Remove(T i)//Remove an element i of the list
+	void Remove(T i)//Remove an element i of the liste
 	{
 		int j = 0;
 		Iterator<T> it = Begin();
@@ -160,7 +169,7 @@ public:
 	Iterator<T> At(int i)//Search a node at a position i
 	{
 		int j = 0;
-		Iterator<T> it = Iterator<T>(Header, this);;
+		Iterator<T> it = Iterator<T>(Header, this);
 		while (j != i)
 		{
 			if (it.element != nullptr)
