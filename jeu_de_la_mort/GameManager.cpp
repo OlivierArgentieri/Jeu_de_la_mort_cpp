@@ -40,11 +40,6 @@ Game GameManager::GetCurrentGame()
 	return *this->m_ptr_game_;
 }
 
-/*
-Map GameManager::GetCurrentMap()
-{
-	m_ptr_game_->GetMap();
-}*/
 
 Humanoid* GameManager::GetHumanoidByPosition(Vector2 _v2Position)
 {

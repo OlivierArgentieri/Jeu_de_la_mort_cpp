@@ -30,6 +30,7 @@ void Human::ResetLapReproduct()
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
+	
 	if (CanTransformToZombie())
 	{
 		TransformToZombie();

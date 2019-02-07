@@ -5,12 +5,13 @@
 
 bool Military::UseEffect(Vector2 _v2NewPosition)
 {
-	auto t = this->GetOneZombieInMyRange();
+	
+	auto t = GetOneZombieInMyRange();
 	if (t == nullptr)
 		return false;
 	
 	t->KillMe();
-
+	
 	return true;
 }
 
@@ -27,6 +28,7 @@ Zombie* Military::GetOneZombieInMyRange()
 {
 	MyNewList<Zombie*> temp = GetZombiesInMyRange();
 
+	
 	int listSize = temp.Size();
 
 	if (listSize > 0)
@@ -42,58 +44,58 @@ MyNewList<Zombie*> Military::GetZombiesInMyRange()
 {
 	Vector2 v2Temp;
 	Case* ptrCaseTemp = nullptr;
-	MyNewList<Zombie*> *returnList = new MyNewList<Zombie*>();
+	MyNewList<Zombie*> returnList =MyNewList<Zombie*>();
 
-	for (int i = 1; i < this->GetRange() && returnList->Size() < 1; i++)
+	for (int i = 1; i < this->GetRange() && returnList.Size() < 1; i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + -i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + -i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + -i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + -i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + +i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + +i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList->PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
 
 	}
-	return *returnList;
+	return returnList;
 }

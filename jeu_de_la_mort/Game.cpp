@@ -94,7 +94,6 @@ void Game::GameLoop()
 
 		DisplayMap();
 
-
 		DisplayATH();
 		CheckGameOver();
 	}
@@ -104,14 +103,14 @@ void Game::TriggerAllPlayer()
 {
 	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
-		Humanoid* ptr = this->m_ptr_humanoids_->At(i).operator*();
+		Humanoid* ptr = m_ptr_humanoids_->At(i).operator*();
 		ptr->TriggerPlayTurn();
 	}
 }
 
 void Game::CheckGameOver()
 {
-	if (GetNumberOfInfectedHuman()==0 &&  GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
+	if (GetNumberOfInfectedHuman() == 0 && GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
 		this->m_game_over_ = true;
 }
 
