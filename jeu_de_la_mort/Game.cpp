@@ -59,7 +59,7 @@ void Game::RemoveHumanoidFromList(Humanoid* _ptrHumanoid)
 
 Map Game::GetMap()
 {
-	return Map(this->m_ptr_map_);
+	return *this->m_ptr_map_;
 }
 
 void Game::DisplayMap()

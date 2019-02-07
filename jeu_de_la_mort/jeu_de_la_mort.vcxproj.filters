@@ -193,6 +193,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram.cdr" />
   </ItemGroup>
 </Project>

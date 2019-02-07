@@ -12,7 +12,7 @@ private:
 	void InitCase();
 public:
 	Map(Vector2 *_ptrSize);
-	Map(Map *_ptrMap);
+	Map(const Map& _refMap);
 	~Map();
 	Vector2 GetSize();
 	Case* GetCaseByPosition(Vector2 _v2Position);

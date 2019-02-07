@@ -95,9 +95,10 @@ void Humanoid::SetMap(Map* _ptrMap)
 
 Map Humanoid::GetMap()
 {
+	/*
 	if (this->m_ptr_map_ == nullptr)
-		return Map(new Vector2());
-	return Map(this->m_ptr_map_); //todo
+		return Map();*/
+	return *this->m_ptr_map_; //todo
 }
 
 Vector2 Humanoid::GetPosition()

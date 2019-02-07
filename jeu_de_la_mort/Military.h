@@ -9,5 +9,5 @@ public:
 	bool UseEffect(Vector2 _v2NewPosition) override;
 	Military(Vector2 _v2Position);
 	Zombie* GetOneZombieInMyRange();
-	MyNewList<Vector2*>* GetZombiesInMyRange();
+	MyNewList<Zombie*> GetZombiesInMyRange();
 };

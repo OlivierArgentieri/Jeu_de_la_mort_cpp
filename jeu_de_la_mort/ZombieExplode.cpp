@@ -14,20 +14,26 @@ ZombieExplode::ZombieExplode(Vector2 _v2Position)
 
 ZombieExplode::~ZombieExplode()
 {
-	this->Explode();
+	Explode();
 	GameManager::GetInstance()->RemoveHumanoid(this);
 }
 
 void ZombieExplode::Explode()
 {
-	InfectHuman(GetHumanInMyRange());
+	MyNewList<Human*> humans = GetHumansInMyRange();
+	int listSize = humans.Size();
+
+	if (listSize > 0)
+	{
+		InfectHuman(humans);
+	}
 }
 
-MyNewList<Vector2*>* ZombieExplode::GetHumanInMyRange()
+MyNewList<Human*> ZombieExplode::GetHumansInMyRange()
 {
 	Vector2 v2Temp;
 	Case* ptrCaseTemp = nullptr;
-	MyNewList<Vector2*> *returnList = new MyNewList<Vector2*>();
+	MyNewList<Human*> *returnList = new MyNewList<Human*>();
 
 
 	for (int i = 0; i < this->GetRange(); i++)
@@ -36,61 +42,64 @@ MyNewList<Vector2*>* ZombieExplode::GetHumanInMyRange()
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + -i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + i);
-		returnList->PushBack(new Vector2(v2Temp));
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + -i);
-		returnList->PushBack(new Vector2(v2Temp));
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
+
+		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + -i);
+		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + -i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + +i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + +i);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
 
 		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList->PushBack(new Vector2(v2Temp));
+			returnList->PushBack(ptrCaseTemp->GetHumanOccupant());
 
-	return returnList;
+	}
+	return *returnList;
 }
 
 void ZombieExplode::InfectHuman(MyNewList<Human*> _lHumans)
 {
-	for(int i=0; i< _lHumans.Size(); i++)
+	for (int i = 0; i < _lHumans.Size(); i++)
 	{
-		if (_lHumans.At(i).operator*() != nullptr)
-			_lHumans.At(i).operator*()->GetInfectedByZombie();
+		// cast
+		_lHumans.At(i).operator*()->GetInfectedByZombie();
 	}
 }
 
 void ZombieExplode::KillMe()
 {
-	Explode();
 	delete(this);
 }

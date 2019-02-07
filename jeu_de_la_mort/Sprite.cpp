@@ -8,6 +8,12 @@ Sprite::Sprite(char _cChar, color _cColor)
 	SetColor(_cColor);
 }
 
+Sprite::Sprite(const Sprite& _refSprite)
+{
+	m_char_ = _refSprite.m_char_;
+	m_color_ = _refSprite.m_color_;
+}
+
 void Sprite::SetColor(color _cColor)
 {
 	m_color_ = _cColor;

@@ -22,7 +22,6 @@ public:
 		element = position;
 		m_list = list;
 	}
-
 	~Iterator()
 	{
 	}

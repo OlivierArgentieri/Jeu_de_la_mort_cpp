@@ -14,16 +14,12 @@ public:
 		Queue = nullptr;
 		size = 0;
 	}
-	MyNewList(MyNewList *_ptrNewList)
+	MyNewList(const MyNewList &_refNewList)
 	{
-		if(_ptrNewList == nullptr)
+		size = 0;
+		for(Node<T> *ptr_node = _refNewList.Header; ptr_node != nullptr ; ptr_node = ptr_node->Next)
 		{
-			MyNewList();
-			return;
-		}
-		for(int i =0; i< _ptrNewList->size; i++)
-		{
-			this->PushBack(_ptrNewList->At(i).operator*());
+			PushBack(ptr_node->value);
 		}
 	}
 	~MyNewList()
@@ -173,7 +169,7 @@ public:
 	Iterator<T> At(int i)//Search a node at a position i
 	{
 		int j = 0;
-		Iterator<T> it = Iterator<T>(Header, this);;
+		Iterator<T> it = Iterator<T>(Header, this);
 		while (j != i)
 		{
 			if (it.element != nullptr)

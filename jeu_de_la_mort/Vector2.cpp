@@ -7,16 +7,10 @@ Vector2::Vector2(int _iX, int _iY)
 	this->m_y = _iY;
 }
 
-Vector2::Vector2(Vector2* _ptrVector)
+Vector2::Vector2(const Vector2& _ptrVector)
 {
-	if (_ptrVector == nullptr)
-	{
-		Vector2();
-		return;
-	}
-
-	this->m_x = _ptrVector->GetX();
-	this->m_y = _ptrVector->GetY();
+	this->m_x = _ptrVector.m_x;
+	this->m_y = _ptrVector.m_y;
 }
 
 int Vector2::GetX()

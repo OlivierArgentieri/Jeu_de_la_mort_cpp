@@ -7,7 +7,7 @@ private:
 
 public:
 	Vector2(int _iX, int _iY);// todo 
-	Vector2(Vector2 *_ptrVector);
+	Vector2(const Vector2 &_ptrVector);
 	int GetX();
 	int GetY();
 	Vector2();

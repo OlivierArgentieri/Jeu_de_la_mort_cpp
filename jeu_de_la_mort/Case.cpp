@@ -27,7 +27,7 @@ Vector2 Case::GetPosition()
 	if (this->m_ptr_position_ == nullptr)
 		return Vector2();
 
-	return Vector2(this->m_ptr_position_);
+	return *this->m_ptr_position_;
 }
 
 Sprite Case::GetSprite()

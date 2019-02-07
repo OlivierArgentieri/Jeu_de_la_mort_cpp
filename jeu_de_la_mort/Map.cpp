@@ -30,10 +30,10 @@ Map::Map(Vector2* _ptrSize)
 	this->InitCase();
 }
 
-Map::Map(Map* _ptrMap)
+Map::Map(const Map& _refMap)
 {
-	this->m_ptr_size_ = new Vector2(_ptrMap->m_ptr_size_);
-	this->m_ptr_cases_= new MyNewList<Case*>(_ptrMap->m_ptr_cases_);
+	this->m_ptr_size_ = new Vector2(*_refMap.m_ptr_size_);
+	this->m_ptr_cases_= new MyNewList<Case*>(*_refMap.m_ptr_cases_);
 }
 
 Map::~Map()
@@ -45,7 +45,7 @@ Map::~Map()
 
 Vector2 Map::GetSize()
 {
-	return Vector2(this->m_ptr_size_);
+	return *this->m_ptr_size_;
 }
 
 Case* Map::GetCaseByPosition(Vector2 _v2Position)
