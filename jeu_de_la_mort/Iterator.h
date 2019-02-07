@@ -25,7 +25,6 @@ public:
 
 	~Iterator()
 	{
-
 	}
 
 	Iterator<T>& operator++(int i)

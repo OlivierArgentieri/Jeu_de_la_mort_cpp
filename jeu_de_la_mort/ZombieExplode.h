@@ -12,7 +12,7 @@ public:
 	ZombieExplode(Vector2 _v2Position);
 	~ZombieExplode();
 	void Explode();
-	MyNewList<Human*> GetHumanInMyRange();
+	MyNewList<Vector2*>* GetHumanInMyRange();
 	void InfectHuman(MyNewList<Human*> _lHumans);
 	void KillMe() override;
 };
