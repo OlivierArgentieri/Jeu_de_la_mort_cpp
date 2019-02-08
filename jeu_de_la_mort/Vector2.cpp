@@ -50,10 +50,15 @@ bool Vector2::operator==(int _iValue)
 
 bool Vector2::operator==(Vector2 _v2Vector)
 {
-	return this->m_x == GetX() && this->m_y == GetY();
+	return this->m_x == _v2Vector.GetX() && this->m_y == _v2Vector.GetY();
 }
 
 bool Vector2::operator!=(int _iValue)
 {
 	return !(this->operator==(_iValue));
+}
+
+bool Vector2::operator!=(Vector2 _v2Value)
+{
+	return !(this->operator==(_v2Value));
 }

@@ -9,6 +9,7 @@ private:
 	bool m_game_over_;
 public:
 	Game(Vector2* _ptrSizeMap);
+	Game(const Game &_refGame);
 	~Game();
 	void AddHumanoid(Humanoid* _ptrHumanoid);
 	void DeleteHumanoid(Humanoid* _ptrHumanoid);
@@ -22,6 +23,7 @@ public:
 	void CheckGameOver();
 	Humanoid* GetHumanoidByPosition(Vector2 _v2Position);
 	int GetNumberOfInfectedHuman();
+	MyNewList<Humanoid*> GetAllHumanoid();
 	MyNewList<Human*> GetAllHumans();
 	MyNewList<Zombie*> GetAllZombies();
 };

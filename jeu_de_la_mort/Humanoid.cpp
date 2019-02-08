@@ -106,17 +106,30 @@ Vector2 Humanoid::GetPosition()
 	return this->m_position_;
 }
 
-int Humanoid::GetRange()
+int Humanoid::GetMoveRange()
 {
-	return this->m_range_;
+	return this->m_move_range_;
 }
 
-void Humanoid::SetRange(int _iNewRange)
+int Humanoid::GetEffectRange()
+{
+	return this->m_effect_range_;
+}
+
+void Humanoid::SetMoveRange(int _iNewRange)
 {
 	if (_iNewRange <= 0)
 		return;
 
-	this->m_range_ = _iNewRange;
+	this->m_move_range_= _iNewRange;
+}
+
+void Humanoid::SetEffectRange(int _iNewRange)
+{
+	if (_iNewRange <= 0)
+		return;
+
+	this->m_effect_range_ = _iNewRange;
 }
 
 Humanoid::~Humanoid()

@@ -60,6 +60,14 @@
   </Class>
   <Class Name="Civil">
     <Position X="12" Y="12.5" Width="2" />
+    <InheritanceLine Type="Human" FixedFromPoint="true">
+      <Path>
+        <Point X="12.938" Y="11.088" />
+        <Point X="12.938" Y="12.125" />
+        <Point X="13" Y="12.125" />
+        <Point X="13" Y="12.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Civil.h</FileName>
@@ -67,6 +75,14 @@
   </Class>
   <Class Name="Doctor">
     <Position X="14.5" Y="12.5" Width="2" />
+    <InheritanceLine Type="Human" FixedFromPoint="true">
+      <Path>
+        <Point X="12.938" Y="11.088" />
+        <Point X="12.938" Y="12.125" />
+        <Point X="15.5" Y="12.125" />
+        <Point X="15.5" Y="12.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAA=</HashCode>
       <FileName>Doctor.h</FileName>
@@ -74,6 +90,14 @@
   </Class>
   <Class Name="Military">
     <Position X="8" Y="12.5" Width="3.5" />
+    <InheritanceLine Type="Human" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="12.938" Y="11.088" />
+        <Point X="12.938" Y="12.125" />
+        <Point X="9.75" Y="12.125" />
+        <Point X="9.75" Y="12.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAQAAAAAAAQAAAAACAAAAAAA=</HashCode>
       <FileName>Military.h</FileName>
@@ -163,7 +187,7 @@
   <Class Name="Case">
     <Position X="11.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAACAACAgEIAAAAAAAAEAAAAEAgIAIAAIAAAAAAA=</HashCode>
+      <HashCode>AACAAACAACAgEIAAAAAAAAEAAAAEAgIAIAIIAAAAAAA=</HashCode>
       <FileName>Case.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -179,7 +203,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QBAEAAAEAAgAAEAIwQAAAEAAACiAAACAAAAAACAACAA=</HashCode>
+      <HashCode>QBAEAAAEAAgAAEAIwQAAAEAAACiEAAAAAAAAACAACAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

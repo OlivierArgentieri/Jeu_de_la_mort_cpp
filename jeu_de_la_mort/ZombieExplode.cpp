@@ -6,7 +6,7 @@
 ZombieExplode::ZombieExplode(Vector2 _v2Position)
 {
 	SetSprite(new Sprite('E', YELLOW));
-	SetRange(3);
+	SetEffectRange(3);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
@@ -37,7 +37,7 @@ MyNewList<Human*> ZombieExplode::GetHumansInMyRange()
 	MyNewList<Human*> returnList = MyNewList<Human*>();
 
 
-	for (int i = 0; i < this->GetRange(); i++)
+	for (int i = 0; i < this->GetEffectRange(); i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);

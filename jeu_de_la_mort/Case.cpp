@@ -12,9 +12,20 @@ void Case::SetPosition(Vector2 * _ptrPosition)
 	this->m_ptr_position_ = _ptrPosition;
 }
 
+void Case::SetPosition(const Vector2& _refPosition)
+{
+	this->m_ptr_position_ = new Vector2(_refPosition);
+}
+
+
 Case::Case(Vector2* _ptrPosition)
 {
 	this->SetPosition(_ptrPosition);
+}
+
+Case::Case(const Vector2& _refPosition)
+{
+	this->SetPosition(_refPosition);
 }
 
 Case::~Case()

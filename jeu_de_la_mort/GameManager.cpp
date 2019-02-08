@@ -35,9 +35,9 @@ void GameManager::RemoveHumanoid(Humanoid* _ptrHumanoid)
 	}
 }
 
-Game GameManager::GetCurrentGame()
+Game* GameManager::GetCurrentGame()
 {
-	return *this->m_ptr_game_;
+	return this->m_ptr_game_; // todo copy
 }
 
 

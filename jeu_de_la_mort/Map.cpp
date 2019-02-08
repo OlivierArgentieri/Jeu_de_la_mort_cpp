@@ -17,7 +17,7 @@ void Map::InitCase()
 	{
 		for (int j = 0; j < this->m_ptr_size_->GetY(); j++)
 		{
-			Vector2* p_v2 = new Vector2(i, j);
+			Vector2 p_v2 = Vector2(i, j);
 			this->m_ptr_cases_->PushBack(new Case(p_v2));
 		}
 	}

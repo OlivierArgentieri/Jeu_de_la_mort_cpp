@@ -14,6 +14,14 @@ Game::Game(Vector2* _ptrSizeMap)
 	this->m_game_over_ = false;
 }
 
+/**/
+Game::Game(const Game& _refGame)
+{
+	this->m_ptr_humanoids_ = new MyNewList<Humanoid*>(*_refGame.m_ptr_humanoids_);
+	this->m_ptr_map_ = new Map(new Vector2(_refGame.m_ptr_map_->GetSize()));
+	this->m_game_over_ = _refGame.m_game_over_;
+}
+
 Game::~Game()
 {
 	delete(m_ptr_humanoids_);
@@ -83,7 +91,6 @@ void Game::DisplayATH()
 	Util::SetCursorConsolePosition(GetMap().GetSize());
 	std::cout << std::endl << "Nb of human : " << GetAllHumans().Size();
 	std::cout << std::endl << "Nb of Zombie : " << GetAllZombies().Size();
-
 }
 
 void Game::GameLoop()
@@ -129,10 +136,19 @@ int Game::GetNumberOfInfectedHuman()
 	int toReturn = 0;
 	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
-		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human" && static_cast<Human*>(this->m_ptr_humanoids_->At(i).operator*())->AmIinfected())
+		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human" && static_cast<Human*>(this
+		                                                                                          ->m_ptr_humanoids_->
+		                                                                                          At(i).operator*())->
+			AmIinfected())
 			toReturn++;
 	}
 	return toReturn;
+}
+
+
+MyNewList<Humanoid*> Game::GetAllHumanoid()
+{
+	return *this->m_ptr_humanoids_;
 }
 
 MyNewList<Human*> Game::GetAllHumans()

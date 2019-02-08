@@ -13,7 +13,8 @@ private :
 	Map *m_ptr_map_;
 	Sprite *m_ptr_sprite_;
 
-	int m_range_ = 1; // todo construct by object
+	int m_effect_range_ = 1; // todo construct by object
+	int m_move_range_ = 1;
 
 public:
 	virtual Vector2 GetMovePattern();
@@ -25,13 +26,15 @@ public:
 	virtual std::string GetTag()=0;
 	virtual Sprite GetSprite();
 	virtual void ChangeColorSprite(color _cColor);
-	void SetSprite(Sprite* _ptrSprite);
-	void SetPosition(Vector2 _v2Position);
+	virtual void SetSprite(Sprite* _ptrSprite);
+	virtual void SetPosition(Vector2 _v2Position);
 	void SetMap(Map *_ptrMap);
 	virtual Map GetMap();
 	Vector2 GetPosition();
-	virtual int GetRange();
-	virtual void SetRange(int _iNewRange);
+	virtual int GetMoveRange();
+	virtual int GetEffectRange();
+	void SetMoveRange(int _iNewRange);
+	void SetEffectRange(int _iNewRange);
 	
 	~Humanoid();
 };
