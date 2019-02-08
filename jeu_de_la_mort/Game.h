@@ -21,6 +21,7 @@ public:
 	void TriggerAllPlayer();
 	void CheckGameOver();
 	Humanoid* GetHumanoidByPosition(Vector2 _v2Position);
-	int GetNumberOfHumanoidsByTag(std::string _sTag);
 	int GetNumberOfInfectedHuman();
+	MyNewList<Human*> GetAllHumans();
+	MyNewList<Zombie*> GetAllZombies();
 };

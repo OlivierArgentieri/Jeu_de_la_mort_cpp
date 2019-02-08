@@ -38,6 +38,11 @@ Vector2 Vector2::operator+(Vector2 _v2Vector)
 	return Vector2(this->GetX() + _v2Vector.GetX(), this->GetY() + _v2Vector.GetY());
 }
 
+Vector2 Vector2::operator-(Vector2 _v2Vector)
+{
+	return Vector2(this->GetX() - _v2Vector.GetX(), this->GetY() - _v2Vector.GetY());
+}
+
 bool Vector2::operator==(int _iValue)
 {
 	return this->m_x == _iValue && this->m_y == _iValue;

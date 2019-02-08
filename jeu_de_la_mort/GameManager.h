@@ -26,4 +26,5 @@ public:
 	Humanoid* GetHumanoidByPosition(Vector2 _v2Position);
 	void InstantiateRandomHuman(Vector2 _v2Position);
 	void InstantiateRandomZombieType(Vector2 _v2Position);
+	MyNewList<Humanoid> GetHumanoids();
 };

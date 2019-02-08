@@ -81,8 +81,8 @@ void Game::DisplayATH()
 	std::cout << std::endl << "                     ";
 
 	Util::SetCursorConsolePosition(GetMap().GetSize());
-	std::cout <<std::endl<< "Nb of human : " << GetNumberOfHumanoidsByTag("Human");
-	std::cout << std::endl<< "Nb of Zombie : " << GetNumberOfHumanoidsByTag("Zombie");
+	std::cout << std::endl << "Nb of human : " << GetAllHumans().Size();
+	std::cout << std::endl << "Nb of Zombie : " << GetAllZombies().Size();
 
 }
 
@@ -110,7 +110,7 @@ void Game::TriggerAllPlayer()
 
 void Game::CheckGameOver()
 {
-	if (GetNumberOfInfectedHuman() == 0 && GetNumberOfHumanoidsByTag("Zombie") == 0 || GetNumberOfHumanoidsByTag("Human") == 0)
+	if (GetNumberOfInfectedHuman() == 0 && GetAllZombies().Size() == 0 || GetAllHumans().Size() == 0)
 		this->m_game_over_ = true;
 }
 
@@ -124,18 +124,6 @@ Humanoid* Game::GetHumanoidByPosition(Vector2 _v2Position)
 	return nullptr;
 }
 
-int Game::GetNumberOfHumanoidsByTag(std::string _sTag)
-{
-	int toReturn = 0;
-	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
-	{
-		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == _sTag)
-			toReturn++;
-	}
-
-	return toReturn;
-}
-
 int Game::GetNumberOfInfectedHuman()
 {
 	int toReturn = 0;
@@ -143,6 +131,30 @@ int Game::GetNumberOfInfectedHuman()
 	{
 		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human" && static_cast<Human*>(this->m_ptr_humanoids_->At(i).operator*())->AmIinfected())
 			toReturn++;
+	}
+	return toReturn;
+}
+
+MyNewList<Human*> Game::GetAllHumans()
+{
+	MyNewList<Human*> toReturn = MyNewList<Human*>();
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
+	{
+		auto temp = this->m_ptr_humanoids_->At(i).operator*();
+		if (temp->GetTag() == "Human")
+			toReturn.PushBack(static_cast<Human*>(temp));
+	}
+	return toReturn;
+}
+
+MyNewList<Zombie*> Game::GetAllZombies()
+{
+	MyNewList<Zombie*> toReturn = MyNewList<Zombie*>();
+	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
+	{
+		auto temp = this->m_ptr_humanoids_->At(i).operator*();
+		if (temp->GetTag() == "Zombie")
+			toReturn.PushBack(static_cast<Zombie*>(temp));
 	}
 	return toReturn;
 }
