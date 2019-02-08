@@ -14,9 +14,9 @@ ZombieExplode::ZombieExplode(Vector2 _v2Position)
 
 ZombieExplode::~ZombieExplode()
 {
-	/*
+	
 	Explode();
-	GameManager::GetInstance()->RemoveHumanoid(this);*/
+	GameManager::GetInstance()->RemoveHumanoid(this);
 }
 
 void ZombieExplode::Explode()
