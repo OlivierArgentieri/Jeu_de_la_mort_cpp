@@ -46,6 +46,15 @@ MyNewList<Zombie*> Military::GetZombiesInMyRange()
 	Case* ptrCaseTemp = nullptr;
 	MyNewList<Zombie*> returnList =MyNewList<Zombie*>();
 
+	/*
+	 *todo
+	for (int i = 0; i < 9; i++)
+	{
+
+	}*/
+
+
+
 	for (int i = 1; i < this->GetRange() && returnList.Size() < 1; i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
