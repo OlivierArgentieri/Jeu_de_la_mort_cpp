@@ -12,7 +12,9 @@ public:
 	int GetY();
 	Vector2();
 	Vector2 operator+(Vector2 _v2Vector);
+	Vector2 operator-(Vector2 _v2Vector);
 	bool operator==(int _iValue);
 	bool operator==(Vector2 _v2Vector);
 	bool operator!=(int _iValue);
+	bool operator!=(Vector2 _v2Value);
 };

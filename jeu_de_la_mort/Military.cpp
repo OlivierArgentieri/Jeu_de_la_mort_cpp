@@ -5,20 +5,19 @@
 
 bool Military::UseEffect(Vector2 _v2NewPosition)
 {
-	
 	auto t = GetOneZombieInMyRange();
 	if (t == nullptr)
 		return false;
-	
+
 	t->KillMe();
-	
+
 	return true;
 }
 
 Military::Military(Vector2 _v2Position)
 {
 	SetSprite(new Sprite('M', WHITE));
-	SetRange(2);
+	SetEffectRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
@@ -28,7 +27,7 @@ Zombie* Military::GetOneZombieInMyRange()
 {
 	MyNewList<Zombie*> temp = GetZombiesInMyRange();
 
-	
+
 	int listSize = temp.Size();
 
 	if (listSize > 0)
@@ -42,60 +41,32 @@ Zombie* Military::GetOneZombieInMyRange()
 
 MyNewList<Zombie*> Military::GetZombiesInMyRange()
 {
-	Vector2 v2Temp;
-	Case* ptrCaseTemp = nullptr;
-	MyNewList<Zombie*> returnList =MyNewList<Zombie*>();
+	MyNewList<Zombie*> returnList = MyNewList<Zombie*>();
+	MyNewList<Zombie*> zombieList = GameManager::GetInstance()->GetAllZombies();
 
-	for (int i = 1; i < this->GetRange() && returnList.Size() < 1; i++)
+	Vector2 temp;
+	int x=0, y=0;
+	
+	for (int i = 0; i < zombieList.Size(); i++)
 	{
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+		if (temp != Vector2(0, 0)) // exclude yourself 
+		{
+			Zombie* z = zombieList.At(i).operator*();
+			temp = this->GetPosition() - z->GetPosition();
 
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
+			x = temp.GetX();
+			y = temp.GetY();
+			if (temp.GetX() < 0)
+				x = x * -1;
+			if (temp.GetY() < 0)
+				y = y * -1;
 
-		v2Temp = Vector2(this->GetPosition().GetX() + -i, this->GetPosition().GetY() + 0);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + +i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + +i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Zombie")
-			returnList.PushBack(GetMap().GetCaseByPosition(v2Temp)->GetZombieOccupant());
-
+			temp = Vector2(x, y);
+			if((x > y && x > 1 && x <= GetEffectRange()) || y > x && y > 1 && y <= GetEffectRange())
+			{
+				returnList.PushBack(z);
+			}
+		}
 	}
 	return returnList;
 }

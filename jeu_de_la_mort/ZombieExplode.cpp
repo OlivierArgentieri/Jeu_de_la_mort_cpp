@@ -6,7 +6,7 @@
 ZombieExplode::ZombieExplode(Vector2 _v2Position)
 {
 	SetSprite(new Sprite('E', YELLOW));
-	SetRange(3);
+	SetEffectRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
@@ -14,7 +14,6 @@ ZombieExplode::ZombieExplode(Vector2 _v2Position)
 
 ZombieExplode::~ZombieExplode()
 {
-	
 	Explode();
 	GameManager::GetInstance()->RemoveHumanoid(this);
 }
@@ -32,61 +31,33 @@ void ZombieExplode::Explode()
 
 MyNewList<Human*> ZombieExplode::GetHumansInMyRange()
 {
-	Vector2 v2Temp;
-	Case* ptrCaseTemp = nullptr;
+
 	MyNewList<Human*> returnList = MyNewList<Human*>();
+	MyNewList<Human*> humanList = GameManager::GetInstance()->GetAllHumans();
 
+	Vector2 temp;
+	int x = 0, y = 0;
 
-	for (int i = 0; i < this->GetRange(); i++)
+	for (int i = 0; i < humanList.Size(); i++)
 	{
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
+		if (temp != Vector2(0, 0)) // exclude yourself 
+		{
+			Human* z = humanList.At(i).operator*();
+			temp = this->GetPosition() - z->GetPosition();
 
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
+			x = temp.GetX();
+			y = temp.GetY();
+			if (temp.GetX() < 0)
+				x = x * -1;
+			if (temp.GetY() < 0)
+				y = y * -1;
 
-		v2Temp = Vector2(this->GetPosition().GetX() + -i, this->GetPosition().GetY() + 0);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + 0, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + -i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + -1, this->GetPosition().GetY() + +i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
-		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + +i);
-		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
-
-		if (ptrCaseTemp != nullptr && ptrCaseTemp->IsOccuped() && ptrCaseTemp->GetTagOccupant() == "Human")
-			returnList.PushBack(ptrCaseTemp->GetHumanOccupant());
-
+			temp = Vector2(x, y);
+			if ((x > y && x > 0 && x <= GetEffectRange()) || y > x && y > 0 && y <= GetEffectRange())
+			{
+				returnList.PushBack(z);
+			}
+		}
 	}
 	return returnList;
 }

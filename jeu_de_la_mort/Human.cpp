@@ -97,8 +97,8 @@ Vector2 Human::GetNearestEmptyPosition()
 {
 	Vector2 v2Temp;
 	Case* ptrCaseTemp = nullptr;
-
-	for (int i = 1; i <= this->GetRange(); i++)
+	
+	for (int i = 1; i <= this->GetMoveRange(); i++)
 	{
 		v2Temp = Vector2(this->GetPosition().GetX() + i, this->GetPosition().GetY() + 0);
 		ptrCaseTemp = GetMap().GetCaseByPosition(v2Temp);
