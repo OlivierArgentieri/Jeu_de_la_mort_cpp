@@ -13,21 +13,6 @@ std::string Human::GetTag()
 	return "Human";
 }
 
-void Human::IncrementLapReproduct()
-{
-	this->m_cpt_lap_reproduct_++;
-}
-
-int Human::GetLapReproduct()
-{
-	return this->m_cpt_lap_reproduct_;
-}
-
-void Human::ResetLapReproduct()
-{
-	this->m_cpt_lap_reproduct_ = 0;
-}
-
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
 	
@@ -57,23 +42,6 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 	IncrementLapReproduct();
 }
 
-bool Human::CanReproduct(Vector2 _v2SecondPosition)
-{
-	Case* h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h
-		->GetHumanOccupant()
-		->GetLapReproduct() >
-		5) // si humain + pas infecté + collision -> reproduction
-		return true;
-
-	return false;
-}
-
-void Human::Reproduct(Vector2 _v2BabyPosition)
-{
-	Factory::InitiateRandomHuman(_v2BabyPosition);
-	this->ResetLapReproduct();
-}
 
 void Human::GetInfectedByZombie()
 {

@@ -4,6 +4,8 @@
 #include "Zombie.h"
 
 
+class Adult;
+
 void Case::SetPosition(Vector2 * _ptrPosition)
 {
 	if (_ptrPosition == nullptr || _ptrPosition->GetX() < 0 || _ptrPosition->GetY()< 0)
@@ -76,12 +78,11 @@ std::string Case::GetTagOccupant()
 	return this->m_ptr_humanoid_->GetTag();
 }
 
-Human* Case::GetHumanOccupant()
+Adult* Case::GetAdultOccupant()
 {
-	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human")
+	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human" || this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() == "Human" && this->m_ptr_humanoid_->GetTag() != "Adult")
 		return nullptr;
-
-	return  static_cast<Human*>(this->m_ptr_humanoid_);
+	return  static_cast<Adult*>(this->m_ptr_humanoid_);
 }
 
 

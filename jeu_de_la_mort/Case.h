@@ -3,6 +3,7 @@
 #include "Humanoid.h"
 #include "Human.h"
 #include "Zombie.h"
+#include "Adult.h"
 
 class Case
 {
@@ -23,6 +24,6 @@ public:
 	void Exit();
 
 	std::string GetTagOccupant();
-	Human* GetHumanOccupant();
+	Adult* GetAdultOccupant();
 	Zombie* GetZombieOccupant();
 };

@@ -39,7 +39,7 @@ void Zombie::KillMe()
 void Zombie::EatHuman(Vector2 _v2NewPosition)
 {
 
-	Human* h = GetMap().GetCaseByPosition(_v2NewPosition)->GetHumanOccupant(); // todo viré le cast
+	Human* h = GetMap().GetCaseByPosition(_v2NewPosition)->GetAdultOccupant(); // todo viré le cast
 	h->GetInfectedByZombie();
 }
 
