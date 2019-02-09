@@ -35,12 +35,35 @@ void GameManager::RemoveHumanoid(Humanoid* _ptrHumanoid)
 	}
 }
 
-Game* GameManager::GetCurrentGame()
+MyNewList<Human*> GameManager::GetAllHumans()
 {
-	return this->m_ptr_game_; // todo copy
+	MyNewList<Human*> toReturn = MyNewList<Human*>();
+	MyNewList<Humanoid*> Humanoids = m_ptr_game_->GetAllHumanoid();
+
+	int size = Humanoids.Size();
+	for (int i = 0; i < size; i++)
+	{
+		auto temp = Humanoids.At(i).operator*();
+		if (temp->GetTag() == "Human")
+			toReturn.PushBack(static_cast<Human*>(temp));
+	}
+	return toReturn;
 }
 
+MyNewList<Zombie*> GameManager::GetAllZombies()
+{
+	MyNewList<Zombie*> toReturn = MyNewList<Zombie*>();
+	MyNewList<Humanoid*> Humanoids= m_ptr_game_->GetAllHumanoid();
 
+	int size = Humanoids.Size();
+	for (int i = 0; i < size; i++)
+	{
+		auto temp = Humanoids.At(i).operator*();
+		if (temp->GetTag() == "Zombie")
+			toReturn.PushBack(static_cast<Zombie*>(temp));
+	}
+	return toReturn;
+}
 Humanoid* GameManager::GetHumanoidByPosition(Vector2 _v2Position)
 {
 	return m_ptr_game_->GetHumanoidByPosition(_v2Position);
@@ -63,7 +86,6 @@ void GameManager::InstantiateRandomHuman(Vector2 _v2Position)
 	case 2:
 		new Military(_v2Position);
 		break;
-
 	}
 }
 

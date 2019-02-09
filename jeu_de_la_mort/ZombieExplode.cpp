@@ -6,7 +6,7 @@
 ZombieExplode::ZombieExplode(Vector2 _v2Position)
 {
 	SetSprite(new Sprite('E', YELLOW));
-	SetEffectRange(3);
+	SetEffectRange(2);
 	SetPosition(_v2Position);
 	GameManager::GetInstance()->RegisterHumanoid(this);
 }
@@ -14,7 +14,6 @@ ZombieExplode::ZombieExplode(Vector2 _v2Position)
 
 ZombieExplode::~ZombieExplode()
 {
-	
 	Explode();
 	GameManager::GetInstance()->RemoveHumanoid(this);
 }
@@ -34,7 +33,7 @@ MyNewList<Human*> ZombieExplode::GetHumansInMyRange()
 {
 
 	MyNewList<Human*> returnList = MyNewList<Human*>();
-	MyNewList<Human*> humanList = GameManager::GetInstance()->GetCurrentGame()->GetAllHumans();
+	MyNewList<Human*> humanList = GameManager::GetInstance()->GetAllHumans();
 
 	Vector2 temp;
 	int x = 0, y = 0;

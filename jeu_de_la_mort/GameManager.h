@@ -22,9 +22,9 @@ public:
 	void RegisterGame(Game* _ptr_game);
 	void RegisterHumanoid(Humanoid* _ptrHumanoid);
 	void RemoveHumanoid(Humanoid* _ptrHumanoid);
-	Game* GetCurrentGame();
+	MyNewList<Human*> GetAllHumans();
+	MyNewList<Zombie*> GetAllZombies();
 	Humanoid* GetHumanoidByPosition(Vector2 _v2Position);
 	void InstantiateRandomHuman(Vector2 _v2Position);
 	void InstantiateRandomZombieType(Vector2 _v2Position);
-	MyNewList<Humanoid> GetHumanoids();
 };

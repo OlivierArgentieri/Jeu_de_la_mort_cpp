@@ -42,7 +42,7 @@ Zombie* Military::GetOneZombieInMyRange()
 MyNewList<Zombie*> Military::GetZombiesInMyRange()
 {
 	MyNewList<Zombie*> returnList = MyNewList<Zombie*>();
-	MyNewList<Zombie*> zombieList = GameManager::GetInstance()->GetCurrentGame()->GetAllZombies();
+	MyNewList<Zombie*> zombieList = GameManager::GetInstance()->GetAllZombies();
 
 	Vector2 temp;
 	int x=0, y=0;

@@ -10,7 +10,7 @@ private:
 	int m_cpt_lap_infected_;
 	int m_cpt_lap_reproduct_ =2; 
 
-	const int m_lap_before_transform_ = 1;
+	const int m_lap_before_transform_ = 2;
 public:
 	virtual bool UseEffect(Vector2 _v2NewPosition) =0;
 	std::string GetTag() override;
