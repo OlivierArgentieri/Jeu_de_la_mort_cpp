@@ -132,6 +132,9 @@
     <ClInclude Include="ZombieEnum.h">
       <Filter>Header Files\Humanoid\Zombie</Filter>
     </ClInclude>
+    <ClInclude Include="Adult.h">
+      <Filter>Header Files\Humanoid\Human</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -191,8 +194,11 @@
     <ClCompile Include="Factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Adult.cpp">
+      <Filter>Source Files\Humanoid\Human</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cdr" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

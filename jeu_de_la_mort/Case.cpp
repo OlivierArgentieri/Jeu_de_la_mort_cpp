@@ -80,11 +80,13 @@ std::string Case::GetTagOccupant()
 
 Adult* Case::GetAdultOccupant()
 {
-	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human" || this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() == "Human" && this->m_ptr_humanoid_->GetTag() != "Adult")
+	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human")
 		return nullptr;
-	return  static_cast<Adult*>(this->m_ptr_humanoid_);
-}
 
+	if(static_cast<Human*>(this->m_ptr_humanoid_)->ImAdult())
+		return  static_cast<Adult*>(this->m_ptr_humanoid_);
+	return nullptr;
+}
 
 Zombie* Case::GetZombieOccupant()
 {

@@ -7,12 +7,13 @@ private:
 	int m_cpt_lap_reproduct_ = 2;
 
 public :
+	std::string GetTag();
 	void IncrementLapReproduct();
 	int GetLapReproduct();
 	void ResetLapReproduct();
 	bool CanReproduct(Vector2 _v2SecondPosition);
 	virtual void Reproduct(Vector2 _v2BabyPosition);
 	Vector2 GetNearestEmptyPosition();
-	bool UseEffect(Vector2 _v2NewPosition) override;
+	bool ImAdult() override;
+	void PlayTurn(Vector2 _v2NewPosition) override;
 };
-

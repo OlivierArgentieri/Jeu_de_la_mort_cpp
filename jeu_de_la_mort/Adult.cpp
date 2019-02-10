@@ -23,7 +23,7 @@ void Adult::ResetLapReproduct()
 bool Adult::CanReproduct(Vector2 _v2SecondPosition)
 {
 	Case* h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetHumanOccupant()->AmIinfected() && h->GetHumanOccupant()->GetLapReproduct() >
+	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetAdultOccupant()->AmIinfected() && h->GetAdultOccupant()->GetLapReproduct() >
 		5) // si humain + pas infecté + collision -> reproduction
 		return true;
 
@@ -66,4 +66,22 @@ Vector2 Adult::GetNearestEmptyPosition()
 	}
 
 	return Vector2();
+}
+
+bool Adult::ImAdult()
+{
+	return true;
+}
+
+void Adult::PlayTurn(Vector2 _v2NewPosition)
+{
+	if (CanReproduct(_v2NewPosition))
+	{
+		Vector2 temp = GetNearestEmptyPosition();
+		if (temp != -1)
+			Reproduct(temp);
+		return;
+	}
+	IncrementLapReproduct();
+	Human::PlayTurn(_v2NewPosition);
 }
