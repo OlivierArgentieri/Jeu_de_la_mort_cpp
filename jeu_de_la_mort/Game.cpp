@@ -89,8 +89,8 @@ void Game::DisplayATH()
 	std::cout << std::endl << "                     ";
 
 	Util::SetCursorConsolePosition(GetMap().GetSize());
-	std::cout << std::endl << "Nb of human : " << GetAllHumans().Size();
-	std::cout << std::endl << "Nb of Zombie : " << GetAllZombies().Size();
+	std::cout << std::endl << "Nb of human : " << GameManager::GetInstance()->GetAllHumans().Size();
+	std::cout << std::endl << "Nb of Zombie : " << GameManager::GetInstance()->GetAllZombies().Size();
 }
 
 void Game::GameLoop()
@@ -117,7 +117,7 @@ void Game::TriggerAllPlayer()
 
 void Game::CheckGameOver()
 {
-	if (GetNumberOfInfectedHuman() == 0 && GetAllZombies().Size() == 0 || GetAllHumans().Size() == 0)
+	if (GetNumberOfInfectedHuman() == 0 && GameManager::GetInstance()->GetAllZombies().Size() == 0 || GameManager::GetInstance()->GetAllHumans().Size() == 0)
 		this->m_game_over_ = true;
 }
 
@@ -136,11 +136,12 @@ int Game::GetNumberOfInfectedHuman()
 	int toReturn = 0;
 	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
 	{
-		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human" && static_cast<Human*>(this
-		                                                                                          ->m_ptr_humanoids_->
-		                                                                                          At(i).operator*())->
-			AmIinfected())
-			toReturn++;
+		if (this->m_ptr_humanoids_->At(i).operator*()->GetTag() == "Human")
+		{
+			bool isInfected = static_cast<Human*>(this->m_ptr_humanoids_->At(i).operator*())->AmIinfected();
+			if (isInfected)
+				toReturn++;
+		}
 	}
 	return toReturn;
 }
@@ -149,28 +150,4 @@ int Game::GetNumberOfInfectedHuman()
 MyNewList<Humanoid*> Game::GetAllHumanoid()
 {
 	return *this->m_ptr_humanoids_;
-}
-
-MyNewList<Human*> Game::GetAllHumans()
-{
-	MyNewList<Human*> toReturn = MyNewList<Human*>();
-	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
-	{
-		auto temp = this->m_ptr_humanoids_->At(i).operator*();
-		if (temp->GetTag() == "Human")
-			toReturn.PushBack(static_cast<Human*>(temp));
-	}
-	return toReturn;
-}
-
-MyNewList<Zombie*> Game::GetAllZombies()
-{
-	MyNewList<Zombie*> toReturn = MyNewList<Zombie*>();
-	for (int i = 0; i < this->m_ptr_humanoids_->Size(); i++)
-	{
-		auto temp = this->m_ptr_humanoids_->At(i).operator*();
-		if (temp->GetTag() == "Zombie")
-			toReturn.PushBack(static_cast<Zombie*>(temp));
-	}
-	return toReturn;
 }

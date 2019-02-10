@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Map">
-    <Position X="25.25" Y="5.5" Width="2.5" />
+    <Position X="24.75" Y="5.5" Width="2.5" />
     <AssociationLine Name="m_ptr_size_" Type="Vector2" FixedFromPoint="true">
       <Path>
-        <Point X="26.603" Y="5.5" />
-        <Point X="26.603" Y="1.951" />
+        <Point X="26.103" Y="5.5" />
+        <Point X="26.103" Y="1.951" />
         <Point X="17.75" Y="1.951" />
       </Path>
     </AssociationLine>
@@ -30,16 +30,19 @@
     <AssociationLine Name="m_position_" Type="Vector2" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="9.5" Y="3.956" />
-        <Point X="16.125" Y="3.956" />
-        <Point X="16.125" Y="3.401" />
+        <Point X="16.75" Y="3.956" />
+        <Point X="16.75" Y="3.401" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="m_ptr_map_" Type="Map" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="9.5" Y="4.606" />
-        <Point X="26.188" Y="4.606" />
-        <Point X="26.188" Y="5.5" />
+        <Point X="9.5" Y="4.375" />
+        <Point X="25.688" Y="4.375" />
+        <Point X="25.688" Y="5.5" />
       </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.082" Y="0.393" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>IBAAAAEAAKBBEQAYgAAEAAEAAAAACgAACAAEACAQQAQ=</HashCode>
@@ -52,39 +55,39 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ZombieSpecificMove">
-    <Position X="6.75" Y="9.75" Width="2.25" />
+    <Position X="6.75" Y="9.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAA=</HashCode>
       <FileName>ZombieSpecificMove.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Civil">
-    <Position X="12" Y="13" Width="2" />
+    <Position X="9.75" Y="15.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Civil.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Doctor">
-    <Position X="14.5" Y="13" Width="2" />
+    <Position X="12" Y="15.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAA=</HashCode>
       <FileName>Doctor.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Military">
-    <Position X="8" Y="13" Width="3.5" />
+    <Position X="6" Y="15.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAQAAAAAAAQAAAAACAAAAAAA=</HashCode>
       <FileName>Military.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Iterator&lt;T&gt;">
-    <Position X="32.25" Y="5.25" Width="3" />
+    <Position X="31.75" Y="5.25" Width="3" />
     <AssociationLine Name="element" Type="Node&lt;T&gt;" FixedToPoint="true">
       <Path>
-        <Point X="35.25" Y="6.127" />
-        <Point X="36.25" Y="6.127" />
+        <Point X="34.75" Y="6.127" />
+        <Point X="35.75" Y="6.127" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.149" Y="0.06" />
@@ -92,8 +95,8 @@
     </AssociationLine>
     <AssociationLine Name="m_list" Type="MyNewList&lt;T&gt;" FixedFromPoint="true">
       <Path>
-        <Point X="32.25" Y="6.5" />
-        <Point X="31" Y="6.5" />
+        <Point X="31.75" Y="6.5" />
+        <Point X="30.5" Y="6.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -106,12 +109,12 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="MyNewList&lt;T&gt;">
-    <Position X="29" Y="5.25" Width="2" />
+    <Position X="28.5" Y="5.25" Width="2" />
     <AssociationLine Name="Header" Type="Node&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="31" Y="8.437" />
-        <Point X="37.625" Y="8.437" />
-        <Point X="37.625" Y="6.612" />
+        <Point X="30.5" Y="8.437" />
+        <Point X="37.125" Y="8.437" />
+        <Point X="37.125" Y="6.612" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="2.148" Y="1.56" />
@@ -119,9 +122,9 @@
     </AssociationLine>
     <AssociationLine Name="Queue" Type="Node&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="31" Y="7.972" />
-        <Point X="36.562" Y="7.972" />
-        <Point X="36.562" Y="6.612" />
+        <Point X="30.5" Y="7.972" />
+        <Point X="36.062" Y="7.972" />
+        <Point X="36.062" Y="6.612" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="1.143" Y="1.074" />
@@ -137,7 +140,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Node&lt;T&gt;">
-    <Position X="36.25" Y="5.25" Width="1.5" />
+    <Position X="35.75" Y="5.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
@@ -163,7 +166,7 @@
   <Class Name="Case">
     <Position X="11.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAACAACAgEIAAAAAAAAEAAAAEAgIAIAIIAAAAAAA=</HashCode>
+      <HashCode>AACAAACAACAgEIAAAAAAAAEAAEAEAgIAIAIIAAAAAAA=</HashCode>
       <FileName>Case.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -172,14 +175,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Game">
-    <Position X="21" Y="5.5" Width="3.25" />
+    <Position X="20.5" Y="5.5" Width="3.25" />
     <AssociationLine Name="m_ptr_map_" Type="Map">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.01" Y="0.045" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QBAEAAAEAAgAAEAIwQAAAEAAACiEAAAAAAAAACAACAA=</HashCode>
+      <HashCode>ABAEAAAEAAgAAEAIwQAAAEAAACiEAAAAAAAAACAACAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -188,7 +191,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="GameManager">
-    <Position X="16.5" Y="5.5" Width="3" />
+    <Position X="16" Y="5.5" Width="3" />
     <AssociationLine Name="m_ptr_game_manager" Type="GameManager">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.226" Y="0.312" />
@@ -200,7 +203,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAEAAgAAAAAAAAAAAAQAAAABAAACAAAAAQAGEBCCAA=</HashCode>
+      <HashCode>QAAEAAAAAAAAAAAAAAAQAAAABCAACAAAAAQACEBCCAA=</HashCode>
       <FileName>GameManager.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -209,16 +212,16 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ZombieRandomMove">
-    <Position X="0.5" Y="9.75" Width="2" />
+    <Position X="0.5" Y="9.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>ZombieRandomMove.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Human">
-    <Position X="11.5" Y="6.25" Width="2.75" />
+    <Position X="11.25" Y="6.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>IIAAACBCAACAEBAAAEAAUAAAAhABEAAASABCIBAAAAA=</HashCode>
+      <HashCode>IKAAACBCAACAAAAAAAAAUAAAAgAAEAAASAACABAAAAA=</HashCode>
       <FileName>Human.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -230,14 +233,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Util">
-    <Position X="17.25" Y="9" Width="2.5" />
+    <Position X="16" Y="9.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Util.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ZombieExplode">
-    <Position X="3" Y="9.75" Width="3.25" />
+    <Position X="3" Y="9.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAACAAEAAAAAoAAAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>ZombieExplode.h</FileName>
@@ -254,10 +257,24 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Factory">
-    <Position X="17.25" Y="10.5" Width="1.5" />
+    <Position X="16" Y="10.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAQQAAAAAAAAAAQAAAEAgAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Factory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Adult">
+    <Position X="9.5" Y="11.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAEBAAAEAAAAAAABABAAAACABAIAAAAAA=</HashCode>
+      <FileName>Adult.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Children">
+    <Position X="13" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABAAAAAAAAAAAEAAAACAAAAAAAGAACAAAACAA=</HashCode>
+      <FileName>Children.h</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="color">
@@ -268,14 +285,14 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="zombie">
-    <Position X="19.25" Y="10.5" Width="1.5" />
+    <Position X="19" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ZombieEnum.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="human">
-    <Position X="21.25" Y="10.5" Width="1.5" />
+    <Position X="20.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABBAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EnumHuman.h</FileName>

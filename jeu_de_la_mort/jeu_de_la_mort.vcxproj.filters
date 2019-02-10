@@ -58,6 +58,18 @@
     <Filter Include="Header Files\Map">
       <UniqueIdentifier>{082e17ac-9033-4111-8694-8fb75c6c1aa9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Humanoid\Human\Adult">
+      <UniqueIdentifier>{48636ae3-8840-4c46-9e8f-f55e3047127b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Humanoid\Human\Children">
+      <UniqueIdentifier>{83cbb7d0-ee1c-44bc-a1c2-f04c6f4a7820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Humanoid\Human\Adult">
+      <UniqueIdentifier>{94337471-7a2e-43bc-89b6-3fc2ad541ce7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Humanoid\Human\Children">
+      <UniqueIdentifier>{120aeb77-480e-4614-bb84-01c3e199976d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -76,15 +88,6 @@
       <Filter>Header Files\Humanoid\Zombie</Filter>
     </ClInclude>
     <ClInclude Include="Human.h">
-      <Filter>Header Files\Humanoid\Human</Filter>
-    </ClInclude>
-    <ClInclude Include="Doctor.h">
-      <Filter>Header Files\Humanoid\Human</Filter>
-    </ClInclude>
-    <ClInclude Include="Military.h">
-      <Filter>Header Files\Humanoid\Human</Filter>
-    </ClInclude>
-    <ClInclude Include="Civil.h">
       <Filter>Header Files\Humanoid\Human</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
@@ -132,6 +135,21 @@
     <ClInclude Include="ZombieEnum.h">
       <Filter>Header Files\Humanoid\Zombie</Filter>
     </ClInclude>
+    <ClInclude Include="Adult.h">
+      <Filter>Header Files\Humanoid\Human\Adult</Filter>
+    </ClInclude>
+    <ClInclude Include="Civil.h">
+      <Filter>Header Files\Humanoid\Human\Adult</Filter>
+    </ClInclude>
+    <ClInclude Include="Doctor.h">
+      <Filter>Header Files\Humanoid\Human\Adult</Filter>
+    </ClInclude>
+    <ClInclude Include="Military.h">
+      <Filter>Header Files\Humanoid\Human\Adult</Filter>
+    </ClInclude>
+    <ClInclude Include="Children.h">
+      <Filter>Header Files\Humanoid\Human\Children</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -151,15 +169,6 @@
     </ClCompile>
     <ClCompile Include="ZombieSpecificMove.cpp">
       <Filter>Source Files\Humanoid\Zombie</Filter>
-    </ClCompile>
-    <ClCompile Include="Doctor.cpp">
-      <Filter>Source Files\Humanoid\Human</Filter>
-    </ClCompile>
-    <ClCompile Include="Military.cpp">
-      <Filter>Source Files\Humanoid\Human</Filter>
-    </ClCompile>
-    <ClCompile Include="Civil.cpp">
-      <Filter>Source Files\Humanoid\Human</Filter>
     </ClCompile>
     <ClCompile Include="ZombieRandomMove.cpp">
       <Filter>Source Files\Humanoid\Zombie</Filter>
@@ -191,8 +200,23 @@
     <ClCompile Include="Factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Civil.cpp">
+      <Filter>Source Files\Humanoid\Human\Adult</Filter>
+    </ClCompile>
+    <ClCompile Include="Doctor.cpp">
+      <Filter>Source Files\Humanoid\Human\Adult</Filter>
+    </ClCompile>
+    <ClCompile Include="Military.cpp">
+      <Filter>Source Files\Humanoid\Human\Adult</Filter>
+    </ClCompile>
+    <ClCompile Include="Adult.cpp">
+      <Filter>Source Files\Humanoid\Human\Adult</Filter>
+    </ClCompile>
+    <ClCompile Include="Children.cpp">
+      <Filter>Source Files\Humanoid\Human\Children</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cdr" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

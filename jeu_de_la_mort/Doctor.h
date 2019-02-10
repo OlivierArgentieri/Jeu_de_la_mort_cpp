@@ -1,8 +1,8 @@
 #pragma once
-#include "Human.h"
 #include "GameManager.h"
+#include "Adult.h"
 
-class Doctor : public Human
+class Doctor : public Adult
 {
 public:
 	bool UseEffect(Vector2 _v2NewPosition) override;

@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Adult.h" />
     <ClInclude Include="Case.h" />
+    <ClInclude Include="Children.h" />
     <ClInclude Include="Civil.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Doctor.h" />
@@ -178,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Case.cpp" />
+    <ClCompile Include="Children.cpp" />
     <ClCompile Include="Civil.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Factory.cpp" />
@@ -187,6 +190,7 @@
     <ClCompile Include="Humanoid.cpp" />
     <ClCompile Include="jeu_de_la_mort.cpp" />
     <ClCompile Include="Military.cpp" />
+    <ClCompile Include="Adult.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

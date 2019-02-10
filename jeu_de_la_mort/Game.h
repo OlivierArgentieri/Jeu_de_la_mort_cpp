@@ -24,6 +24,4 @@ public:
 	Humanoid* GetHumanoidByPosition(Vector2 _v2Position);
 	int GetNumberOfInfectedHuman();
 	MyNewList<Humanoid*> GetAllHumanoid();
-	MyNewList<Human*> GetAllHumans();
-	MyNewList<Zombie*> GetAllZombies();
 };
