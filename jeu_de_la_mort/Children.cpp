@@ -36,7 +36,7 @@ bool Children::ImAdult()
 bool Children::CanGrow()
 {
 
-	return m_nb_lap_grow_ > 5;
+	return m_nb_lap_grow_ > 3;
 }
 
 void Children::Grow()
