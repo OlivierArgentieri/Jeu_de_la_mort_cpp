@@ -7,7 +7,6 @@ private:
 	int m_cpt_lap_reproduct_ = 2;
 
 public :
-	std::string GetTag();
 	void IncrementLapReproduct();
 	int GetLapReproduct();
 	void ResetLapReproduct();

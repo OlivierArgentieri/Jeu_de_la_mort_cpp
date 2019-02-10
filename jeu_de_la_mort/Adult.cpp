@@ -3,6 +3,7 @@
 #include "Case.h"
 #include "Factory.h"
 #include "Map.h"
+#include "Children.h"
 
 
 void Adult::IncrementLapReproduct()
@@ -22,8 +23,8 @@ void Adult::ResetLapReproduct()
 
 bool Adult::CanReproduct(Vector2 _v2SecondPosition)
 {
-	Case* h = GetMap().GetCaseByPosition(_v2SecondPosition);
-	if (h != nullptr && h->GetTagOccupant() == "Human" && !h->GetAdultOccupant()->AmIinfected() && h->GetAdultOccupant()->GetLapReproduct() >
+	Case* c = GetMap().GetCaseByPosition(_v2SecondPosition);
+	if (c != nullptr && c->GetTagOccupant() == "Human" && c->GetAdultOccupant() != nullptr && !c->GetAdultOccupant()->AmIinfected() && c->GetAdultOccupant()->GetLapReproduct() >
 		5) // si humain + pas infecté + collision -> reproduction
 		return true;
 
@@ -32,7 +33,7 @@ bool Adult::CanReproduct(Vector2 _v2SecondPosition)
 
 void Adult::Reproduct(Vector2 _v2BabyPosition)
 {
-	Factory::InitiateRandomHuman(_v2BabyPosition);
+	new Children(_v2BabyPosition);
 	this->ResetLapReproduct();
 }
 

@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="Adult.h" />
     <ClInclude Include="Case.h" />
+    <ClInclude Include="Children.h" />
     <ClInclude Include="Civil.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Doctor.h" />
@@ -179,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Case.cpp" />
+    <ClCompile Include="Children.cpp" />
     <ClCompile Include="Civil.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Factory.cpp" />

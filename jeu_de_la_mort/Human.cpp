@@ -6,14 +6,13 @@
 #include "Factory.h"
 
 
-std::string Adult::GetTag()
+std::string Human::GetTag()
 {
 	return "Human";
 }
 
 void Human::PlayTurn(Vector2 _v2NewPosition)
 {
-
 	if (CanTransformToZombie())
 	{
 		TransformToZombie();
@@ -27,7 +26,6 @@ void Human::PlayTurn(Vector2 _v2NewPosition)
 
 	if (CanMove(_v2NewPosition))
 		Move(_v2NewPosition);
-
 }
 
 

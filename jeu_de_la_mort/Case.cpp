@@ -78,6 +78,14 @@ std::string Case::GetTagOccupant()
 	return this->m_ptr_humanoid_->GetTag();
 }
 
+Human* Case::GetHumanOccupant()
+{
+	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human")
+		return nullptr;
+
+	return static_cast<Human*>(this->m_ptr_humanoid_);
+}
+
 Adult* Case::GetAdultOccupant()
 {
 	if (this->m_ptr_humanoid_ != nullptr && this->m_ptr_humanoid_->GetTag() != "Human")

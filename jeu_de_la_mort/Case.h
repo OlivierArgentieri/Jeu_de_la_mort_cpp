@@ -24,6 +24,7 @@ public:
 	void Exit();
 
 	std::string GetTagOccupant();
+	Human* GetHumanOccupant();
 	Adult* GetAdultOccupant();
 	Zombie* GetZombieOccupant();
 };
