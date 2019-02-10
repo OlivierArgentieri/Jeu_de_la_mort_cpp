@@ -13,7 +13,7 @@ private :
 	Map *m_ptr_map_;
 	Sprite *m_ptr_sprite_;
 
-	int m_effect_range_ = 1; // todo construct by object
+	int m_effect_range_ = 1; // todo in constructor
 	int m_move_range_ = 1;
 
 public:

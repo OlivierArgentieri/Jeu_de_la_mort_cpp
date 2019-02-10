@@ -38,7 +38,6 @@ Map::Map(const Map& _refMap)
 
 Map::~Map()
 {
-	// todo : patch memory issue
 	delete(m_ptr_cases_);
 	delete(m_ptr_size_);
 }
