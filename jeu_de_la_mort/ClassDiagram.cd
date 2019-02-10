@@ -166,7 +166,7 @@
   <Class Name="Case">
     <Position X="11.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAACAACAgEAAAAAAAAAEAAEAEAgIAIAIIAAAAAAA=</HashCode>
+      <HashCode>AACAAACAACAgEIAAAAAAAAEAAEAEAgIAIAIIAAAAAAA=</HashCode>
       <FileName>Case.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -219,9 +219,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Human">
-    <Position X="12.25" Y="6.25" Width="2.75" />
+    <Position X="11.25" Y="6.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AKAAACBCAACAAAAAAAAAUAAAAgAAEAAASAACABAAAAA=</HashCode>
+      <HashCode>IKAAACBCAACAAAAAAAAAUAAAAgAAEAAASAACABAAAAA=</HashCode>
       <FileName>Human.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -266,8 +266,15 @@
   <Class Name="Adult">
     <Position X="9.5" Y="11.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>ICAAAAAAAAAAEBAAAEAAAAAAABABAAAACABAIAAAAAA=</HashCode>
+      <HashCode>ACAAAAAAAAAAEBAAAEAAAAAAABABAAAACABAIAAAAAA=</HashCode>
       <FileName>Adult.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Children">
+    <Position X="13" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABAAAAAAAAAAAEAAAACAAAAAAAGAACAAAACAA=</HashCode>
+      <FileName>Children.h</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="color">

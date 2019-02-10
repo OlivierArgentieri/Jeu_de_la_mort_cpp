@@ -14,8 +14,12 @@ Children::Children(Vector2 _v2Position)
 void Children::PlayTurn(Vector2 _v2NewPosition)
 {
 	if (CanGrow())
+	{
 		Grow();
-	
+		return;
+	}
+
+	IncrementGrowLapCount();
 	Human::PlayTurn(_v2NewPosition);
 }
 
@@ -40,4 +44,9 @@ void Children::Grow()
 	Vector2 temp(this->GetPosition());
 	delete(this);
 	Factory::InitiateRandomHuman(temp);
+}
+
+void Children::IncrementGrowLapCount()
+{
+	m_nb_lap_grow_++;
 }
